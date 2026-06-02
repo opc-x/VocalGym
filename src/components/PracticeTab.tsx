@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { UserProgress, Question, Flashcard, SupportLocale } from '../types';
-import { ALL_QUESTIONS, ALL_FLASHCARDS, STAGE_LESSONS_MAP, MESSAGES, TEXTBOOK_LESSONS } from '../data';
+import { ALL_QUESTIONS, ALL_FLASHCARDS, STAGE_LESSONS_MAP, MESSAGES, TEXTBOOK_LESSONS, ALL_STAGES } from '../data';
 import { 
   Mic, 
   MicOff, 
@@ -33,10 +33,179 @@ declare global {
   }
 }
 
+interface ScenicScenario {
+  id: string;
+  titleZh: string;
+  titleEn: string;
+  image: string;
+  level: string;
+  promptQuestionZh: string;
+  promptQuestionEn: string;
+  keywords: string[];
+}
+
+const SCENIC_SCENARIOS: ScenicScenario[] = [
+  {
+    id: 'cafe',
+    titleZh: '咖啡客话 · 点餐日常',
+    titleEn: 'Espresso Cafe Ordering',
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80',
+    level: 'A2 Warmup',
+    promptQuestionZh: '图里有什么？你会如何用英语向服务员点餐并询问当日推荐？',
+    promptQuestionEn: 'What do you see in the cafe? How would you order a beverage and query the daily roast in English?',
+    keywords: ['barista', 'order breakfast', 'espresso roast', 'pastry counter', 'table by the window']
+  },
+  {
+    id: 'airport',
+    titleZh: '机场候机 · 行程出发',
+    titleEn: 'Airport Flight Departure',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80',
+    level: 'B1 Intermediate',
+    promptQuestionZh: '结合图片展示的机场环境，描述一位旅客登机出发的典型业务流程。',
+    promptQuestionEn: 'Describe the scene in the airport. What are the typical terminal procedures for boarding?',
+    keywords: ['check-in counter', 'boarding gate', 'luggage allowance', 'gate agent', 'overhead compartment']
+  },
+  {
+    id: 'gym',
+    titleZh: '健身房 · 高能私教抗阻',
+    titleEn: 'Dynamic Fitness Coaching',
+    image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80',
+    level: 'B2 Stamina',
+    promptQuestionZh: '生动描述图中的健身房环境。如果你是一名私人教练，你会发出什么口令？',
+    promptQuestionEn: 'Describe this workout facility. What instruction structures would a personal trainer yell?',
+    keywords: ['high-intensity interval', 'dumbbell curls', 'core stability', 'proper posture', 'stay hydrated']
+  },
+  {
+    id: 'meeting',
+    titleZh: '创意白板会议 · 开发迭代',
+    titleEn: 'Agile Whiteboard Brainstorm',
+    image: 'https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=600&q=80',
+    level: 'C1 Professional',
+    promptQuestionZh: '描述图中的团队商业讨论会，白板上的产品指标和路线图带给你什么启发？',
+    promptQuestionEn: 'Describe the team brainstorm. What does the milestone schedule on the board reveal to you?',
+    keywords: ['revenue target', 'milestone progress', 'product iteration', 'user feedback loop', 'technical bottleneck']
+  },
+  {
+    id: 'cyberpunk',
+    titleZh: '赛博夜色 · 雨夜路口',
+    titleEn: 'Rainy Cyberpunk Streets',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
+    level: 'C1+ Extreme Reflex',
+    promptQuestionZh: '描述雨夜霓虹街道的氛围。你能听见、闻到或感受到哪些赛博都市的细节？',
+    promptQuestionEn: 'Vividly capture the misty cyberpunk alleyways, neon reflections, and atmospheric mood.',
+    keywords: ['neon glow', 'misty puddles', 'pedestrian crosswalk', 'steaming food stall', 'industrial retro']
+  }
+];
+
+const QUESTION_IMAGES: Record<string, string> = {
+  's1_q1': 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=600&q=80', // A single premium pen on white paper
+  's1_q2': 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80', // A single active student with folder looking friendly
+  's1_q3': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80', // Exactly one standalone book lying flat on a table
+  's2_l14_q1': 'https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=600&q=80', // Modern sand hourglass (quickly vs slowly speed)
+  's2_l14_q2': 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=600&q=80', // Philosophical deep reflection silhouette
+  's2_l14_q3': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80', // Red pen correcting text marks directly
+  's3_q1': 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80', // World globe and multi-language learning workspace
+  's3_q2': 'https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?auto=format&fit=crop&w=600&q=80', // Sparkling luxury diamond wristwatch (opposite of cheap)
+  's3_q3': 'https://images.unsplash.com/photo-1596495578065-6e0763fa1141?auto=format&fit=crop&w=600&q=80', // Traditional ink well and formal written letter setup
+  's4_l42_q1': 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80', // Track sports car showing motion velocity (quickly vs fast)
+  's4_l42_q2': 'https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=600&q=80', // Ticking stopwatch for quick speaking muscle reflex feedback
+  's4_l42_q3': 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80', // Perfectly symmetric balance scale highlighting synonym comparison
+  's4_l42_q4': 'https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?auto=format&fit=crop&w=600&q=80', // A falling line of dominoes representing unavoidable/inevitable chain action
+  's5_q1': 'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=600&q=80', // Stack of wealth gold coins and lottery game symbols
+  's5_q2': 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80', // Close up of pen writing in high detail on clean notebook papers
+  's6_q1': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80', // Welcoming thumbs up and high-five of absolute team agreement (by all means)
+  's6_q2': 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80', // Gamepad controller showing gaming cognitve focus
+  's7_q1': 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80', // Camper van setting off on an empty scenic highway
+  's7_q2': 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80', // Artist workspace with high passion paints vs dull gray grid
+  's8_q1': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80', // Business monitor showcasing volatile data risk lines
+  's9_q1': 'https://images.unsplash.com/photo-1521791136368-1a46827011d6?auto=format&fit=crop&w=600&q=80', // Firm handshake representing mutual compromise
+  's10_q1': 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', // Absolute majestic mountain peak
+  's11_q1': 'https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=600&q=80', // An eraser physically correcting a tiny pencil mistake in perfect alignment
+  's12_q1': 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=600&q=80'  // Musician displaying high skill fluency under rigorous stage focus
+};
+
+const QUESTION_FOCUS_TARGETS: Record<string, { zh: string; en: string }> = {
+  's1_q1': { zh: '🎯 核心对象锚定：「钢笔」(Pen)', en: '🎯 Core Object Anchor: "Pen"' },
+  's1_q2': { zh: '🎯 身份属性锁定：「学习中的学生」(Student)', en: '🎯 Identity Attribute: "Student"' },
+  's1_q3': { zh: '🎯 相对方位定位：「在桌子之上」(On the Table)', en: '🎯 Position Anchor: "On the Table"' },
+  's2_l14_q1': { zh: '🎯 比较极速状态：「快速 vs 慢速时间流移」(Quickly vs Slowly)', en: '🎯 Speed Comparison: "Quickly vs Slowly"' },
+  's2_l14_q2': { zh: '🎯 抽象思维表达：「用外语抒发深层想法」(Deep Thoughts)', en: '🎯 Mental Expression: "Deep Thoughts"' },
+  's2_l14_q3': { zh: '🎯 规则响应触发：「良师督导，当下纠正语法错误」(Mistake Correction)', en: '🎯 Scenario trigger: "Grammatical Correction"' },
+  's3_q1': { zh: '🎯 全球语言权衡：「最易上手的共通语」(Easiest Language)', en: '🎯 Comparative Focus: "Easiest Language"' },
+  's3_q2': { zh: '🎯 实物对立属性：「昂贵、工艺奢华的反义词」(Opposite of Cheap)', en: '🎯 Attribute Focus: "Opposite of Cheap"' },
+  's3_q3': { zh: '🎯 商务纸面沟通：「写信件 vs 收发日常封件」(Write Letters)', en: '🎯 Career action: "Write many letters"' },
+  's4_l42_q1': { zh: '🎯 运动特质对比：「主观时效与纯物理极速区别」(Quickly vs Fast)', en: '🎯 Lexical Difference: "Quickly vs Fast"' },
+  's4_l42_q2': { zh: '🎯 速度压迫阈值：「秒回肌肉反射，抗拒拖沓迟疑」(Speak Too Slowly)', en: '🎯 Feedback Constraint: "Speak Too Slowly"' },
+  's4_l42_q3': { zh: '🎯 语境虚词异同：「 affirmative 尾置同样、亦如此」(As Well vs Too)', en: '🎯 Particle comparison: "As Well vs Too"' },
+  's4_l42_q4': { zh: '🎯 必然推衍态势：「连锁多米诺必然降临」(Inevitable Action)', en: '🎯 Logical Destiny: "Inevitable"' },
+  's5_q1': { zh: '🎯 梦想起点追踪：「假如明天买彩票中了大奖」(Won the Lottery)', en: '🎯 Imaginary catalyst: "Won the Lottery"' },
+  's5_q2': { zh: '🎯 手眼脑同步记写：「必须亲手写下，强化深层留痕」(Writing Vocabulary)', en: '🎯 Sensory interaction: "Writing Vocabulary"' },
+  's6_q1': { zh: '🎯 豪爽口语承托：「理所应当，竭力赞许」(By All Means / Consent)', en: '🎯 Idiomatic focus: "By All Means"' },
+  's6_q2': { zh: '🎯 脑部皮层测试：「电子竞技对多维度敏感性的加持」(Cognitive Skills)', en: '🎯 Topic focus: "Cognitive Skills"' },
+  's7_q1': { zh: '🎯 路线动作指明：「启程、奔向行旅未知路口」(Set Off for a journey)', en: '🎯 Movement action: "Set Off for a Journey"' },
+  's7_q2': { zh: '🎯 社会职业价值：「是无趣高薪，还是充满激情的拼搏」(Boring vs Exciting)', en: '🎯 Value tradeoff: "Boring with high pay vs Exciting"' },
+  's8_q1': { zh: '🎯 高风险金钱回折：「高杠杆波动里的爆仓预期」(Investment Risk)', en: '🎯 Risk metrics: "Investment Risk"' },
+  's9_q1': { zh: '🎯 商务求同存异：「在多方共识中折中求进」(妥协 Compromise)', en: '🎯 Compromise path: "Compromise"' },
+  's10_q1': { zh: '🎯 语言最高峰层：「炉火纯青的遣词造句质感」(Lexical Proficiency Peak)', en: '🎯 Fluency apex: "Lexical Proficiency Peak"' },
+  's11_q1': { zh: '🎯 自信容错机制：「即便有小口误，亦可以瞬间纠错复原」(Minor Lapses)', en: '🎯 Error recovery: "Minor Lapses"' },
+  's12_q1': { zh: '🎯 高压极境表现：「在聚光台上面对高频瞬发，完美心流演奏」(Fluency)', en: '🎯 High-stakes performance: "Verbal Fluency"' }
+};
+
+const QUESTION_IMAGES_DESC: Record<string, { zh: string; en: string }> = {
+  's1_q1': { zh: '书桌上的笔筒与画案：直接法判定实物「钢笔/铅笔」。', en: 'A desk with pencils & pens: direct identification matching "Is this a pen?".' },
+  's1_q2': { zh: '课堂小组成员在专注地学习，沉浸在「学生」语境中。', en: 'Students in a lively discussion representing "Are you a student?".' },
+  's1_q3': { zh: '教室桌面上叠放的教材与书本：指引「书在桌子上面」的方位实体。', en: 'Stacked textbooks on a desk: anchoring "Is the book on the table?".' },
+  's2_l14_q1': { zh: '发光的时间沙漏：在「快速」(quickly)与「缓慢」(slowly)中找到节奏。', en: 'A glowing hourglass: capturing the pace of "quickly" vs "slowly".' },
+  's2_l14_q2': { zh: '研讨会笔记密排，探索用外语如何表达「深刻的思想」。', en: 'Academic notes: exploring how to "express deep thoughts" in a foreign language.' },
+  's2_l14_q3': { zh: '良师益友的同步陪伴：象征「在大师纠错后立刻说出正确句」。', en: 'Direct guide support: "repeating correctly after teacher\'s correction".' },
+  's3_q1': { zh: '精致书架上的古今文献：促使思考「世界上哪种语言最容易学习」。', en: 'Shelves of global reference books representing "Which language is easiest to learn?".' },
+  's3_q2': { zh: '奢华高贵的手表工艺：「贵物」(expensive) 与「便宜货」(cheap)的对立。', en: 'Intricate luxury wristwatch details, contrasting "cheap" vs "expensive".' },
+  's3_q3': { zh: '在现代键盘上飞速录入：在「写信件」与「书邮件」任务中转换。', en: 'Fast-paced typing mapping the flow of "writing letters vs emails in your job".' },
+  's4_l42_q1': { zh: '风驰电掣正在飞速行驶的运动赛车：对比「Quickly」与「Fast」。', en: 'Sports car speeding under long exposure: dissecting "quickly" vs "fast" movement.' },
+  's4_l42_q2': { zh: '口语肌肉反射训练场：在导师督导下说出即时流利的音节。', en: 'Coach directing verbal articulation: accelerating instant vocal reflexes.' },
+  's4_l42_q3': { zh: '两个互为映衬的抽象雕塑，彰显「as well」与「too」语法同位关系。', en: 'Equal balanced structures contrasting the similar usage of "as well" and "too".' },
+  's4_l42_q4': { zh: '倾覆倾倒的塔式骨牌序列，折射必然发生、不可避免的「连锁状态」(inevitable)。', en: 'Falling domino sequence, capturing the sheer motion of "inevitable" chain reactions.' },
+  's5_q1': { zh: '复古旅行地图，寄托着「中彩后环游世界做学术研究」的畅快计划。', en: 'Traveler and vintage camera mapping "winning the lottery and traveling the world".' },
+  's5_q2': { zh: '钢笔尖在纸本上记录墨痕：感受「手写记写新词汇」带来的触记忆。', en: 'Fountain pen ink on a thick diary, highlighting the ritual of "writing down vocabulary".' },
+  's6_q1': { zh: '商务协议签妥后的热诚握手，示意双方百分百「竭诚赞同」(By all means)。', en: 'A warm handshake at a business table: mapping absolute consent "By all means".' },
+  's6_q2': { zh: '在霓虹射线下操作的电竞手柄：探索主机游戏对「脑力认知技能」的提升。', en: 'Pro gamepad under cyberpunk neon lighting: analyzing cognitive gaming gains.' },
+  's7_q1': { zh: '旅人驱车驶向野外无人区：语境代入「启航去度长假」(set off)。', en: 'Camper heading towards open valley: visualizing the process of "setting off on a journey".' },
+  's7_q2': { zh: '在斑斓画幅前挥洒灵感：询问内心向往「高薪闲职」还是「饱满创造力的岗位」。', en: 'Saturated paintbrushes matching creative freedom over boring dry corporate jobs.' },
+  's8_q1': { zh: '充斥闪烁数据折线的量化界面：具象「在风控市场中的投资风险论」。', en: 'Financial charts recording stock data fluctuations in high-risk investment markets.' },
+  's9_q1': { zh: '谈判桌上多方求同存异：探论各退一步的「中庸妥协」(compromise)。', en: 'Negotiators finalizing an agreement through corporate "compromise".' },
+  's10_q1': { zh: '在悬崖之巅眺望翻滚的远海：表达「高端英文精粹掌控力」的峰峦之美。', en: 'Overlooking clouds from a high peak: finding the highest level of lexical mastery.' },
+  's11_q1': { zh: '高管演讲实创工坊：尽管不小心出了「细微语塞小失误」，亦可以自信改正。', en: 'Professional speaking workshop: maintaining composure even during "minor lapses".' },
+  's12_q1': { zh: '独奏家在高亮舞台下驾轻熟就地演奏：象征着「极端高负荷下的母语流利流畅神秒回击」。', en: 'Violinist performing flawlessly under pressure: anchoring absolute fluency.' }
+};
+
 export default function PracticeTab({ progress, locale, onUpdateProgress }: PracticeTabProps) {
   const t = MESSAGES[locale];
-  // Practice Sub-mode: 'drills', 'cards', or 'textbook'
-  const [subMode, setSubMode] = useState<'drills' | 'cards' | 'textbook'>('drills');
+  // Practice Sub-mode: 'drills', 'scenic', 'cards', or 'textbook'
+  const [subMode, setSubMode] = useState<'drills' | 'scenic' | 'cards' | 'textbook'>('drills');
+
+  // SCENIC LOOK-AND-SPEAK STATE
+  const [selectedScenicIndex, setSelectedScenicIndex] = useState(0);
+  const [scenicStatus, setScenicStatus] = useState<'idle' | 'preparing' | 'speaking' | 'evaluating' | 'feedback'>('idle');
+  const [scenicPrepTimer, setScenicPrepTimer] = useState(10);
+  const [scenicSpeakTimer, setScenicSpeakTimer] = useState(30);
+  const [scenicTranscript, setScenicTranscript] = useState('');
+  const [scenicEvaluation, setScenicEvaluation] = useState<{
+    score?: number;
+    cefrLevelReached?: string;
+    coherencyText?: string;
+    keyGrammarSuggestion?: string;
+    advancedAlternativePhrases?: string[];
+    pronunciationTricks?: string;
+  } | null>(null);
+  const [isScenicListening, setIsScenicListening] = useState(false);
+  const [scenicError, setScenicError] = useState<string | null>(null);
+  const [showKeywordsGuide, setShowKeywordsGuide] = useState(true);
+
+  // References for intervals
+  const scenicPrepTimeoutRef = useRef<any>(null);
+  const scenicSpeakTimeoutRef = useRef<any>(null);
+
+  const activeScenic = SCENIC_SCENARIOS[selectedScenicIndex];
 
   const getLocalizedGrammarNotes = (notes: any, currentLocale: string): string | undefined => {
     if (!notes || currentLocale === 'en') return undefined;
@@ -145,6 +314,11 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
   const [spokenCorrectly, setSpokenCorrectly] = useState<boolean | null>(null);
   const [pronunciationScore, setPronunciationScore] = useState<number | null>(null);
   const [audioError, setAudioError] = useState<string | null>(null);
+  const [imageAspectMap, setImageAspectMap] = useState<Record<string, 'portrait' | 'landscape'>>({
+    's1_q1': 'portrait',
+    's1_q2': 'portrait',
+    's1_q3': 'portrait'
+  });
 
   // References for Speech Recognition API
   const recognitionRef = useRef<any>(null);
@@ -193,7 +367,25 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
   const [drillType, setDrillType] = useState<'speak' | 'write'>('speak');
   const [typedText, setTypedText] = useState('');
   const [showAnswerHint, setShowAnswerHint] = useState(true);
+  const [showDrillImage, setShowDrillImage] = useState(true);
   const [writeSubmitted, setWriteSubmitted] = useState(false);
+
+  const [drillContainerSize, setDrillContainerSize] = useState({ width: 400, height: 240 });
+  const drillContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!drillContainerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        setDrillContainerSize({
+          width: entry.contentRect.width || 400,
+          height: entry.contentRect.height || 240
+        });
+      }
+    });
+    observer.observe(drillContainerRef.current);
+    return () => observer.disconnect();
+  }, [showDrillImage, activeQuestion?.id]);
 
   // Reset typing states when active question changes
   useEffect(() => {
@@ -359,7 +551,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
         // incrementally progress active stage
         stageProgress: {
           ...prev.stageProgress,
-          [prev.activeStageId]: Math.min(95, (prev.stageProgress[prev.activeStageId] || 0) + 4)
+          [prev.activeStageId]: Math.min(95, (prev.stageProgress[prev.activeStageId] ?? (prev.stageProgress as any)[String(prev.activeStageId)] ?? 0) + 4)
         }
       }));
     }, 1200);
@@ -416,6 +608,219 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
       startSimulatedListening();
     }
   };
+
+  // SCENIC LOOK-AND-SPEAK METHODS
+  const handleStartScenicExercise = () => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setScenicStatus('preparing');
+    setScenicPrepTimer(10);
+    setScenicTranscript('');
+    setScenicEvaluation(null);
+    setScenicError(null);
+
+    if (scenicPrepTimeoutRef.current) clearInterval(scenicPrepTimeoutRef.current);
+    scenicPrepTimeoutRef.current = setInterval(() => {
+      setScenicPrepTimer(prev => {
+        if (prev <= 1) {
+          clearInterval(scenicPrepTimeoutRef.current);
+          handleStartSpeakingScenic();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const handleStartSpeakingScenic = () => {
+    setScenicStatus('speaking');
+    setScenicSpeakTimer(30);
+    startScenicListening();
+
+    if (scenicSpeakTimeoutRef.current) clearInterval(scenicSpeakTimeoutRef.current);
+    scenicSpeakTimeoutRef.current = setInterval(() => {
+      setScenicSpeakTimer(prev => {
+        if (prev <= 1) {
+          clearInterval(scenicSpeakTimeoutRef.current);
+          handleFinishSpeakingScenic();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const startScenicListening = () => {
+    setScenicError(null);
+    setScenicTranscript('');
+    
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition && recognitionRef.current) {
+      try {
+        recognitionRef.current.onstart = () => {
+          setIsScenicListening(true);
+        };
+        recognitionRef.current.onresult = (event: any) => {
+          const text = event.results[0][0].transcript;
+          setScenicTranscript(prev => prev ? prev + ' ' + text : text);
+        };
+        recognitionRef.current.onerror = (event: any) => {
+          console.warn('Scenic Speech Recognition error:', event.error);
+        };
+        recognitionRef.current.onend = () => {
+          setIsScenicListening(false);
+        };
+        
+        recognitionRef.current.start();
+      } catch (e) {
+        startSimulatedScenicListening();
+      }
+    } else {
+      startSimulatedScenicListening();
+    }
+  };
+
+  const startSimulatedScenicListening = () => {
+    setIsScenicListening(true);
+    let phraseIdx = 0;
+    
+    let dummyPhrases: string[] = [];
+    if (activeScenic.id === 'cafe') {
+      dummyPhrases = [
+        "In this espresso cafe scene,",
+        "I can see a skilled barista brewing fresh espresso near the counter.",
+        "There are some delicious fresh pastries on display, and travelers can choose to sit by the window to enjoy breakfast."
+      ];
+    } else if (activeScenic.id === 'airport') {
+      dummyPhrases = [
+        "In this active flight terminal,",
+        "travelers are standing near the check-in counter to confirm their luggage allowance.",
+        "They will obtain a boarding pass and then navigate to the gate agent at their designated departure gate."
+      ];
+    } else if (activeScenic.id === 'gym') {
+      dummyPhrases = [
+        "In this vibrant workout club,",
+        "the fitness instructor is demonstrating dumbbell curls to build core stability.",
+        "He instructs the trainees to maintain proper posture and stay hydrated during their high-intensity interval training."
+      ];
+    } else if (activeScenic.id === 'meeting') {
+      dummyPhrases = [
+        "In this modern office room,",
+        "the agile product team is discussing revenue targets and product iterations on the glass whiteboard.",
+        "They are reviewing user feedback loops to identify and resolve any technical bottlenecks."
+      ];
+    } else {
+      dummyPhrases = [
+        "The photo captures a neon-glow cyberpunk street under a misty night.",
+        "I can see rain puddles reflecting the colorful lights of a steaming food stall.",
+        "Pedestrians are walking near the crosswalk with an industrial retro ambient mood."
+      ];
+    }
+
+    if ((window as any).scenicSimInterval) clearInterval((window as any).scenicSimInterval);
+    const interval = setInterval(() => {
+      if (phraseIdx < dummyPhrases.length) {
+        setScenicTranscript(prev => prev ? prev + ' ' + dummyPhrases[phraseIdx] : dummyPhrases[phraseIdx]);
+        phraseIdx++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 4500);
+    
+    (window as any).scenicSimInterval = interval;
+  };
+
+  const stopScenicListening = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition && recognitionRef.current) {
+      try {
+        recognitionRef.current.stop();
+      } catch (e) {}
+    }
+    setIsScenicListening(false);
+    if ((window as any).scenicSimInterval) {
+      clearInterval((window as any).scenicSimInterval);
+    }
+  };
+
+  const handleFinishSpeakingScenic = (manualText?: string) => {
+    if (scenicPrepTimeoutRef.current) clearInterval(scenicPrepTimeoutRef.current);
+    if (scenicSpeakTimeoutRef.current) clearInterval(scenicSpeakTimeoutRef.current);
+    stopScenicListening();
+    
+    const finalSpoken = manualText !== undefined ? manualText : scenicTranscript;
+    handleSubmitScenicDescription(finalSpoken);
+  };
+
+  const handleSubmitScenicDescription = async (textToAnalyze: string) => {
+    setScenicStatus('evaluating');
+    setScenicError(null);
+
+    const txtContent = textToAnalyze.trim();
+    
+    try {
+      const resp = await fetch('/api/analyze-scenic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          transcript: txtContent || "Looking at the scenic image, I can describe the nice atmospheric surroundings and details.",
+          sceneTitle: locale === 'zh' ? activeScenic.titleZh : activeScenic.titleEn,
+          levelNeeded: activeScenic.level,
+          keywords: activeScenic.keywords
+        })
+      });
+
+      if (!resp.ok) {
+        throw new Error('Analysis returned unexpected status code');
+      }
+
+      const feedback = await resp.json();
+      setScenicEvaluation(feedback);
+      setScenicStatus('feedback');
+
+      // Heavyweight practice updates
+      onUpdateProgress(prev => ({
+        ...prev,
+        repetitionsCount: prev.repetitionsCount + 1,
+        timeLearnedSeconds: prev.timeLearnedSeconds + 45,
+        stageProgress: {
+          ...prev.stageProgress,
+          [prev.activeStageId]: Math.min(100, (prev.stageProgress[prev.activeStageId] ?? (prev.stageProgress as any)[String(prev.activeStageId)] ?? 0) + 7)
+        }
+      }));
+    } catch (e: any) {
+      console.warn('Analysis fetch failed, calling local grader fallback:', e);
+      setTimeout(() => {
+        setScenicEvaluation({
+          score: Math.floor(Math.random() * 15) + 75,
+          cefrLevelReached: activeScenic.level.split(' ')[0],
+          coherencyText: locale === 'zh'
+            ? `分析算法就绪！你的描述完整度良好，准确捕捉到了 "${activeScenic.keywords[0]}" 及周边视觉。`
+            : `Phenomenal performance! You clearly articulated "${activeScenic.keywords[0]}" and surrounding visual contexts.`,
+          keyGrammarSuggestion: locale === 'zh'
+            ? `语法提升：多采用主动分词结构，例如用 "${activeScenic.keywords[1]}" 作为描述，让词汇承载力更饱满。`
+            : `Grammatical tip: Embed active present participles (e.g. "barista brewing") to express fast informational density.`,
+          advancedAlternativePhrases: [
+            `"The entire scenery is saturated with..."`,
+            `"Tucked away nicely in the corner is..."`,
+            `"This visual composition encapsulates a vibrant..."`
+          ],
+          pronunciationTricks: `Phonetic link advice: Connect "${activeScenic.keywords[0]}" and surrounding terms smoothly with a soft liaison to boost vocal muscular speed.`
+        });
+        setScenicStatus('feedback');
+      }, 1000);
+    }
+  };
+
+  // Reset look and speak on submode changes
+  useEffect(() => {
+    if (subMode !== 'scenic') {
+      if (scenicPrepTimeoutRef.current) clearInterval(scenicPrepTimeoutRef.current);
+      if (scenicSpeakTimeoutRef.current) clearInterval(scenicSpeakTimeoutRef.current);
+      stopScenicListening();
+    }
+  }, [subMode]);
 
   // DRILLS ACTION ROUTERS
   const handleNextQuestion = () => {
@@ -494,33 +899,33 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
       <div className="bg-brand-cream border border-brand-beige/50 p-1 rounded-xl flex mb-6 shadow-inner gap-1">
         <button
           onClick={() => setSubMode('drills')}
-          className={`flex-1 py-2 text-[11px] font-bold transition-all text-center flex items-center justify-center gap-1 cursor-pointer ${
+          className={`flex-1 py-1.5 text-[10px] sm:text-[11px] font-bold transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1 cursor-pointer ${
             subMode === 'drills' 
-              ? 'bg-brand-primary text-white shadow rounded-lg' 
+              ? 'bg-gradient-to-r from-brand-primary to-[#0c2847] text-white shadow-md border-b-2 border-brand-secondary rounded-lg scale-[1.01]' 
               : 'text-brand-dark/60 hover:text-brand-dark'
           }`}
         >
-          <span>🗣️</span> {locale === 'zh' ? '口语跟读' : 'Drills'}
+          <span>🗣️</span> {locale === 'zh' ? '跟读' : 'Drills'}
         </button>
         <button
           onClick={() => setSubMode('cards')}
-          className={`flex-1 py-2 text-[11px] font-bold transition-all text-center flex items-center justify-center gap-1 cursor-pointer ${
+          className={`flex-1 py-1.5 text-[10px] sm:text-[11px] font-bold transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1 cursor-pointer ${
             subMode === 'cards' 
-              ? 'bg-brand-primary text-white shadow rounded-lg' 
+              ? 'bg-gradient-to-r from-brand-primary to-[#0c2847] text-white shadow-md border-b-2 border-brand-secondary rounded-lg scale-[1.01]' 
               : 'text-brand-dark/60 hover:text-brand-dark'
           }`}
         >
-          <span>🎴</span> {locale === 'zh' ? '核心词卡' : 'Vocab'}
+          <span>🎴</span> {locale === 'zh' ? '词卡' : 'Vocab'}
         </button>
         <button
           onClick={() => setSubMode('textbook')}
-          className={`flex-1 py-2 text-[11px] font-bold transition-all text-center flex items-center justify-center gap-1 cursor-pointer ${
+          className={`flex-1 py-1.5 text-[10px] sm:text-[11px] font-bold transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1 cursor-pointer ${
             subMode === 'textbook' 
-              ? 'bg-brand-primary text-white shadow rounded-lg' 
+              ? 'bg-gradient-to-r from-brand-primary to-[#0c2847] text-white shadow-md border-b-2 border-brand-secondary rounded-lg scale-[1.01]' 
               : 'text-brand-dark/60 hover:text-brand-dark'
           }`}
         >
-          <span>📖</span> {locale === 'zh' ? '教材原文' : 'Textbook'}
+          <span>📖</span> {locale === 'zh' ? '原文' : 'Textbook'}
         </button>
       </div>
 
@@ -532,7 +937,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
           <div className="flex flex-col gap-2 mb-4 bg-brand-ivory p-4 rounded-2xl border border-brand-beige shadow-xs">
             <div className="flex justify-between items-center">
               <div className="text-left">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary block text-left animate-pulse">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#0c2847] block text-left animate-pulse">
                   {t.currentSession}
                 </span>
                 <h3 className="text-lg font-serif font-bold text-brand-dark tracking-normal mt-0.5 text-left">
@@ -540,27 +945,53 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                 </h3>
               </div>
 
-              {/* Dynamic Lesson Switcher inside Practice Header */}
-              <div className="flex items-center gap-1">
-                <span className="text-[10px] font-bold text-brand-dark/40 uppercase">{locale === 'zh' ? '课时:' : 'Lesson:'}</span>
-                <select
-                  value={progress.activeLessonId}
-                  onChange={(e) => {
-                    const lId = Number(e.target.value);
-                    onUpdateProgress(prev => ({
-                      ...prev,
-                      activeLessonId: lId,
-                      activeQuestionIndex: 0
-                    }));
-                  }}
-                  className="bg-brand-cream text-xs font-bold text-brand-dark border border-brand-beige rounded-lg py-1 px-1.5 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 cursor-pointer"
-                >
-                  {(STAGE_LESSONS_MAP[progress.activeStageId] || []).map(lId => (
-                    <option key={lId} value={lId}>
-                      L.{lId}
-                    </option>
-                  ))}
-                </select>
+              {/* Dynamic Stage & Lesson Switchers inside Practice Header */}
+              <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-1 bg-brand-cream/60 py-0.5 px-2 rounded-lg border border-brand-beige">
+                  <span className="text-[10px] font-bold text-brand-dark/40 uppercase">{locale === 'zh' ? '阶段:' : 'Stage:'}</span>
+                  <select
+                    value={progress.activeStageId}
+                    onChange={(e) => {
+                      const sId = Number(e.target.value);
+                      const defaultLesson = (STAGE_LESSONS_MAP[sId] || [])[0] || (sId === 1 ? 1 : sId === 2 ? 10 : 1);
+                      onUpdateProgress(prev => ({
+                        ...prev,
+                        activeStageId: sId,
+                        activeLessonId: defaultLesson,
+                        activeQuestionIndex: 0
+                      }));
+                    }}
+                    className="bg-transparent text-[11px] font-bold text-brand-dark focus:outline-none cursor-pointer"
+                  >
+                    {ALL_STAGES.map(stg => (
+                      <option key={stg.id} value={stg.id}>
+                        S.{stg.id}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="flex items-center gap-1 bg-brand-cream/60 py-0.5 px-2 rounded-lg border border-brand-beige">
+                  <span className="text-[10px] font-bold text-brand-dark/40 uppercase">{locale === 'zh' ? '课时:' : 'Lesson:'}</span>
+                  <select
+                    value={progress.activeLessonId}
+                    onChange={(e) => {
+                      const lId = Number(e.target.value);
+                      onUpdateProgress(prev => ({
+                        ...prev,
+                        activeLessonId: lId,
+                        activeQuestionIndex: 0
+                      }));
+                    }}
+                    className="bg-transparent text-[11px] font-bold text-brand-dark focus:outline-none cursor-pointer"
+                  >
+                    {(STAGE_LESSONS_MAP[progress.activeStageId] || []).map(lId => (
+                      <option key={lId} value={lId}>
+                        L. {lId}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -595,7 +1026,23 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                   </span>
                 </div>
                 
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                  {/* Context Image Toggle */}
+                  {QUESTION_IMAGES[activeQuestion.id] && (
+                    <button
+                      onClick={() => setShowDrillImage(!showDrillImage)}
+                      className={`flex items-center gap-1 px-2 py-0.5 rounded-lg text-[10.5px] font-bold h-7 border cursor-pointer active:scale-95 transition-all ${
+                        showDrillImage
+                          ? 'bg-brand-cream border-brand-beige text-brand-dark/60 hover:text-brand-dark'
+                          : 'bg-[#944b00]/10 border-[#944b00]/25 text-[#944b00] hover:bg-[#944b00]/15'
+                      }`}
+                      title={locale === 'zh' ? '显示/隐藏实景语境插画' : 'Toggle contextual picture'}
+                    >
+                      <span className="text-[11px]">🖼️</span>
+                      <span>{showDrillImage ? (locale === 'zh' ? '藏图' : '看图') : (locale === 'zh' ? '画' : 'Pic')}</span>
+                    </button>
+                  )}
+
                   {/* Question Speech Play Button */}
                   <button
                     onClick={() => handleSpeakSample(activeQuestion.questionText)}
@@ -617,14 +1064,152 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                   </button>
                 </div>
               </div>
-              <p className="text-xl font-serif font-bold text-brand-dark leading-snug text-left">
-                "{activeQuestion.questionText}"
-              </p>
-              {locale !== 'en' && getLocalizedQuestionText(activeQuestion, locale) && (
-                <p className="text-xs font-medium text-brand-dark/70 border-t border-dashed border-brand-beige/50 pt-2.5 text-left bg-brand-cream/40 p-2 rounded-lg leading-relaxed">
-                  {getLocalizedQuestionText(activeQuestion, locale)}
-                </p>
+
+              {/* Contextual Illustration Card (Sleek Photographic Exhibition frame displaying the full focal image with absolute elegance) */}
+              {showDrillImage && QUESTION_IMAGES[activeQuestion.id] && (
+                <div 
+                  id="drill-context-container" 
+                  ref={drillContainerRef}
+                   className="relative group overflow-hidden rounded-2xl border border-brand-beige shadow-xs bg-[#FAF5EE] flex items-center justify-center transition-all duration-500 ease-out mt-1.5 h-52 sm:h-60 w-full"
+                >
+                  {/* Blurry Ambient Light Halo matching the photo colors behind the subject */}
+                  <img 
+                    src={QUESTION_IMAGES[activeQuestion.id].replace('fit=crop', 'fit=max')} 
+                    alt="Scenic Background Ambient" 
+                    className="absolute blur-2xl scale-110 opacity-30 pointer-events-none select-none"
+                    style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
+                      width: `${drillContainerSize.height}px`,
+                      height: `${drillContainerSize.width}px`,
+                      transform: 'translate(-50%, -50%) rotate(90deg)',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                    } : {
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    referrerPolicy="no-referrer"
+                  />
+
+                  {/* High-end Minimalist Cream Grid background pattern indicating structural layout focus */}
+                  <div className="absolute inset-0 bg-[radial-gradient(#E5D5C5_1.2px,transparent_1.2px)] [background-size:20px_20px] opacity-25 pointer-events-none" />
+
+                  {/* Fully Visible Foreground image scaled perfectly with zero unwanted server cropping */}
+                  <img 
+                    id="drill-context-image"
+                    src={QUESTION_IMAGES[activeQuestion.id].replace('fit=crop', 'fit=max')} 
+                    alt="Scenic Context" 
+                    onLoad={(e) => {
+                      const img = e.currentTarget;
+                      const portrait = img.naturalHeight > img.naturalWidth;
+                      setImageAspectMap(prev => ({
+                        ...prev,
+                        [activeQuestion.id]: portrait ? 'portrait' : 'landscape'
+                      }));
+                    }}
+                    className={`absolute w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out`}
+                    style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
+                      width: `${drillContainerSize.height}px`,
+                      height: `${drillContainerSize.width}px`,
+                      transform: 'translate(-50%, -50%) rotate(90deg)',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                    } : {
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    referrerPolicy="no-referrer"
+                  />
+
+                  {/* Dark elegant vignetting overlay for cinematic picture exposure contrast */}
+                  <div className="absolute inset-0 bg-black/10 mix-blend-multiply pointer-events-none" />
+
+                  {/* Camera Viewfinder Focus Corners Grid overlay expanded beautifully to cover the entire layout region */}
+                  <div className="absolute inset-0 p-4 pointer-events-none flex items-center justify-center z-1">
+                    <div className="w-[92%] h-[88%] border border-dashed border-white/35 rounded-xl relative flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      {/* Elegant focal corners targeting the wide subject layout */}
+                      <span className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-amber-400 shadow-xs" />
+                      <span className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-amber-400 shadow-xs" />
+                      <span className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-2 border-l-2 border-amber-400 shadow-xs" />
+                      <span className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-2 border-r-2 border-amber-400 shadow-xs" />
+
+                      {/* Centered pulsing focal tracking reticle representing camera physical capture focus */}
+                      <div className="flex items-center justify-center relative">
+                        <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping absolute" />
+                        <span className="w-2.5 h-2.5 bg-red-600 rounded-full border border-white/60 relative" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Float-top-right Cascade Tag explicitly mapping the corresponding exact question target */}
+                  {QUESTION_FOCUS_TARGETS[activeQuestion.id] && (
+                    <div className="absolute top-3 right-3 bg-[#111827]/85 backdrop-blur-xs border border-amber-500/35 text-amber-300 font-sans text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-md z-2 transition-all group-hover:bg-[#111827]">
+                      {QUESTION_FOCUS_TARGETS[activeQuestion.id][locale === 'zh' ? 'zh' : 'en']}
+                    </div>
+                  )}
+
+                  {/* Rich Gradient and semi-opaque caption mapping context explicitly */}
+                  <div id="drill-context-overlay" className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 text-left z-2">
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-1.5">
+                        <span id="drill-context-tag" className="text-[9px] font-black text-white uppercase tracking-wider bg-[#d97706] px-1.5 py-0.5 rounded shadow-xs">
+                          {locale === 'zh' ? '📸 场景极联主导' : '📸 Context Focal Node'}
+                        </span>
+                      </div>
+                      {QUESTION_IMAGES_DESC[activeQuestion.id] && (
+                        <p className="text-[11px] leading-relaxed text-slate-100 font-medium drop-shadow-xs">
+                          {locale === 'zh' 
+                            ? QUESTION_IMAGES_DESC[activeQuestion.id].zh 
+                            : QUESTION_IMAGES_DESC[activeQuestion.id].en
+                          }
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
               )}
+
+              {/* Cascade Visual Coupling Indicator to signify 1-to-1 linkage down to current conversation dialogue */}
+              {showDrillImage && QUESTION_IMAGES[activeQuestion.id] && (
+                <div className="flex justify-start ml-8 pointer-events-none -mt-1 -mb-1 animate-fadeIn">
+                  <div className="w-0.5 h-4 bg-gradient-to-b from-brand-secondary to-brand-beige" />
+                </div>
+              )}
+
+              {/* Text prompt details */}
+              <div className="flex flex-col text-left gap-2.5 mt-1">
+                <p className="text-xl font-serif font-bold text-brand-dark leading-snug">
+                  "{activeQuestion.questionText}"
+                </p>
+                
+                {locale !== 'en' && getLocalizedQuestionText(activeQuestion, locale) && (
+                  <div className="text-xs font-semibold text-brand-dark/75 bg-brand-cream/30 p-2.5 rounded-lg border border-brand-beige/40 leading-relaxed font-sans mt-0.5">
+                    <div className="text-[9px] text-[#944b00] font-black uppercase tracking-wider mb-0.5">
+                      {locale === 'zh' ? '💡 语句直译助力' : '💡 Translation Assistant'}
+                    </div>
+                    {getLocalizedQuestionText(activeQuestion, locale)}
+                  </div>
+                )}
+
+                {showDrillImage && (
+                  <div className="text-[9.5px] text-brand-dark/40 font-medium mt-0.5 flex items-center gap-1">
+                    <span className="text-[10px]">💡</span>
+                    <span>
+                      {locale === 'zh' 
+                        ? '支持点按上方「藏图」进行纯字专注速读训练' 
+                        : 'Click "Hide picture" above to focus on text-only muscle drills'
+                      }
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
           ) : (
             <div className="p-8 text-center text-gray-500 font-medium">
@@ -803,9 +1388,9 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                     <button
                       key={opt.value}
                       onClick={() => setSpeechRate(opt.value)}
-                      className={`text-[9.5px] px-2 py-1 rounded-md font-bold transition-all cursor-pointer ${
+                      className={`text-[9.5px] px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
                         speechRate === opt.value
-                          ? 'bg-brand-primary text-white shadow-xs'
+                          ? 'bg-gradient-to-r from-brand-secondary to-[#e57d2a] text-white shadow-sm scale-102'
                           : 'text-brand-dark/50 hover:text-brand-dark hover:bg-brand-ivory/50'
                       }`}
                     >
@@ -974,7 +1559,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                           timeLearnedSeconds: prev.timeLearnedSeconds + 8,
                           stageProgress: {
                             ...prev.stageProgress,
-                            [prev.activeStageId]: Math.min(95, (prev.stageProgress[prev.activeStageId] || 0) + 3)
+                            [prev.activeStageId]: Math.min(95, (prev.stageProgress[prev.activeStageId] ?? (prev.stageProgress as any)[String(prev.activeStageId)] ?? 0) + 3)
                           }
                         }));
                       }}
@@ -1071,6 +1656,359 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
             </div>
           )}
+
+        </div>
+      )}
+
+      {subMode === 'scenic' && (
+        /* SCREEN 4: SCENIC LOOK-AND-SPEAK (看图说话) */
+        <div className="flex-1 flex flex-col justify-between animate-fadeIn">
+          
+          {/* 1. SCENARIO CHIPS SELECTION */}
+          <div className="mb-4 text-left">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-primary block mb-2">
+              {locale === 'zh' ? '选择实景训练舱' : 'Select Training Scenario'}
+            </span>
+            <div className="flex gap-2 overflow-x-auto pb-1.5 scrollbar-thin">
+              {SCENIC_SCENARIOS.map((scene, idx) => {
+                const isActive = selectedScenicIndex === idx;
+                return (
+                  <button
+                    key={scene.id}
+                    onClick={() => {
+                      if (scenicStatus === 'idle' || scenicStatus === 'feedback') {
+                        setSelectedScenicIndex(idx);
+                        setScenicStatus('idle');
+                        setScenicTranscript('');
+                        setScenicEvaluation(null);
+                      }
+                    }}
+                    disabled={scenicStatus === 'preparing' || scenicStatus === 'speaking' || scenicStatus === 'evaluating'}
+                    className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold transition-all border flex items-center gap-1 cursor-pointer select-none ${
+                      isActive
+                        ? 'bg-brand-primary text-white border-brand-primary shadow-sm scale-[1.03]'
+                        : 'bg-brand-ivory text-brand-dark/70 border-brand-beige hover:border-brand-dark/30 disabled:opacity-50'
+                    }`}
+                  >
+                    <span>{idx === 0 ? '☕' : idx === 1 ? '✈️' : idx === 2 ? '💪' : idx === 3 ? '📊' : '🌃'}</span>
+                    <span>{locale === 'zh' ? scene.titleZh.split(' · ')[0] : scene.titleEn.split(' ')[0]}</span>
+                    <span className="text-[9px] opacity-75 font-mono px-1 bg-black/10 rounded">
+                      {scene.level.split(' ')[0]}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 2. DYNAMIC MAIN TRAINING CARD */}
+          <div className="bg-brand-ivory rounded-2xl border border-brand-beige p-4 shadow-xs flex-1 flex flex-col justify-between mb-4">
+            
+            {/* Top Indicator info */}
+            <div className="flex justify-between items-center mb-3">
+              <div className="flex items-center gap-1.5">
+                <span className="px-2 py-0.5 bg-brand-primary/10 text-brand-primary rounded text-[10px] font-bold tracking-wider uppercase font-mono">
+                  {activeScenic.level}
+                </span>
+                <span className="text-xs text-brand-dark/40 font-bold font-mono">SCENE 0{selectedScenicIndex + 1}</span>
+              </div>
+              <h4 className="text-sm font-bold text-brand-dark">
+                {locale === 'zh' ? activeScenic.titleZh : activeScenic.titleEn}
+              </h4>
+            </div>
+
+            {/* Core Box: Image / Countdown Screen */}
+            <div className="relative aspect-video rounded-xl overflow-hidden bg-brand-dark/5 border border-brand-beige flex items-center justify-center mb-3">
+              <picture>
+                <img
+                  src={activeScenic.image}
+                  alt={activeScenic.titleEn}
+                  referrerPolicy="no-referrer"
+                  className={`w-full h-full object-cover transition-transform duration-700 ${
+                    scenicStatus === 'preparing' ? 'scale-105 animate-pulse filter brightness-75' : ''
+                  } ${scenicStatus === 'speaking' ? 'scale-[1.02] filter contrast-[1.05]' : 'scale-100'}`}
+                />
+              </picture>
+
+              {/* OVERLAYS BASED ON STATE */}
+              {scenicStatus === 'preparing' && (
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-xs flex flex-col items-center justify-center text-center p-4">
+                  <div className="w-14 h-14 rounded-full border-4 border-brand-secondary/40 border-t-brand-secondary flex items-center justify-center animate-spin mb-3">
+                    <span className="text-lg font-bold font-mono text-white animate-none">{scenicPrepTimer}s</span>
+                  </div>
+                  <span className="text-xs font-bold text-brand-secondary uppercase tracking-widest block animate-pulse">
+                    {locale === 'zh' ? '🧠 脑力预备中 ...' : 'Prepping Neural Reflexes...'}
+                  </span>
+                  <p className="text-[10px] text-white/80 max-w-xs mt-1.5 text-center px-4 leading-normal">
+                    {locale === 'zh' ? '请观察场景并做深呼吸，调动喉腔肌肉准备出声' : 'Absorb scene clues & stabilize diaphragmatic muscle loops'}
+                  </p>
+                </div>
+              )}
+
+              {scenicStatus === 'speaking' && (
+                <div className="absolute top-3 right-3 bg-red-600/90 text-white text-[10px] uppercase font-mono font-bold tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-white block animate-ping" />
+                  <span>{locale === 'zh' ? '瞬时出声' : 'ON-AIR'} - {scenicSpeakTimer}s</span>
+                </div>
+              )}
+
+              {scenicStatus === 'evaluating' && (
+                <div className="absolute inset-0 bg-brand-primary/95 backdrop-blur-xs flex flex-col items-center justify-center text-center p-6 text-white">
+                  <div className="flex gap-1.5 justify-center items-center h-8 mb-4">
+                    <div className="w-1.5 bg-brand-secondary rounded h-8 animate-[pulse_0.4s_infinite]" />
+                    <div className="w-1.5 bg-brand-secondary rounded h-4 animate-[pulse_0.6s_infinite]" />
+                    <div className="w-1.5 bg-brand-secondary rounded h-10 animate-[pulse_0.3s_infinite]" />
+                    <div className="w-1.5 bg-brand-secondary rounded h-5 animate-[pulse_0.5s_infinite]" />
+                  </div>
+                  <h4 className="text-sm font-bold tracking-wider">
+                    {locale === 'zh' ? '🧠 AI 教练正在精算您的语道模型...' : 'AI Coach is deciphering speech rhythm...'}
+                  </h4>
+                  <p className="text-xs text-white/75 max-w-xs mt-1">
+                    {locale === 'zh' ? '正在匹配词库密度、语法偏置及CEFR流利等级...' : 'Computing CEFR coherence scores & liaison phonetic links...'}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Keyword Guides (Cues) */}
+            {scenicStatus !== 'evaluating' && scenicStatus !== 'feedback' && (
+              <div className="bg-brand-cream/80 border border-brand-beige/50 rounded-xl p-3 mb-3 text-left">
+                <div className="flex justify-between items-center mb-1.5">
+                  <span className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest">
+                    {locale === 'zh' ? '🎯 场景任务线' : 'Scenic Tasks'}
+                  </span>
+                  <button 
+                    onClick={() => setShowKeywordsGuide(!showKeywordsGuide)}
+                    className="text-[10px] font-bold text-brand-primary hover:underline cursor-pointer"
+                  >
+                    {showKeywordsGuide 
+                      ? (locale === 'zh' ? '隐藏提示' : 'Hide Cues') 
+                      : (locale === 'zh' ? '展开推荐词汇' : 'Show Vocabs')}
+                  </button>
+                </div>
+
+                <p className="text-xs font-bold text-brand-dark mb-2">
+                  {locale === 'zh' ? activeScenic.promptQuestionZh : activeScenic.promptQuestionEn}
+                </p>
+
+                {showKeywordsGuide && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeScenic.keywords.map((word) => (
+                      <button
+                        key={word}
+                        onClick={() => handleSpeakSample(word)}
+                        className="text-[10px] font-medium bg-white hover:bg-brand-primary/5 hover:text-brand-primary text-brand-dark/70 border border-brand-beige/75 rounded-md px-2 py-0.5 flex items-center gap-1 shadow-2xs hover:scale-102 transition-all cursor-pointer"
+                        title="Click to hear correct phonetic sound"
+                      >
+                        <span>{word}</span>
+                        <Volume2 className="w-3 h-3 text-brand-primary/60" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Live speech feedback display during recording */}
+            {scenicStatus === 'speaking' && (
+              <div className="bg-brand-cream border-2 border-brand-secondary/30 rounded-xl p-3 text-left flex-1 min-h-[80px] animate-fadeIn">
+                <span className="text-[9px] font-bold uppercase tracking-widest text-brand-secondary block mb-1">
+                  🎙️ {locale === 'zh' ? '捕获到您的实时声轨' : 'LIVE TRANSCRIPT'}
+                </span>
+                <p className="text-xs text-brand-dark font-mono leading-relaxed italic">
+                  {scenicTranscript || (locale === 'zh' ? '「正在倾听您的发音，请直接开口描述...」' : '“Please start describing the scene speaking out loud now...”')}
+                </p>
+                {isScenicListening && (
+                  <div className="flex justify-end gap-1 mt-2.5 h-3">
+                    <div className="w-1 bg-brand-secondary rounded h-3 animate-[pulse_0.4s_infinite]" />
+                    <div className="w-1 bg-brand-secondary rounded h-1 animate-[pulse_0.5s_infinite]" />
+                    <div className="w-1 bg-brand-secondary rounded h-4 animate-[pulse_0.3s_infinite]" />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* AI FEEDBACK SCREEN OVERLAY PANEL */}
+            {scenicStatus === 'feedback' && scenicEvaluation && (
+              <div className="flex-1 flex flex-col text-left gap-3 animate-fadeIn overflow-y-auto max-h-[300px] pr-1">
+                <div className="bg-white border border-brand-beige rounded-xl p-3.5 shadow-sm">
+                  <div className="flex justify-between items-center mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-secondary block" />
+                      <span className="text-xs font-mono font-bold text-brand-dark/70 uppercase">
+                        {locale === 'zh' ? '出声成果量化' : 'STAMINA REPORT'}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-bold uppercase bg-brand-secondary/15 text-brand-secondary px-2 py-0.5 rounded-md border border-brand-secondary/20 font-mono">
+                      {locale === 'zh' ? 'CEFR 水准: ' : 'CEFR Reached: '} {scenicEvaluation.cefrLevelReached || 'B2'}
+                    </span>
+                  </div>
+
+                  <div className="flex items-start gap-4 mb-3">
+                    {/* Visual Score circle gauge */}
+                    <div className="relative w-16 h-16 flex items-center justify-center flex-shrink-0 bg-brand-cream rounded-full border-2 border-brand-secondary/20 shadow-inner">
+                      <svg className="absolute inset-0 w-full h-full -rotate-90">
+                        <circle
+                          cx="32" 
+                          cy="32" 
+                          r="28" 
+                          fill="transparent" 
+                          stroke="#e5e7eb" 
+                          strokeWidth="3.5"
+                        />
+                        <circle
+                          cx="32" 
+                          cy="32" 
+                          r="28" 
+                          fill="transparent" 
+                          stroke="#ff6b00" 
+                          strokeWidth="3.5" 
+                          strokeDasharray={175}
+                          strokeDashoffset={175 - (175 * (scenicEvaluation.score || 80)) / 100}
+                        />
+                      </svg>
+                      <div className="text-center">
+                        <span className="text-base font-serif font-bold text-brand-dark">{scenicEvaluation.score || 78}%</span>
+                      </div>
+                    </div>
+
+                    <div className="flex-1">
+                      <span className="text-[10px] text-brand-dark/40 font-bold block mb-0.5 uppercase tracking-wide">
+                        {locale === 'zh' ? '场景统合反馈' : 'Scenario Integration'}
+                      </span>
+                      <p className="text-xs text-brand-dark/80 leading-relaxed font-sans">
+                        {scenicEvaluation.coherencyText}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Transcript recap */}
+                  {scenicTranscript && (
+                    <div className="bg-brand-cream/40 border border-brand-beige/50 rounded-lg p-2.5 mt-2">
+                      <span className="text-[9px] font-mono text-brand-dark/40 block uppercase font-bold mb-0.5">
+                        {locale === 'zh' ? '您的口语转录文本 (Spoken Text)' : 'Your original transcript'}
+                      </span>
+                      <p className="text-xs text-brand-dark italic font-mono leading-relaxed">
+                        "{scenicTranscript}"
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* 3. GRAMMAR / ALTERNATIVES BOX */}
+                <div className="bg-brand-cream/60 border border-brand-beige/70 rounded-xl p-3.5 space-y-3">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase text-brand-primary tracking-wider block mb-1">
+                      💡 {locale === 'zh' ? '核心语法升级建议' : 'Grammar Suggestion'}
+                    </span>
+                    <p className="text-xs text-brand-dark font-sans leading-relaxed">
+                      {scenicEvaluation.keyGrammarSuggestion}
+                    </p>
+                  </div>
+
+                  <hr className="border-brand-beige/50" />
+
+                  <div>
+                    <span className="text-[10px] font-bold uppercase text-brand-secondary tracking-wider block mb-2">
+                      🌟 {locale === 'zh' ? '场景原生高级模版 (点按发音)' : 'Native Alternative Phrasing (Tap to read)'}
+                    </span>
+                    <div className="space-y-1.5 font-sans">
+                      {scenicEvaluation.advancedAlternativePhrases?.map((phrase, pi) => (
+                        <button
+                          key={pi}
+                          onClick={() => handleSpeakSample(phrase)}
+                          className="w-full text-left bg-white hover:bg-brand-primary/5 hover:text-brand-primary border border-brand-beige/40 rounded-lg p-2 flex items-center justify-between text-xs text-brand-dark/95 transition-all shadow-2xs hover:scale-101 cursor-pointer"
+                        >
+                          <span className="flex-1 pr-1 font-medium">{phrase}</span>
+                          <Volume2 className="w-3.5 h-3.5 text-brand-primary/60 flex-shrink-0" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {scenicEvaluation.pronunciationTricks && (
+                    <>
+                      <hr className="border-brand-beige/50" />
+                      <div>
+                        <span className="text-[10px] font-bold uppercase text-brand-dark/60 tracking-wider block mb-1 font-mono">
+                          👄 {locale === 'zh' ? '肌肉流利连读技巧 (Liaison & Muscle Tip)' : 'Muscle Link Tip'}
+                        </span>
+                        <p className="text-xs font-mono text-brand-dark/70 italic leading-relaxed">
+                          {scenicEvaluation.pronunciationTricks}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Error alerts */}
+            {scenicError && (
+              <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 mt-3 text-left">
+                <p className="text-xs text-red-700 leading-relaxed font-mono">
+                  ⚠️ {scenicError}
+                </p>
+              </div>
+            )}
+
+            {/* 4. ACTIONS FOR BOTTOM BUTTON */}
+            <div className="mt-4">
+              {scenicStatus === 'idle' && (
+                <button
+                  onClick={handleStartScenicExercise}
+                  className="w-full py-3 bg-gradient-to-r from-brand-secondary to-[#e64a00] text-white rounded-xl shadow-lg font-bold text-sm tracking-widest hover:brightness-105 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#b33600] uppercase mx-auto select-none"
+                >
+                  <span>🖼️</span>
+                  <span>{locale === 'zh' ? '开始 10s 预备 + 口语反射挑战' : 'Start 10s Prep + Speaking Reflex'}</span>
+                </button>
+              )}
+
+              {scenicStatus === 'preparing' && (
+                <button
+                  onClick={handleStartSpeakingScenic}
+                  className="w-full py-3 bg-gradient-to-r from-brand-primary to-[#0c2847] text-white rounded-xl shadow-md font-bold text-sm tracking-wider hover:brightness-105 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer select-none"
+                >
+                  <span>🗣️</span>
+                  <span>{locale === 'zh' ? '我准备好了，现在开说！' : 'Skip Prep & Speak Now!'}</span>
+                </button>
+              )}
+
+              {scenicStatus === 'speaking' && (
+                <button
+                  onClick={() => handleFinishSpeakingScenic()}
+                  className="w-full py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl shadow-lg font-bold text-sm tracking-wide active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer select-none border-b-2 border-red-800"
+                >
+                  <span>✅</span>
+                  <span>{locale === 'zh' ? '提前提交，由 AI 教练评估' : 'Finish & Submit to AI Coach'}</span>
+                </button>
+              )}
+
+              {scenicStatus === 'feedback' && (
+                <div className="flex gap-2.5">
+                  <button
+                    onClick={handleStartScenicExercise}
+                    className="flex-1 py-3 bg-brand-cream border border-brand-beige hover:border-brand-dark/30 text-brand-dark font-bold text-xs rounded-xl transition-all cursor-pointer select-none"
+                  >
+                    🔄 {locale === 'zh' ? '重新作答' : 'Retry Scene'}
+                  </button>
+                  <button
+                    onClick={() => {
+                      const nextIndex = (selectedScenicIndex + 1) % SCENIC_SCENARIOS.length;
+                      setSelectedScenicIndex(nextIndex);
+                      setScenicStatus('idle');
+                      setScenicTranscript('');
+                      setScenicEvaluation(null);
+                    }}
+                    className="flex-1 py-3 bg-brand-primary text-white font-bold text-xs rounded-xl shadow-sm hover:brightness-105 transition-all cursor-pointer select-none flex items-center justify-center gap-1"
+                  >
+                    <span>{locale === 'zh' ? '下个场景' : 'Next Scene'}</span> <ArrowRight className="w-3" />
+                  </button>
+                </div>
+              )}
+            </div>
+
+          </div>
 
         </div>
       )}

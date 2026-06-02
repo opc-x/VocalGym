@@ -8,6 +8,7 @@ import { UserProgress, SupportLocale } from './types';
 import { ALL_STAGES, STAGE_LESSONS_MAP } from './data';
 import HomeTab from './components/HomeTab';
 import PracticeTab from './components/PracticeTab';
+import ScenicTab from './components/ScenicTab';
 import StatsTab from './components/StatsTab';
 import ProfileTab from './components/ProfileTab';
 import { MESSAGES } from './data';
@@ -25,7 +26,11 @@ import {
   ChevronRight,
   Info,
   Layers,
-  Dumbbell
+  Dumbbell,
+  Compass,
+  Cloud,
+  CloudOff,
+  CloudLightning
 } from 'lucide-react';
 
 const LOCAL_STORAGE_KEY = 'callan_app_progress_v1';
@@ -80,7 +85,7 @@ export default function App() {
   ] as const;
 
   const [locale, setLocale] = useState<SupportLocale>('zh');
-  const [activeTab, setActiveTab] = useState<'home' | 'practice' | 'stats' | 'profile'>('practice');
+  const [activeTab, setActiveTab] = useState<'home' | 'practice' | 'scenic' | 'stats' | 'profile'>('practice');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
@@ -277,7 +282,7 @@ export default function App() {
     <div className="bg-brand-cream text-brand-dark font-sans min-h-screen flex flex-col overflow-x-hidden antialiased select-none">
       
       {/* 1. Global Header App Bar */}
-      <header className="bg-brand-ivory shadow-[0_1px_10px_rgba(234,223,211,0.3)] flex justify-between items-center px-5 w-full h-16 z-40 fixed top-0 left-0 border-b border-brand-beige/70">
+      <header className="bg-brand-ivory shadow-[0_1px_10px_rgba(234,223,211,0.3)] flex justify-between items-center px-5 w-full h-16 z-50 fixed top-0 left-0 border-b border-brand-beige/70 transform-gpu">
         <div className="flex items-center gap-4">
           <button 
             onClick={() => setIsSidebarOpen(true)}
@@ -343,6 +348,29 @@ export default function App() {
                   </div>
                 </div>
               </>
+            )}
+          </div>
+          
+          {/* Cloud Sync Connection Status Indicator */}
+          <div 
+            onClick={() => setActiveTab('profile')} 
+            className="flex items-center gap-1 p-1 rounded-xl hover:bg-brand-cream cursor-pointer transition-all active:scale-95"
+            title={user ? `Firebase Cloud Synced: ${user.email}` : "Offline Local Storage (Click to Bind Google Account)"}
+          >
+            {user ? (
+              <div className="flex items-center gap-1 bg-emerald-500/10 text-emerald-700 border border-emerald-500/20 px-2 py-0.5 rounded-full text-[9px] font-bold">
+                {isSyncing ? (
+                  <CloudLightning className="w-2.5 h-2.5 animate-spin text-brand-primary" />
+                ) : (
+                  <Cloud className="w-2.5 h-2.5 text-emerald-600 fill-emerald-600/10" />
+                )}
+                <span>{locale === 'zh' ? '已云连' : 'Synced'}</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-1 bg-amber-500/10 text-amber-700 border border-amber-500/20 px-2 py-0.5 rounded-full text-[9px] font-bold animate-pulse">
+                <CloudOff className="w-2.5 h-2.5 text-amber-600" />
+                <span>{locale === 'zh' ? '离线' : 'Offline'}</span>
+              </div>
             )}
           </div>
 
@@ -452,6 +480,14 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'scenic' && (
+          <ScenicTab 
+            progress={progress}
+            locale={locale}
+            onUpdateProgress={setProgress}
+          />
+        )}
+
         {activeTab === 'stats' && (
           <StatsTab 
             progress={progress}
@@ -473,58 +509,71 @@ export default function App() {
       </main>
 
       {/* 4. Cohesive Bottom Navigation Bar */}
-      <nav className="fixed bottom-0 left-0 w-full z-40 bg-brand-ivory border-t border-brand-beige h-18 safe-pb flex justify-around items-center shadow-[0_-2px_12px_rgba(44,39,36,0.04)]">
+      <nav className="fixed bottom-0 left-0 w-full z-50 bg-brand-ivory border-t border-brand-beige h-18 safe-pb flex justify-around items-center px-2 shadow-[0_-2px_12px_rgba(44,39,36,0.04)] transform-gpu">
         
         {/* Home Tab Selector */}
         <button 
           onClick={() => { setActiveTab('home'); setIsSidebarOpen(false); }}
-          className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all cursor-pointer ${
+          className={`flex flex-col items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all cursor-pointer ${
             activeTab === 'home' 
-              ? 'text-brand-primary scale-102 font-semibold' 
-              : 'text-brand-dark/40 hover:text-brand-dark'
+              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-102 font-bold animate-[rubberBand_0.4s]' 
+              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream/40 rounded-full px-3 py-1.5 sm:px-4 sm:py-2'
           }`}
         >
-          <Home className="w-5 h-5 stroke-[2px]" />
-          <span className="text-[10px] font-bold mt-1 font-sans">{t.home}</span>
+          <Home className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2px]" />
+          <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 font-sans">{t.home}</span>
         </button>
 
-        {/* Practice Tab Selector Button (Terracotta Pill Highlight) */}
+        {/* Practice Tab Selector Button */}
         <button 
           onClick={() => { setActiveTab('practice'); setIsSidebarOpen(false); }}
-          className={`flex flex-col items-center justify-center px-5 py-2 rounded-full transition-all cursor-pointer ${
+          className={`flex flex-col items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all cursor-pointer ${
             activeTab === 'practice' 
-              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-105' 
-              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream px-5 py-2 rounded-full'
+              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-102 font-bold animate-[rubberBand_0.4s]' 
+              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream/40 rounded-full px-3 py-1.5 sm:px-4 sm:py-2'
           }`}
         >
-          <Dumbbell className="w-5 h-5 stroke-[2px]" />
-          <span className="text-[10px] font-bold mt-0.5 font-sans">{t.practice}</span>
+          <Dumbbell className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2px]" />
+          <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 font-sans">{t.practice}</span>
+        </button>
+
+        {/* Scenic (场景速练) Tab Selector Button */}
+        <button 
+          onClick={() => { setActiveTab('scenic'); setIsSidebarOpen(false); }}
+          className={`flex flex-col items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all cursor-pointer ${
+            activeTab === 'scenic' 
+              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-102 font-bold animate-[rubberBand_0.4s]' 
+              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream/40 rounded-full px-3 py-1.5 sm:px-4 sm:py-2'
+          }`}
+        >
+          <Compass className={`w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2px] transition-transform duration-500 ${activeTab === 'scenic' ? 'rotate-45' : ''}`} />
+          <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 font-sans">{locale === 'zh' ? '场景速练' : 'Scenic'}</span>
         </button>
 
         {/* Stats Tab Selector */}
         <button 
           onClick={() => { setActiveTab('stats'); setIsSidebarOpen(false); }}
-          className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all cursor-pointer ${
+          className={`flex flex-col items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all cursor-pointer ${
             activeTab === 'stats' 
-              ? 'text-brand-primary scale-102 font-semibold' 
-              : 'text-brand-dark/40 hover:text-brand-dark'
+              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-102 font-bold animate-[rubberBand_0.4s]' 
+              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream/40 rounded-full px-3 py-1.5 sm:px-4 sm:py-2'
           }`}
         >
-          <BarChart2 className="w-5 h-5 stroke-[2px]" />
-          <span className="text-[10px] font-bold mt-1 font-sans">{t.stats}</span>
+          <BarChart2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2px]" />
+          <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 font-sans">{t.stats}</span>
         </button>
 
         {/* Profile Tab Selector */}
         <button 
           onClick={() => { setActiveTab('profile'); setIsSidebarOpen(false); }}
-          className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all cursor-pointer ${
+          className={`flex flex-col items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all cursor-pointer ${
             activeTab === 'profile' 
-              ? 'text-brand-primary scale-102 font-semibold' 
-              : 'text-brand-dark/40 hover:text-brand-dark'
+              ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/10 scale-102 font-bold animate-[rubberBand_0.4s]' 
+              : 'text-brand-dark/40 hover:text-brand-dark hover:bg-brand-cream/40 rounded-full px-3 py-1.5 sm:px-4 sm:py-2'
           }`}
         >
-          <User className="w-5 h-5 stroke-[2px]" />
-          <span className="text-[10px] font-bold mt-1 font-sans">{t.profile}</span>
+          <User className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2px]" />
+          <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 font-sans">{t.profile}</span>
         </button>
         
       </nav>

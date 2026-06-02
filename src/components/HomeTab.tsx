@@ -4,18 +4,18 @@ import { Check, Lock, PlayCircle, Zap, BookOpen, Volume2, Sparkles, GraduationCa
 import { useState } from 'react';
 
 const cefrLevels: Record<number, { code: string; nameZh: string; nameEn: string; colorClass: string }> = {
-  1: { code: 'A1', nameZh: '入门热身组 · Beginner', nameEn: 'Introductory Warmup', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-200 / 30' },
-  2: { code: 'A1+', nameZh: '语法强化组 · Active Beginner', nameEn: 'Basic Active Reflexes', colorClass: 'bg-teal-50 text-teal-700 border-teal-200 / 30' },
-  3: { code: 'A2', nameZh: '初级生存组 · Elementary', nameEn: 'Essential Survival Flow', colorClass: 'bg-cyan-50 text-cyan-700 border-cyan-200 / 30' },
-  4: { code: 'A2+', nameZh: '连排抗阻组 · High Elementary', nameEn: 'Integrated Syntax Link', colorClass: 'bg-sky-50 text-sky-700 border-sky-200 / 30' },
-  5: { code: 'B1', nameZh: '日常交流组 · Lower-Int', nameEn: 'Functional Routine Lift', colorClass: 'bg-blue-50 text-blue-700 border-blue-200 / 30' },
-  6: { code: 'B1+', nameZh: '耐力重载组 · Mid-Int', nameEn: 'Medium Resistance Reps', colorClass: 'bg-indigo-50 text-indigo-700 border-indigo-200 / 30' },
-  7: { code: 'B2', nameZh: '高阶流利组 · Upper-Int', nameEn: 'Fluid Conversationalist', colorClass: 'bg-violet-50 text-violet-700 border-violet-200 / 30' },
-  8: { code: 'B2+', nameZh: '双核精审组 · High Upper-Int', nameEn: 'Coordinated Speech Velocity', colorClass: 'bg-purple-50 text-purple-700 border-purple-200 / 30' },
-  9: { code: 'C1', nameZh: '专业精熟组 · Advanced I', nameEn: 'Expressive Complexity Speed', colorClass: 'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200 / 30' },
-  10: { code: 'C1', nameZh: '神经突触组 · Advanced II', nameEn: 'Advanced Dialectical Output', colorClass: 'bg-pink-50 text-pink-700 border-pink-200 / 30' },
-  11: { code: 'C1+', nameZh: '极限过载组 · Professional I', nameEn: 'High-speed Cognitive Precision', colorClass: 'bg-rose-50 text-rose-700 border-rose-200 / 30' },
-  12: { code: 'C1+', nameZh: '终极直觉组 · Professional II', nameEn: 'Flawless Muscle Automaticity', colorClass: 'bg-amber-50 text-amber-700 border-amber-200 / 30 shadow-xs' },
+  1: { code: 'A1', nameZh: '入门热身组 · Beginner', nameEn: 'Introductory Warmup', colorClass: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/30' },
+  2: { code: 'A1+', nameZh: '语法强化组 · Active Beginner', nameEn: 'Basic Active Reflexes', colorClass: 'bg-teal-500/10 text-teal-700 border-teal-500/30' },
+  3: { code: 'A2', nameZh: '初级生存组 · Elementary', nameEn: 'Essential Survival Flow', colorClass: 'bg-cyan-500/10 text-cyan-700 border-cyan-500/30' },
+  4: { code: 'A2+', nameZh: '连排抗阻组 · High Elementary', nameEn: 'Integrated Syntax Link', colorClass: 'bg-sky-500/10 text-sky-700 border-sky-500/30' },
+  5: { code: 'B1', nameZh: '日常交流组 · Lower-Int', nameEn: 'Functional Routine Lift', colorClass: 'bg-blue-500/10 text-blue-700 border-blue-500/30' },
+  6: { code: 'B1+', nameZh: '耐力重载组 · Mid-Int', nameEn: 'Medium Resistance Reps', colorClass: 'bg-indigo-500/10 text-indigo-700 border-indigo-500/30' },
+  7: { code: 'B2', nameZh: '高阶流利组 · Upper-Int', nameEn: 'Fluid Conversationalist', colorClass: 'bg-violet-500/10 text-violet-700 border-violet-500/30' },
+  8: { code: 'B2+', nameZh: '双核精审组 · High Upper-Int', nameEn: 'Coordinated Speech Velocity', colorClass: 'bg-purple-500/10 text-purple-700 border-purple-500/30' },
+  9: { code: 'C1', nameZh: '专业精熟组 · Advanced I', nameEn: 'Expressive Complexity Speed', colorClass: 'bg-fuchsia-500/10 text-fuchsia-700 border-fuchsia-500/30' },
+  10: { code: 'C1', nameZh: '神经突触组 · Advanced II', nameEn: 'Advanced Dialectical Output', colorClass: 'bg-pink-500/10 text-pink-700 border-pink-500/30' },
+  11: { code: 'C1+', nameZh: '极限过载组 · Professional I', nameEn: 'High-speed Cognitive Precision', colorClass: 'bg-rose-500/10 text-rose-700 border-rose-500/30' },
+  12: { code: 'C1+', nameZh: '终极直觉组 · Professional II', nameEn: 'Flawless Muscle Automaticity', colorClass: 'bg-amber-500/10 text-amber-700 border-amber-500/30 shadow-xs' },
 };
 
 interface HomeTabProps {
@@ -63,7 +63,7 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
           </span>
           <span className="w-1 h-1 bg-brand-beige rounded-full" />
           <span className="text-xs font-semibold text-brand-dark/60">
-            {progress.stageProgress[progress.activeStageId] || 0}% {locale === 'zh' ? '已充能' : 'Pumped'}
+            {progress.stageProgress[progress.activeStageId] ?? (progress.stageProgress as any)[String(progress.activeStageId)] ?? 0}% {locale === 'zh' ? '已充能' : 'Pumped'}
           </span>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
           const isActive = progress.activeStageId === stage.id;
           const isLocked = !isCompleted && !isActive && stage.id > 2 && stage.id !== progress.activeStageId;
 
-          const stageProgressVal = isCompleted ? 100 : (isActive ? progress.stageProgress[stage.id] || 0 : 0);
+          const stageProgressVal = isCompleted ? 100 : (progress.stageProgress[stage.id] ?? (progress.stageProgress as any)[String(stage.id)] ?? 0);
 
           return (
             <div 
@@ -123,8 +123,10 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
               >
                 <div className="flex flex-col sm:flex-row items-stretch gap-4">
                   {/* Left Column: Side-by-side CEFR Professional Tier Badge */}
-                  <div className={`sm:w-28 shrink-0 flex sm:flex-col items-center justify-between sm:justify-center text-center rounded-lg p-2.5 border border-dashed border-brand-beige/80 ${
-                    cefrLevels[stage.id]?.colorClass || 'bg-brand-cream/40'
+                  <div className={`sm:w-28 shrink-0 flex sm:flex-col items-center justify-between sm:justify-center text-center rounded-lg p-2.5 border transition-all ${
+                    cefrLevels[stage.id]
+                      ? `${cefrLevels[stage.id].colorClass} border-solid`
+                      : 'bg-brand-cream/40 border-dashed border-brand-beige/80 text-brand-dark/60'
                   }`}>
                     <div className="flex flex-col items-start sm:items-center">
                       <span className="text-[8px] uppercase tracking-wider font-extrabold opacity-60 font-mono">
@@ -454,9 +456,9 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
       {/* Floating Action Button */}
       <button 
         onClick={onResumeLesson}
-        className="fixed bottom-22 right-5 md:right-1/3 z-40 bg-brand-primary text-brand-ivory shadow-[0_8px_30px_rgba(200,90,50,0.3)] rounded-full px-5 py-3 flex items-center gap-2 active:scale-95 hover:opacity-95 transition-all duration-150 cursor-pointer border border-brand-primary/20"
+        className="fixed bottom-22 right-5 md:right-1/3 z-40 bg-gradient-to-r from-brand-secondary to-[#e57d2a] text-white shadow-[0_8px_30px_rgba(254,151,67,0.35)] rounded-full px-5 py-3 flex items-center gap-2 active:scale-95 hover:scale-[1.03] transition-all duration-200 cursor-pointer border border-brand-secondary/30"
       >
-        <Zap className="w-4 h-4 fill-brand-cream text-brand-cream animate-pulse" />
+        <Zap className="w-4 h-4 fill-white text-white animate-pulse" />
         <span className="text-xs font-bold leading-none">{locale === 'zh' ? '恢复极速速读' : 'Resume Lesson'}</span>
       </button>
     </div>
