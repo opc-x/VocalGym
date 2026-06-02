@@ -1,0 +1,6 @@
+{
+  "name": "Vocal Muscle Gym",
+  "description": "A high-stamina vocal workout room designed to build native English speaking reflexes through rapid repetition, muscle-memory training, and instant AI coaching.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

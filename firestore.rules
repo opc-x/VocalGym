@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Entity validation helper to prevent update-gaps and shadow fields
+    function isValidUserProgress(data) {
+      return data.userId == request.auth.uid
+        && data.activeStageId is int && data.activeStageId >= 1 && data.activeStageId <= 12
+        && data.activeLessonId is int
+        && data.activeQuestionIndex is int
+        && data.activeFlashcardIndex is int
+        && data.repetitionsCount is int
+        && data.timeLearnedSeconds is int
+        && data.completedStages is list
+        && data.masteredWords is list
+        && data.reviewLaterWords is list;
+    }
+
+    // 2. User Progress Collection Gate
+    match /progress/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      
+      // User can create their progress document
+      allow create: if isOwner(userId) && isValidId(userId) 
+        && isValidUserProgress(incoming())
+        && (incoming().updatedAt == request.time);
+
+      // User can update their progress document
+      allow update: if isOwner(userId) && isValidId(userId)
+        && isValidUserProgress(incoming())
+        && (incoming().updatedAt == request.time)
+        && (incoming().userId == existing().userId); // Immutable field protection
+
+      // Protect deletion
+      allow delete: if isOwner(userId) && isValidId(userId);
+    }
+  }
+}

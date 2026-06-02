@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "UserProgress": {
+      "title": "User Progress",
+      "description": "Tracks the lesson, stage, and vocabulary learning progress of a user.",
+      "type": "object",
+      "properties": {
+        "activeStageId": { "type": "integer" },
+        "activeLessonId": { "type": "integer" },
+        "activeQuestionIndex": { "type": "integer" },
+        "activeFlashcardIndex": { "type": "integer" },
+        "completedStages": {
+          "type": "array"
+        },
+        "stageProgress": {
+          "type": "object",
+          "description": "Progress mapping of stage IDs to percentage completeness"
+        },
+        "masteredWords": {
+          "type": "array"
+        },
+        "reviewLaterWords": {
+          "type": "array"
+        },
+        "repetitionsCount": { "type": "integer" },
+        "timeLearnedSeconds": { "type": "integer" },
+        "userId": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "activeStageId", "activeLessonId", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "progress/{userId}": {
+      "schema": "UserProgress",
+      "description": "Stores the learning progress for a specific user ID."
+    }
+  }
+}
