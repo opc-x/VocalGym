@@ -181,7 +181,7 @@ export default function StatsTab({ progress, locale }: StatsTabProps) {
           {ALL_STAGES.slice(0, 4).map(stage => {
             const isCompleted = progress.completedStages.includes(stage.id);
             const isActive = progress.activeStageId === stage.id;
-            const progressVal = isCompleted ? 100 : (isActive ? progress.stageProgress[stage.id] || 0 : 0);
+            const progressVal = isCompleted ? 100 : (progress.stageProgress[stage.id] ?? (progress.stageProgress as any)[String(stage.id)] ?? 0);
 
             return (
               <div key={stage.id} className="flex items-center justify-between text-xs font-sans">
