@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { UserProgress, Question, Flashcard, SupportLocale } from '../types';
-import { ALL_QUESTIONS, ALL_FLASHCARDS, STAGE_LESSONS_MAP, MESSAGES, TEXTBOOK_LESSONS, ALL_STAGES } from '../data';
+import { UserProgress, Question, Flashcard, SupportLocale, TextbookLesson } from '../types';
+import { STAGE_LESSONS_MAP, MESSAGES, loadStageData, ALL_STAGES } from '../data';
 import { 
   Mic, 
   MicOff, 
@@ -323,19 +323,50 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
   // References for Speech Recognition API
   const recognitionRef = useRef<any>(null);
 
-  // Get current questions filtered by active stage AND active lesson
-  let questions = ALL_QUESTIONS.filter(q => q.stageId === progress.activeStageId && q.lessonId === progress.activeLessonId);
+  const [stageLessons, setStageLessons] = useState<TextbookLesson[]>([]);
+  const [stageQuestions, setStageQuestions] = useState<Question[]>([]);
+  const [stageFlashcards, setStageFlashcards] = useState<Flashcard[]>([]);
+  const [isLoadingData, setIsLoadingData] = useState<boolean>(true);
+
+  useEffect(() => {
+    let isCurrent = true;
+    setIsLoadingData(true);
+    loadStageData(progress.activeStageId)
+      .then(data => {
+        if (isCurrent) {
+          setStageLessons(data.lessons);
+          setStageQuestions(data.questions);
+          setStageFlashcards(data.flashcards);
+          setIsLoadingData(false);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load stage data for practice:", err);
+        if (isCurrent) {
+          setStageLessons([]);
+          setStageQuestions([]);
+          setStageFlashcards([]);
+          setIsLoadingData(false);
+        }
+      });
+    return () => {
+      isCurrent = false;
+    };
+  }, [progress.activeStageId]);
+
+  // Get current questions filtered by active lesson
+  let questions = stageQuestions.filter(q => q.lessonId === progress.activeLessonId);
   if (questions.length === 0) {
     // Graceful fallback to all questions in this stage so there is never an empty state
-    questions = ALL_QUESTIONS.filter(q => q.stageId === progress.activeStageId);
+    questions = stageQuestions;
   }
   const currentQuestionIndex = progress.activeQuestionIndex % (questions.length || 1);
   const activeQuestion: Question | undefined = questions[currentQuestionIndex];
 
-  // Get current flashcards filtered by stage (or fallback to ALL)
-  const flashcards = ALL_FLASHCARDS.filter(fc => fc.stageId === progress.activeStageId);
+  // Get current flashcards
+  const flashcards = stageFlashcards;
   const currentCardIndex = progress.activeFlashcardIndex % (flashcards.length || 1);
-  const activeCard: Flashcard | undefined = flashcards[currentCardIndex] || ALL_FLASHCARDS[0];
+  const activeCard: Flashcard | undefined = flashcards[currentCardIndex] || stageFlashcards[0];
 
   // 3D card flipped state
   const [isFlipped, setIsFlipped] = useState(false);
@@ -892,6 +923,15 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
       }
     }, 450);
   };
+
+  if (isLoadingData) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] text-brand-dark/50 gap-3">
+        <div className="w-8 h-8 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
+        <span className="text-xs font-semibold">{locale === 'zh' ? '正在加载口语练习库...' : 'Loading practice deck...'}</span>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto relative flex flex-col h-full">
@@ -2252,8 +2292,8 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
       {subMode === 'textbook' && (() => {
         // Find current textbook lesson
-        const currentChapter = TEXTBOOK_LESSONS.find(
-          tl => tl.stageId === progress.activeStageId && tl.lessonId === progress.activeLessonId
+        const currentChapter = stageLessons.find(
+          tl => tl.lessonId === progress.activeLessonId
         );
 
         const activeChapterObj = currentChapter || {
@@ -2265,13 +2305,13 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
             en: "Vocal reflex gym training requires immediate, intuitive, and complete verbal muscle patterns. Do not pause to construct sentences; follow standard spoken structures naturally.",
             zh: "肌肉反射训练极其注重高频连续回声。在回答问题时，请一律使用完整句、原音对应的缩写结构（如 don't, isn't 等），这有助于直接打通母语肌肉直觉反射。"
           },
-          vocabulary: ALL_FLASHCARDS.filter(fc => fc.stageId === progress.activeStageId).slice(0, 4).map(fc => ({
+          vocabulary: stageFlashcards.slice(0, 4).map(fc => ({
             word: fc.word,
             phonetics: fc.phonetics || "",
             meaningZh: fc.definition || "",
             meaningEn: ""
           })),
-          drillParagraphs: ALL_QUESTIONS.filter(q => q.stageId === progress.activeStageId && q.lessonId === progress.activeLessonId).map(q => ({
+          drillParagraphs: stageQuestions.filter(q => q.lessonId === progress.activeLessonId).map(q => ({
             question: q.questionText,
             answer: q.expectedAnswer,
             questionZh: q.questionTextZh || "",

@@ -1,0 +1,83 @@
+{
+  "stageId": 2,
+  "lessons": [
+    {
+      "id": "tb_l14",
+      "stageId": 2,
+      "lessonId": 14,
+      "title": "Lesson 14: Preference & Grammar Mistakes",
+      "grammarNotes": {
+        "en": "We use 'prefer doing something to doing something else' or 'prefer to do something'. Speaking speed of 200+ wpm must be maintained.",
+        "zh": "使用 prefer ... to ... 或者 prefer to ... 表达倾向。保持每分钟200以上词的高速连读，犯错后必须马上纠正重复。"
+      },
+      "vocabulary": [
+        { "word": "Prefer", "phonetics": "/prɪˈfɜːr/", "meaningZh": "更喜欢", "meaningEn": "To like one thing or person better than another." },
+        { "word": "Mistake", "phonetics": "/mɪˈsteɪk/", "meaningZh": "错误", "meaningEn": "An action or judgment that is misguided or wrong." },
+        { "word": "Grammatical", "phonetics": "/ɡrəˈmæt.ɪ.kəl/", "meaningZh": "语法的", "meaningEn": "Conforming to the rules of grammar." }
+      ],
+      "drillParagraphs": [
+        {
+          "question": "Do you prefer studying English quickly or slowly?",
+          "answer": "I prefer studying English quickly because it improves my speaking speed and helps me think without translating.",
+          "questionZh": "你喜欢快速地学英语还是缓慢地学英语？",
+          "answerZh": "我更喜欢快速地学英语，因为这能改善我的说话速度，帮助我不用翻译直接思考。"
+        },
+        {
+          "question": "Is it easy to express deep thoughts in a foreign language?",
+          "answer": "No, it isn't easy to express deep thoughts in a foreign language; it requires a lot of vocabulary practice and fluency.",
+          "questionZh": "在外语中表达深刻的思想容易吗？",
+          "answerZh": "不，在外语中表达深刻的思想不容易；这需要大量的词汇积累与流利度。"
+        },
+        {
+          "question": "What do we do when we make a grammatical mistake?",
+          "answer": "When we make a grammatical mistake, we repeat the sentence correctly immediately after the teacher's correction.",
+          "questionZh": "当我们犯语法错误的时候，我们该做什么？",
+          "answerZh": "当我们犯语法错误的时候，我们在老师纠错后，立即正确地重复该句子。"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "s2_l14_q1",
+      "stageId": 2,
+      "lessonId": 14,
+      "questionText": "Do you prefer studying English quickly or slowly?",
+      "expectedAnswer": "I prefer studying English quickly because it improves my speaking speed and helps me think without translating.",
+      "questionTextZh": "你更倾向于快速地还是缓慢地学习英语？",
+      "expectedAnswerZh": "我更喜欢快速地学英语，因为能改改进口语语速，帮我不用在脑中翻译就能直接用英语思考。"
+    },
+    {
+      "id": "s2_l14_q2",
+      "stageId": 2,
+      "lessonId": 14,
+      "questionText": "Is it easy to express deep thoughts in a foreign language?",
+      "expectedAnswer": "No, it isn't easy to express deep thoughts in a foreign language; it requires a lot of vocabulary practice and fluency.",
+      "questionTextZh": "在外语中表达深刻的思想容易吗？",
+      "expectedAnswerZh": "不，在外语中表达深刻的思想不容易；这需要做大量的词汇练习和流利度训练。"
+    },
+    {
+      "id": "s2_l14_q3",
+      "stageId": 2,
+      "lessonId": 14,
+      "questionText": "What do we do when we make a grammatical mistake?",
+      "expectedAnswer": "When we make a grammatical mistake, we repeat the sentence correctly immediately after the teacher's correction.",
+      "questionTextZh": "当我们犯语法错误时，我们会做什么？",
+      "expectedAnswerZh": "当我们犯语法错误时，我们在老师纠错后立刻正确地重复全句。"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_structure",
+      "stageId": 2,
+      "word": "Structure",
+      "phonetics": "/ˈstrʌk.tʃər/",
+      "definition": "The arrangement of and relations between the parts or elements of something complex.",
+      "example": "\"The grammatical structure of English sentences is practiced repeatedly.\"",
+      "isNew": false,
+      "wordZh": "结构",
+      "definitionZh": "复杂事物的各个部分或元素之间的排列和关系。",
+      "exampleZh": "“英语句子的语法结构是反复练习的。”"
+    }
+  ]
+}

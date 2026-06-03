@@ -1,0 +1,24 @@
+{
+  "stageId": 11,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s11_q1",
+      "stageId": 11,
+      "lessonId": 111,
+      "questionText": "Does standard mastery of a language prevent you from making minor lapses?",
+      "expectedAnswer": "No, standard mastery of a language does not prevent minor lapses, but it allows you to correct yourself instantly."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_mastery",
+      "stageId": 11,
+      "word": "Mastery",
+      "phonetics": "/ˈmɑː.stər.i/",
+      "definition": "Comprehensive knowledge or skill in a subject or accomplishment.",
+      "example": "\"Achieving auditory mastery requires intense dedication to daily phonetic loops.\"",
+      "isNew": true
+    }
+  ]
+}

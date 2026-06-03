@@ -1,0 +1,31 @@
+{
+  "stageId": 7,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s7_q1",
+      "stageId": 7,
+      "lessonId": 71,
+      "questionText": "What does it mean to set off for a journey?",
+      "expectedAnswer": "To set off for a journey means to start traveling or begin a trip to a certain destination."
+    },
+    {
+      "id": "s7_q2",
+      "stageId": 7,
+      "lessonId": 72,
+      "questionText": "Would you rather have a boring job with high pay or an exciting job with low pay?",
+      "expectedAnswer": "I would rather have an exciting job with low pay because job satisfaction is more important than wealth alone."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_syllabus",
+      "stageId": 7,
+      "word": "Syllabus",
+      "phonetics": "/ˈsɪl.ə.bəs/",
+      "definition": "An outline or summary of the subjects to be covered in a course of study.",
+      "example": "\"Our syllabus covers all twelve stages of phonetic and lexical training.\"",
+      "isNew": true
+    }
+  ]
+}

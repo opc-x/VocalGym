@@ -1,0 +1,24 @@
+{
+  "stageId": 12,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s12_q1",
+      "stageId": 12,
+      "lessonId": 121,
+      "questionText": "What is the ultimate benefit of achieving complete verbal fluency under pressure?",
+      "expectedAnswer": "The ultimate benefit is the capacity to think, react, and converse with high speed, accuracy, and emotional resonance in any context."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_fluency",
+      "stageId": 12,
+      "word": "Fluency",
+      "phonetics": "/ˈfluː.ən.si/",
+      "definition": "The quality or condition of being able to speak easily, write accurately, and understand naturally.",
+      "example": "\"With stage twelve completed, you have unlocked complete native fluency.\"",
+      "isNew": true
+    }
+  ]
+}

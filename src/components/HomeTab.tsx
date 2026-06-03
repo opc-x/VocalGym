@@ -1,7 +1,7 @@
-import { ALL_STAGES, ALL_QUESTIONS, ALL_FLASHCARDS, STAGE_LESSONS_MAP, MESSAGES } from '../data';
-import { Stage, UserProgress, SupportLocale } from '../types';
+import { ALL_STAGES, STAGE_LESSONS_MAP, MESSAGES, loadStageData } from '../data';
+import { Stage, UserProgress, SupportLocale, Question, Flashcard } from '../types';
 import { Check, Lock, PlayCircle, Zap, BookOpen, Volume2, Sparkles, GraduationCap, Dumbbell } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const cefrLevels: Record<number, { code: string; nameZh: string; nameEn: string; colorClass: string }> = {
   1: { code: 'A1', nameZh: '入门热身组 · Beginner', nameEn: 'Introductory Warmup', colorClass: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/30' },
@@ -32,8 +32,33 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
   const [selectedCurriculumLesson, setSelectedCurriculumLesson] = useState<number | 'all'>('all');
   const [curriculumTab, setCurriculumTab] = useState<'questions' | 'vocabulary'>('questions');
 
-  const questionsForStage = ALL_QUESTIONS.filter(q => q.stageId === selectedCurriculumStage);
-  const vocabularyForStage = ALL_FLASHCARDS.filter(fc => fc.stageId === selectedCurriculumStage);
+  const [questionsForStage, setQuestionsForStage] = useState<Question[]>([]);
+  const [vocabularyForStage, setVocabularyForStage] = useState<Flashcard[]>([]);
+  const [isLoadingSyllabus, setIsLoadingSyllabus] = useState<boolean>(false);
+
+  useEffect(() => {
+    let isCurrent = true;
+    setIsLoadingSyllabus(true);
+    loadStageData(selectedCurriculumStage)
+      .then(data => {
+        if (isCurrent) {
+          setQuestionsForStage(data.questions);
+          setVocabularyForStage(data.flashcards);
+          setIsLoadingSyllabus(false);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load stage data for syllabus:", err);
+        if (isCurrent) {
+          setQuestionsForStage([]);
+          setVocabularyForStage([]);
+          setIsLoadingSyllabus(false);
+        }
+      });
+    return () => {
+      isCurrent = false;
+    };
+  }, [selectedCurriculumStage]);
 
   const filteredQuestions = questionsForStage.filter(q => {
     if (selectedCurriculumLesson === 'all') return true;
@@ -364,90 +389,97 @@ export default function HomeTab({ progress, locale, onSelectStage, onResumeLesso
 
         {/* Database List */}
         <div className="space-y-3 max-h-[360px] overflow-y-auto pr-1 hide-scrollbar">
-          {curriculumTab === 'questions' ? (
-            filteredQuestions.length > 0 ? (
-              filteredQuestions.map((q, idx) => (
-                <div key={q.id} className="bg-brand-cream/40 hover:bg-brand-cream/80 p-3.5 rounded-xl border border-brand-beige/50 transition-all flex flex-col gap-2 relative">
-                  <div className="flex justify-between items-start gap-2">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="bg-brand-primary/10 text-brand-primary border border-brand-primary/20 px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase font-mono">
-                        S.{q.stageId} - L.{q.lessonId || 'N/A'} - Q{idx + 1}
-                      </span>
+          {isLoadingSyllabus ? (
+            <div className="flex flex-col items-center justify-center py-12 text-brand-dark/40 text-xs gap-2">
+              <div className="w-6 h-6 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
+              <span>{locale === 'zh' ? '正在加载课程大纲...' : 'Loading syllabus...'}</span>
+            </div>
+          ) : (
+            curriculumTab === 'questions' ? (
+              filteredQuestions.length > 0 ? (
+                filteredQuestions.map((q, idx) => (
+                  <div key={q.id} className="bg-brand-cream/40 hover:bg-brand-cream/80 p-3.5 rounded-xl border border-brand-beige/50 transition-all flex flex-col gap-2 relative">
+                    <div className="flex justify-between items-start gap-2">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="bg-brand-primary/10 text-brand-primary border border-brand-primary/20 px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase font-mono">
+                          S.{q.stageId} - L.{q.lessonId || 'N/A'} - Q{idx + 1}
+                        </span>
+                        <button
+                          onClick={() => onSelectStage(q.stageId, q.lessonId)}
+                          className="text-[9px] bg-brand-ivory hover:bg-brand-beige/50 text-brand-primary border border-brand-beige px-2 py-0.5 rounded font-bold transition-all cursor-pointer flex items-center gap-0.5"
+                          title="Enter practice mode for this lesson"
+                        >
+                          <Zap className="w-2.5 h-2.5 fill-brand-primary text-brand-primary" />
+                          {locale === 'zh' ? '回音速练' : 'DRILL'}
+                        </button>
+                      </div>
                       <button
-                        onClick={() => onSelectStage(q.stageId, q.lessonId)}
-                        className="text-[9px] bg-brand-ivory hover:bg-brand-beige/50 text-brand-primary border border-brand-beige px-2 py-0.5 rounded font-bold transition-all cursor-pointer flex items-center gap-0.5"
-                        title="Enter practice mode for this lesson"
+                        onClick={() => triggerSyllabusSpeak(q.questionText + " ... " + q.expectedAnswer)}
+                        className="text-brand-dark/40 hover:text-brand-primary transition-colors p-1 rounded hover:bg-brand-beige/30 cursor-pointer"
+                        title="Speak dialogue pair"
                       >
-                        <Zap className="w-2.5 h-2.5 fill-brand-primary text-brand-primary" />
-                        {locale === 'zh' ? '回音速练' : 'DRILL'}
+                        <Volume2 className="w-3.5 h-3.5" />
                       </button>
                     </div>
-                    <button
-                      onClick={() => triggerSyllabusSpeak(q.questionText + " ... " + q.expectedAnswer)}
-                      className="text-brand-dark/40 hover:text-brand-primary transition-colors p-1 rounded hover:bg-brand-beige/30 cursor-pointer"
-                      title="Speak dialogue pair"
-                    >
-                      <Volume2 className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                  <div className="text-left">
-                    <span className="text-[9px] font-bold text-brand-dark/40 uppercase tracking-wider block">
-                      {locale === 'zh' ? '教材问题 / 助教提问' : 'Question Prompt'}
-                    </span>
-                    <p className="text-xs font-bold text-brand-dark mt-0.5 leading-snug">
-                      "{q.questionText}"
-                    </p>
-                  </div>
-                  <div className="border-t border-brand-beige/40 pt-2 mt-1 text-left">
-                    <span className="text-[9px] font-bold text-brand-primary/80 uppercase tracking-wider block">
-                      {locale === 'zh' ? '官方标准回答 / 肌肉反射回音' : 'Expected Answer'}
-                    </span>
-                    <p className="text-xs font-medium text-brand-dark/80 bg-brand-ivory/80 p-2 rounded-lg border border-brand-beige/30 mt-1 leading-relaxed">
-                      {q.expectedAnswer}
-                    </p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="text-center py-6 text-brand-dark/40 text-xs italic">
-                {locale === 'zh' ? `第 ${selectedCurriculumLesson} 课暂无对话数据，请挑选其他课时！` : `No question data loaded for Lesson ${selectedCurriculumLesson} yet. Select from other lessons!`}
-              </div>
-            )
-          ) : (
-            vocabularyForStage.length > 0 ? (
-              vocabularyForStage.map((word) => (
-                <div key={word.id} className="bg-brand-cream/40 hover:bg-brand-cream/80 p-3.5 rounded-xl border border-brand-beige/50 transition-all flex flex-col gap-2 relative text-left">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="font-serif font-bold text-sm text-brand-dark">{word.word}</span>
-                      <span className="text-[10px] font-mono text-brand-dark/50">{word.phonetics}</span>
+                    <div className="text-left">
+                      <span className="text-[9px] font-bold text-brand-dark/40 uppercase tracking-wider block">
+                        {locale === 'zh' ? '教材问题 / 助教提问' : 'Question Prompt'}
+                      </span>
+                      <p className="text-xs font-bold text-brand-dark mt-0.5 leading-snug">
+                        "{q.questionText}"
+                      </p>
                     </div>
-                    <button
-                      onClick={() => triggerSyllabusSpeak(word.word + " ... Definition: " + word.definition)}
-                      className="text-brand-dark/40 hover:text-brand-primary transition-colors p-1 rounded hover:bg-brand-beige/30 cursor-pointer"
-                      title="Speak definition"
-                    >
-                      <Volume2 className="w-3.5 h-3.5" />
-                    </button>
+                    <div className="border-t border-brand-beige/40 pt-2 mt-1 text-left">
+                      <span className="text-[9px] font-bold text-brand-primary/80 uppercase tracking-wider block">
+                        {locale === 'zh' ? '官方标准回答 / 肌肉反射回音' : 'Expected Answer'}
+                      </span>
+                      <p className="text-xs font-medium text-brand-dark/80 bg-brand-ivory/80 p-2 rounded-lg border border-brand-beige/30 mt-1 leading-relaxed">
+                        {q.expectedAnswer}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-[9px] font-bold text-brand-dark/40 uppercase tracking-wider block">
-                      {locale === 'zh' ? '词义释义与音标' : 'Definition'}
-                    </span>
-                    <p className="text-xs text-brand-dark/75 mt-0.5 leading-relaxed">{word.definition}</p>
-                  </div>
-                  <div className="bg-brand-ivory/80 p-2.5 rounded-lg border border-brand-beige/30 mt-1">
-                    <span className="text-[9px] font-bold text-brand-primary uppercase tracking-wider block">
-                      {locale === 'zh' ? '核心联想例句' : 'Example Sentence'}
-                    </span>
-                    <p className="text-xs text-brand-dark/60 italic leading-relaxed mt-0.5">"{word.example}"</p>
-                  </div>
+                ))
+              ) : (
+                <div className="text-center py-6 text-brand-dark/40 text-xs italic">
+                  {locale === 'zh' ? `第 ${selectedCurriculumLesson} 课暂无对话数据，请挑选其他课时！` : `No question data loaded for Lesson ${selectedCurriculumLesson} yet. Select from other lessons!`}
                 </div>
-              ))
+              )
             ) : (
-              <div className="text-center py-6 text-brand-dark/40 text-xs italic">
-                {locale === 'zh' ? `当前 Stage ${selectedCurriculumStage} 暂无核心词汇卡片。` : `No vocabulary flashcards found for Stage ${selectedCurriculumStage} yet.`}
-              </div>
+              vocabularyForStage.length > 0 ? (
+                vocabularyForStage.map((word) => (
+                  <div key={word.id} className="bg-brand-cream/40 hover:bg-brand-cream/80 p-3.5 rounded-xl border border-brand-beige/50 transition-all flex flex-col gap-2 relative text-left">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-serif font-bold text-sm text-brand-dark">{word.word}</span>
+                        <span className="text-[10px] font-mono text-brand-dark/50">{word.phonetics}</span>
+                      </div>
+                      <button
+                        onClick={() => triggerSyllabusSpeak(word.word + " ... Definition: " + word.definition)}
+                        className="text-brand-dark/40 hover:text-brand-primary transition-colors p-1 rounded hover:bg-brand-beige/30 cursor-pointer"
+                        title="Speak definition"
+                      >
+                        <Volume2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                    <div>
+                      <span className="text-[9px] font-bold text-brand-dark/40 uppercase tracking-wider block">
+                        {locale === 'zh' ? '词义释义与音标' : 'Definition'}
+                      </span>
+                      <p className="text-xs text-brand-dark/75 mt-0.5 leading-relaxed">{word.definition}</p>
+                    </div>
+                    <div className="bg-brand-ivory/80 p-2.5 rounded-lg border border-brand-beige/30 mt-1">
+                      <span className="text-[9px] font-bold text-brand-primary uppercase tracking-wider block">
+                        {locale === 'zh' ? '核心联想例句' : 'Example Sentence'}
+                      </span>
+                      <p className="text-xs text-brand-dark/60 italic leading-relaxed mt-0.5">"{word.example}"</p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="text-center py-6 text-brand-dark/40 text-xs italic">
+                  {locale === 'zh' ? `当前 Stage ${selectedCurriculumStage} 暂无核心词汇卡片。` : `No vocabulary flashcards found for Stage ${selectedCurriculumStage} yet.`}
+                </div>
+              )
             )
           )}
         </div>

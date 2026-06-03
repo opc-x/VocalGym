@@ -1,0 +1,24 @@
+{
+  "stageId": 8,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s8_q1",
+      "stageId": 8,
+      "lessonId": 81,
+      "questionText": "How do you define the term 'investment risk' in high-stake markets?",
+      "expectedAnswer": "Investment risk is defined as the probability or likelihood of occurrence of a financial loss relative to expected returns."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_vocabulary",
+      "stageId": 8,
+      "word": "Vocabulary",
+      "phonetics": "/vəˈkæb.jə.lə.ri/",
+      "definition": "The body of words used in a particular language or representation.",
+      "example": "\"This active vocabulary helps negotiate high-stake financial contracts with ease.\"",
+      "isNew": false
+    }
+  ]
+}

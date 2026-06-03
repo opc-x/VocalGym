@@ -1,0 +1,24 @@
+{
+  "stageId": 9,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s9_q1",
+      "stageId": 9,
+      "lessonId": 91,
+      "questionText": "Is a compromise always necessary during a complex business negotiation?",
+      "expectedAnswer": "Yes, a compromise is often necessary during a negotiation to find common ground and establish mutual benefit."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_negotiation",
+      "stageId": 9,
+      "word": "Negotiation",
+      "phonetics": "/nəˌɡəʊ.ʃiˈeɪ.ʃən/",
+      "definition": "Discussion aimed at reaching an agreement on terms.",
+      "example": "\"The negotiation concluded with both parties agreeing to a mutual partnership.\"",
+      "isNew": true
+    }
+  ]
+}

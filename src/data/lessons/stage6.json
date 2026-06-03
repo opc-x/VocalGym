@@ -1,0 +1,31 @@
+{
+  "stageId": 6,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s6_q1",
+      "stageId": 6,
+      "lessonId": 61,
+      "questionText": "What does the expression 'by all means' signify?",
+      "expectedAnswer": "The expression 'by all means' signifies giving permission or expressing strong agreement enthusiastically."
+    },
+    {
+      "id": "s6_q2",
+      "stageId": 6,
+      "lessonId": 62,
+      "questionText": "Do you think playing video games can improve your cognitive skills?",
+      "expectedAnswer": "Yes, I think playing specific video games can improve cognitive skills, such as hand-eye coordination."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_cognitive",
+      "stageId": 6,
+      "word": "Cognitive",
+      "phonetics": "/ˈkɒɡ.nɪ.tɪv/",
+      "definition": "Relating to conscious mental activities such as thinking, understanding, or learning.",
+      "example": "\"Vocal reflex drills speed up our cognitive processing when speaking English.\"",
+      "isNew": false
+    }
+  ]
+}

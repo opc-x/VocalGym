@@ -1,0 +1,31 @@
+{
+  "stageId": 5,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s5_q1",
+      "stageId": 5,
+      "lessonId": 51,
+      "questionText": "What would you do if you won the lottery tomorrow?",
+      "expectedAnswer": "If I won the lottery tomorrow, I would travel around the world and invest in my education."
+    },
+    {
+      "id": "s5_q2",
+      "stageId": 5,
+      "lessonId": 52,
+      "questionText": "Is it essential to write down new vocabulary to remember it?",
+      "expectedAnswer": "Yes, it is essential or at least very helpful to write down new vocabulary to reinforce what we learn."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_essential",
+      "stageId": 5,
+      "word": "Essential",
+      "phonetics": "/ɪˈsen.ʃəl/",
+      "definition": "Absolutely necessary; extremely important in a particular situation.",
+      "example": "\"High-speed repetition is essential for developing direct English reflexes.\"",
+      "isNew": true
+    }
+  ]
+}

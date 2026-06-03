@@ -1,5 +1,6 @@
-import { UserProgress, SupportLocale } from '../types';
-import { ALL_STAGES, ALL_FLASHCARDS, MESSAGES } from '../data';
+import { useState, useEffect } from 'react';
+import { UserProgress, SupportLocale, Flashcard } from '../types';
+import { ALL_STAGES, MESSAGES, loadStageData } from '../data';
 import { 
   BarChart4, 
   CheckCircle, 
@@ -19,6 +20,32 @@ interface StatsTabProps {
 
 export default function StatsTab({ progress, locale }: StatsTabProps) {
   const t = MESSAGES[locale];
+  
+  const [allFlashcards, setAllFlashcards] = useState<Flashcard[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    let isCurrent = true;
+    setIsLoading(true);
+    loadStageData(progress.activeStageId)
+      .then(data => {
+        if (isCurrent) {
+          setAllFlashcards(data.flashcards);
+          setIsLoading(false);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load stage data for statistics:", err);
+        if (isCurrent) {
+          setAllFlashcards([]);
+          setIsLoading(false);
+        }
+      });
+    return () => {
+      isCurrent = false;
+    };
+  }, [progress.activeStageId]);
+
   // Derive details
   const totalReps = 1240 + progress.repetitionsCount;
   const hoursLearnedStr = (42.5 + (progress.timeLearnedSeconds / 3600)).toFixed(1);
@@ -26,11 +53,20 @@ export default function StatsTab({ progress, locale }: StatsTabProps) {
   // Vocabulary counts
   const masteredCount = progress.masteredWords.length;
   const reviewCount = progress.reviewLaterWords.length;
-  const unstudiedCount = Math.max(0, ALL_FLASHCARDS.length - masteredCount - reviewCount);
+  const unstudiedCount = Math.max(0, allFlashcards.length - masteredCount - reviewCount);
 
   // Find mastered and review later word items
-  const masteredItems = ALL_FLASHCARDS.filter(fc => progress.masteredWords.includes(fc.id));
-  const reviewItems = ALL_FLASHCARDS.filter(fc => progress.reviewLaterWords.includes(fc.id));
+  const masteredItems = allFlashcards.filter(fc => progress.masteredWords.includes(fc.id));
+  const reviewItems = allFlashcards.filter(fc => progress.reviewLaterWords.includes(fc.id));
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] text-brand-dark/50 gap-3">
+        <div className="w-8 h-8 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
+        <span className="text-xs font-semibold">{locale === 'zh' ? '正在加载统计分析数据...' : 'Loading analytics...'}</span>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto pb-24 font-sans text-brand-dark">
@@ -52,7 +88,7 @@ export default function StatsTab({ progress, locale }: StatsTabProps) {
               {locale === 'zh' ? '已背核心词语' : 'Vocab Studied'}
             </span>
             <span className="text-2xl font-serif font-bold text-brand-dark">
-              {masteredCount + reviewCount} / {ALL_FLASHCARDS.length}
+              {masteredCount + reviewCount} / {allFlashcards.length}
             </span>
           </div>
         </div>
@@ -86,13 +122,13 @@ export default function StatsTab({ progress, locale }: StatsTabProps) {
           {masteredCount > 0 && (
             <div 
               className="bg-brand-secondary h-full transition-all duration-500" 
-              style={{ width: `${(masteredCount / ALL_FLASHCARDS.length) * 100}%` }}
+              style={{ width: `${(masteredCount / (allFlashcards.length || 1)) * 100}%` }}
             />
           )}
           {reviewCount > 0 && (
             <div 
               className="bg-brand-primary h-full transition-all duration-500" 
-              style={{ width: `${(reviewCount / ALL_FLASHCARDS.length) * 100}%` }}
+              style={{ width: `${(reviewCount / (allFlashcards.length || 1)) * 100}%` }}
             />
           )}
           {unstudiedCount > 0 && (

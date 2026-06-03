@@ -1,0 +1,24 @@
+{
+  "stageId": 10,
+  "lessons": [],
+  "questions": [
+    {
+      "id": "s10_q1",
+      "stageId": 10,
+      "lessonId": 101,
+      "questionText": "What represents the highest peak of lexical proficiency in a speech?",
+      "expectedAnswer": "The highest peak of lexical proficiency is represented by precise word choices, elegant idioms, and natural rhythm."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc_proficiency",
+      "stageId": 10,
+      "word": "Proficiency",
+      "phonetics": "/prəˈfɪʃ.ən.si/",
+      "definition": "A high degree of competence or skill; expertise.",
+      "example": "\"Her proficiency in spoken English allowed her to lead international summits.\"",
+      "isNew": false
+    }
+  ]
+}
