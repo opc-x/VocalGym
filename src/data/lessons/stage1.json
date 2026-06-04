@@ -175,7 +175,7 @@
           "questionZh": "这是什么？",
           "answerZh": "这是一支钢笔。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/0"
+          "imagePath": "/images/drills/stage1_lesson1_drill0.jpg"
         },
         {
           "question": "Is this a pen?",
@@ -183,7 +183,7 @@
           "questionZh": "这是一支钢笔吗？",
           "answerZh": "是的，这是一支钢笔。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/1"
+          "imagePath": "/images/drills/stage1_lesson1_drill1.jpg"
         },
         {
           "question": "Is this a pen?",
@@ -191,7 +191,7 @@
           "questionZh": "这是一支钢笔吗？",
           "answerZh": "不，它不是一支钢笔；它是一支铅笔。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/2"
+          "imagePath": "/images/drills/stage1_lesson1_drill2.jpg"
         },
         {
           "question": "Is this a pencil?",
@@ -199,7 +199,7 @@
           "questionZh": "这是一支铅笔吗？",
           "answerZh": "不，它不是一支铅笔；它是一本书。",
           "prompt": "A beautiful clean vector illustration showing a pencil, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/3"
+          "imagePath": "/images/drills/stage1_lesson1_drill3.jpg"
         },
         {
           "question": "Is the pen short?",
@@ -207,7 +207,7 @@
           "questionZh": "这支钢笔短吗？",
           "answerZh": "不，这支钢笔不短；它是长的。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/4"
+          "imagePath": "/images/drills/stage1_lesson1_drill4.jpg"
         },
         {
           "question": "Is the pencil long?",
@@ -215,7 +215,7 @@
           "questionZh": "这支铅笔长吗？",
           "answerZh": "不，这支铅笔不长；它是短的。",
           "prompt": "A beautiful clean vector illustration showing a pencil, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/5"
+          "imagePath": "/images/drills/stage1_lesson1_drill5.jpg"
         },
         {
           "question": "Is the room short?",
@@ -223,7 +223,7 @@
           "questionZh": "这个房间矮（窄）吗？",
           "answerZh": "不，这个房间不矮（窄）；它是长（宽敞）的。",
           "prompt": "A beautiful clean vector illustration showing a room, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/6"
+          "imagePath": "/images/drills/stage1_lesson1_drill6.jpg"
         },
         {
           "question": "Is the table small?",
@@ -231,7 +231,7 @@
           "questionZh": "这张桌子小吗？",
           "answerZh": "不，这张桌子不小；它是大的。",
           "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/7"
+          "imagePath": "/images/drills/stage1_lesson1_drill7.jpg"
         },
         {
           "question": "Is the box large?",
@@ -239,7 +239,7 @@
           "questionZh": "这个盒子大吗？",
           "answerZh": "不，这个盒子不大；它是小的。",
           "prompt": "A beautiful clean vector illustration showing a box, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/8"
+          "imagePath": "/images/drills/stage1_lesson1_drill8.jpg"
         },
         {
           "question": "Is London a village?",
@@ -247,7 +247,7 @@
           "questionZh": "伦敦是个村庄吗？",
           "answerZh": "不，伦敦不是个村庄；它是一个大城市。",
           "prompt": "A beautiful clean vector illustration showing a village, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/9"
+          "imagePath": "/images/drills/stage1_lesson1_drill9.jpg"
         },
         {
           "question": "Is Windsor a city?",
@@ -255,7 +255,7 @@
           "questionZh": "温莎是一个大城市吗？",
           "answerZh": "不，温莎不是一个大城市；它是一个城镇。",
           "prompt": "A beautiful clean vector illustration showing a city, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/10"
+          "imagePath": "/images/drills/stage1_lesson1_drill10.jpg"
         },
         {
           "question": "Is Grantchester a town?",
@@ -263,7 +263,7 @@
           "questionZh": "格兰切斯特是一个城镇吗？",
           "answerZh": "不，格兰切斯特不是一个城镇；它是一个乡村。",
           "prompt": "A beautiful clean vector illustration showing a town, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/11"
+          "imagePath": "/images/drills/stage1_lesson1_drill11.jpg"
         },
         {
           "question": "Is the table long or short?",
@@ -271,7 +271,7 @@
           "questionZh": "这张桌子是长还是短？",
           "answerZh": "这张桌子是长的。",
           "prompt": "A split-screen minimalist vector illustration comparing long on the left and short on the right, modern flat design style",
-          "imagePath": "/api/image/1/1/12"
+          "imagePath": "/images/drills/stage1_lesson1_drill12.jpg"
         },
         {
           "question": "Is a city large or small?",
@@ -279,7 +279,7 @@
           "questionZh": "一个城市是大大还是小小？",
           "answerZh": "一个城市是大的。",
           "prompt": "A split-screen minimalist vector illustration comparing large on the left and small on the right, modern flat design style",
-          "imagePath": "/api/image/1/1/13"
+          "imagePath": "/images/drills/stage1_lesson1_drill13.jpg"
         },
         {
           "question": "Is this a girl?",
@@ -287,7 +287,7 @@
           "questionZh": "这是个女孩吗？",
           "answerZh": "不，这不是个女孩；他是个男人。",
           "prompt": "A beautiful clean vector illustration showing a girl, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/14"
+          "imagePath": "/images/drills/stage1_lesson1_drill14.jpg"
         },
         {
           "question": "Is this a man?",
@@ -295,7 +295,7 @@
           "questionZh": "这是个男人吗？",
           "answerZh": "不，这不是个男人；她是个女人。",
           "prompt": "A beautiful clean vector illustration showing a man, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/15"
+          "imagePath": "/images/drills/stage1_lesson1_drill15.jpg"
         },
         {
           "question": "Is this a woman?",
@@ -303,7 +303,7 @@
           "questionZh": "这是个女人吗？",
           "answerZh": "不，这不是个女人；他是个男孩。",
           "prompt": "A beautiful clean vector illustration showing a woman, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/16"
+          "imagePath": "/images/drills/stage1_lesson1_drill16.jpg"
         },
         {
           "question": "Is this a boy?",
@@ -311,7 +311,7 @@
           "questionZh": "这是个男孩吗？",
           "answerZh": "不，这不是个男孩；她是个女孩。",
           "prompt": "A beautiful clean vector illustration showing a boy, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/1/17"
+          "imagePath": "/images/drills/stage1_lesson1_drill17.jpg"
         }
       ]
     },
@@ -399,7 +399,7 @@
           "questionZh": "钢笔在书本里面吗？",
           "answerZh": "不，钢笔不在书里；它在书下面。",
           "prompt": "A clean minimalist vector illustration of a pen in a book, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/2/0"
+          "imagePath": "/images/drills/stage1_lesson2_drill0.jpg"
         },
         {
           "question": "Is the pen under the book?",
@@ -407,7 +407,7 @@
           "questionZh": "钢笔在书本下面吗？",
           "answerZh": "不，钢笔不在书下面；它在书上面。",
           "prompt": "A clean minimalist vector illustration of a pen under a book, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/2/1"
+          "imagePath": "/images/drills/stage1_lesson2_drill1.jpg"
         },
         {
           "question": "Is this Anna Brown?",
@@ -415,7 +415,7 @@
           "questionZh": "这是安娜·布朗吗？",
           "answerZh": "不，这不是安娜·布朗；他是布朗先生。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is this Anna Brown, modern flat design style",
-          "imagePath": "/api/image/1/2/2"
+          "imagePath": "/images/drills/stage1_lesson2_drill2.jpg"
         },
         {
           "question": "Is this Mr Brown?",
@@ -423,7 +423,7 @@
           "questionZh": "这是布朗先生吗？",
           "answerZh": "不，这不是布朗先生；她是布朗太太。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is this Mr Brown, modern flat design style",
-          "imagePath": "/api/image/1/2/3"
+          "imagePath": "/images/drills/stage1_lesson2_drill3.jpg"
         },
         {
           "question": "Is this Mrs Brown?",
@@ -431,7 +431,7 @@
           "questionZh": "这是布朗太太吗？",
           "answerZh": "不，这不是布朗太太；他是杰克·布朗。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is this Mrs Brown, modern flat design style",
-          "imagePath": "/api/image/1/2/4"
+          "imagePath": "/images/drills/stage1_lesson2_drill4.jpg"
         },
         {
           "question": "Is this Jack Brown?",
@@ -439,7 +439,7 @@
           "questionZh": "这是杰克·布朗吗？",
           "answerZh": "不，这不是杰克·布朗；她是安娜·布朗。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is this Jack Brown, modern flat design style",
-          "imagePath": "/api/image/1/2/5"
+          "imagePath": "/images/drills/stage1_lesson2_drill5.jpg"
         },
         {
           "question": "What colour's this pencil?",
@@ -447,7 +447,7 @@
           "questionZh": "这支铅笔是什么颜色的？",
           "answerZh": "这支铅笔是黑色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
-          "imagePath": "/api/image/1/2/6"
+          "imagePath": "/images/drills/stage1_lesson2_drill6.jpg"
         },
         {
           "question": "Where's the pen?",
@@ -455,7 +455,7 @@
           "questionZh": "钢笔在哪里？",
           "answerZh": "钢笔在书上面。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/2/7"
+          "imagePath": "/images/drills/stage1_lesson2_drill7.jpg"
         },
         {
           "question": "Where's the book?",
@@ -463,7 +463,7 @@
           "questionZh": "书本在哪里？",
           "answerZh": "书本在桌子上面。",
           "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/2/8"
+          "imagePath": "/images/drills/stage1_lesson2_drill8.jpg"
         },
         {
           "question": "Where's the pen?",
@@ -471,7 +471,7 @@
           "questionZh": "钢笔在哪里？",
           "answerZh": "钢笔在桌子下面。",
           "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/2/9"
+          "imagePath": "/images/drills/stage1_lesson2_drill9.jpg"
         },
         {
           "question": "Where's the picture?",
@@ -479,7 +479,7 @@
           "questionZh": "挂画在哪里？",
           "answerZh": "挂画在墙壁上。",
           "prompt": "A beautiful clean vector illustration showing a picture, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/2/10"
+          "imagePath": "/images/drills/stage1_lesson2_drill10.jpg"
         },
         {
           "question": "Where's the light?",
@@ -487,7 +487,7 @@
           "questionZh": "电灯在哪里？",
           "answerZh": "电灯在天花板上。",
           "prompt": "A beautiful clean vector illustration showing a light, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/2/11"
+          "imagePath": "/images/drills/stage1_lesson2_drill11.jpg"
         }
       ]
     },
@@ -563,7 +563,7 @@
           "questionZh": "我是史密斯先生吗？",
           "answerZh": "不，你不是史密斯先生；你是布朗先生。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Am I Mr Smith, modern flat design style",
-          "imagePath": "/api/image/1/3/0"
+          "imagePath": "/images/drills/stage1_lesson3_drill0.jpg"
         },
         {
           "question": "Are you Mr Brown?",
@@ -571,7 +571,7 @@
           "questionZh": "你是布朗先生吗？",
           "answerZh": "不，我不是布朗先生；我是杰克·布朗。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Are you Mr Brown, modern flat design style",
-          "imagePath": "/api/image/1/3/1"
+          "imagePath": "/images/drills/stage1_lesson3_drill1.jpg"
         },
         {
           "question": "Is he Mr Smith?",
@@ -579,7 +579,7 @@
           "questionZh": "他是史密斯先生吗？",
           "answerZh": "不，他不是史密斯先生；他是布朗先生。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is he Mr Smith, modern flat design style",
-          "imagePath": "/api/image/1/3/2"
+          "imagePath": "/images/drills/stage1_lesson3_drill2.jpg"
         },
         {
           "question": "Is she Mr Brown?",
@@ -587,7 +587,7 @@
           "questionZh": "她是布朗先生吗？",
           "answerZh": "不，她不是布朗先生；她是布朗太太。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Is she Mr Brown, modern flat design style",
-          "imagePath": "/api/image/1/3/3"
+          "imagePath": "/images/drills/stage1_lesson3_drill3.jpg"
         }
       ]
     },
@@ -651,7 +651,7 @@
           "questionZh": "桌子在哪里？",
           "answerZh": "桌子在我的前面。",
           "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/4/0"
+          "imagePath": "/images/drills/stage1_lesson4_drill0.jpg"
         },
         {
           "question": "Is the wall in front of you?",
@@ -659,7 +659,7 @@
           "questionZh": "墙壁在你的前面吗？",
           "answerZh": "不，墙壁不在我的前面；它在我的后面。",
           "prompt": "A beautiful clean vector illustration showing a wall, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/4/1"
+          "imagePath": "/images/drills/stage1_lesson4_drill1.jpg"
         },
         {
           "question": "Is the table behind me?",
@@ -667,7 +667,7 @@
           "questionZh": "桌子在我的后面吗？",
           "answerZh": "不，桌子不在你的后面；它在你的前面。",
           "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/4/2"
+          "imagePath": "/images/drills/stage1_lesson4_drill2.jpg"
         },
         {
           "question": "Where's the house?",
@@ -675,7 +675,7 @@
           "questionZh": "房子在哪里？",
           "answerZh": "房子在他的后面。",
           "prompt": "A beautiful clean vector illustration showing a house, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/4/3"
+          "imagePath": "/images/drills/stage1_lesson4_drill3.jpg"
         },
         {
           "question": "Where's the house?",
@@ -683,7 +683,7 @@
           "questionZh": "房子在哪里？",
           "answerZh": "房子在她的后面。",
           "prompt": "A beautiful clean vector illustration showing a house, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/4/4"
+          "imagePath": "/images/drills/stage1_lesson4_drill4.jpg"
         },
         {
           "question": "Are you behind her?",
@@ -691,7 +691,7 @@
           "questionZh": "你在她的后面吗？",
           "answerZh": "不，我不在她的后面；我在她的前面。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Are you behind her, modern flat design style",
-          "imagePath": "/api/image/1/4/5"
+          "imagePath": "/images/drills/stage1_lesson4_drill5.jpg"
         },
         {
           "question": "Am I in front of him?",
@@ -699,7 +699,7 @@
           "questionZh": "我在他的前面吗？",
           "answerZh": "不，你不在他的前面；你在他的后面。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Am I in front of him, modern flat design style",
-          "imagePath": "/api/image/1/4/6"
+          "imagePath": "/images/drills/stage1_lesson4_drill6.jpg"
         }
       ]
     },
@@ -745,7 +745,7 @@
           "questionZh": "你正站在地板上吗？",
           "answerZh": "不，我不是站在地板上；我正坐在椅子上。",
           "prompt": "A clean minimalist vector illustration of a person standing floor, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/5/0"
+          "imagePath": "/images/drills/stage1_lesson5_drill0.jpg"
         },
         {
           "question": "Am I sitting on the chair?",
@@ -753,7 +753,7 @@
           "questionZh": "我正坐在椅子上吗？",
           "answerZh": "不，你不是坐在椅子上；你正站在地板上。",
           "prompt": "A clean minimalist vector illustration of a person standing chair, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/5/1"
+          "imagePath": "/images/drills/stage1_lesson5_drill1.jpg"
         },
         {
           "question": "Are you standing in front of me?",
@@ -761,7 +761,7 @@
           "questionZh": "你正站在我的前面吗？",
           "answerZh": "不，我不是站在你的前面；我正坐在你的前面。",
           "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/5/2"
+          "imagePath": "/images/drills/stage1_lesson5_drill2.jpg"
         },
         {
           "question": "Am I putting the book on the floor?",
@@ -769,7 +769,7 @@
           "questionZh": "我正把书放在地板上吗？",
           "answerZh": "不，你不是把书放在地板上；你是从桌上把书拿起来。",
           "prompt": "A clean minimalist vector illustration of a book on a floor, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/5/3"
+          "imagePath": "/images/drills/stage1_lesson5_drill3.jpg"
         },
         {
           "question": "Am I taking the pen from the table?",
@@ -777,7 +777,7 @@
           "questionZh": "我正从桌上拿走钢笔吗？",
           "answerZh": "不，你不是从桌上拿走钢笔；你是把书放在桌上。",
           "prompt": "A clean minimalist vector illustration of a pen in a table, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/5/4"
+          "imagePath": "/images/drills/stage1_lesson5_drill4.jpg"
         }
       ]
     },
@@ -823,7 +823,7 @@
           "questionZh": "我正在关门吗？",
           "answerZh": "不，你不是在关门；你正在打开书本。",
           "prompt": "A clean minimalist vector illustration of a person opening door, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/6/0"
+          "imagePath": "/images/drills/stage1_lesson6_drill0.jpg"
         },
         {
           "question": "Am I opening the window?",
@@ -831,7 +831,7 @@
           "questionZh": "我正在开窗户吗？",
           "answerZh": "不，你不是在开窗户；你正在合上书本。",
           "prompt": "A clean minimalist vector illustration of a person opening window, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/6/1"
+          "imagePath": "/images/drills/stage1_lesson6_drill1.jpg"
         },
         {
           "question": "What am I doing?",
@@ -839,7 +839,7 @@
           "questionZh": "我正在做什么？",
           "answerZh": "你正在从桌上拿走书本。",
           "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/6/2"
+          "imagePath": "/images/drills/stage1_lesson6_drill2.jpg"
         },
         {
           "question": "What am I doing?",
@@ -847,7 +847,7 @@
           "questionZh": "我正在做什么？",
           "answerZh": "你正在打开书本。",
           "prompt": "A clean minimalist vector illustration of a person opening, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/6/3"
+          "imagePath": "/images/drills/stage1_lesson6_drill3.jpg"
         },
         {
           "question": "What am I doing?",
@@ -855,7 +855,7 @@
           "questionZh": "我正在做什么？",
           "answerZh": "你正在合上书本。",
           "prompt": "A clean minimalist vector illustration of a person closing, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/6/4"
+          "imagePath": "/images/drills/stage1_lesson6_drill4.jpg"
         },
         {
           "question": "What am I doing?",
@@ -863,7 +863,7 @@
           "questionZh": "我正在做什么？",
           "answerZh": "你正在把书本放到桌子上。",
           "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/6/5"
+          "imagePath": "/images/drills/stage1_lesson6_drill5.jpg"
         },
         {
           "question": "Which pencil's black?",
@@ -871,7 +871,7 @@
           "questionZh": "哪支铅笔是黑色的？",
           "answerZh": "这支铅笔是黑色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Which pencil's black, modern flat design style",
-          "imagePath": "/api/image/1/6/6"
+          "imagePath": "/images/drills/stage1_lesson6_drill6.jpg"
         },
         {
           "question": "Which book's open?",
@@ -879,7 +879,7 @@
           "questionZh": "哪本书是打开的？",
           "answerZh": "这本书是打开的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Which book's open, modern flat design style",
-          "imagePath": "/api/image/1/6/7"
+          "imagePath": "/images/drills/stage1_lesson6_drill7.jpg"
         },
         {
           "question": "Which book's closed?",
@@ -887,7 +887,7 @@
           "questionZh": "哪本书是合上的？",
           "answerZh": "这本书是合上的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Which book's closed, modern flat design style",
-          "imagePath": "/api/image/1/6/8"
+          "imagePath": "/images/drills/stage1_lesson6_drill8.jpg"
         }
       ]
     },
@@ -951,7 +951,7 @@
           "questionZh": "这支铅笔是什么颜色的？",
           "answerZh": "这支铅笔是黑色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
-          "imagePath": "/api/image/1/7/0"
+          "imagePath": "/images/drills/stage1_lesson7_drill0.jpg"
         },
         {
           "question": "What colour's that pencil?",
@@ -959,7 +959,7 @@
           "questionZh": "那支铅笔是什么颜色的？",
           "answerZh": "那支铅笔是白色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What colour's that pencil, modern flat design style",
-          "imagePath": "/api/image/1/7/1"
+          "imagePath": "/images/drills/stage1_lesson7_drill1.jpg"
         },
         {
           "question": "Where's this pencil?",
@@ -967,7 +967,7 @@
           "questionZh": "这支铅笔在哪里？",
           "answerZh": "这支铅笔在挂图上。",
           "prompt": "A beautiful clean vector illustration showing a chart, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/7/2"
+          "imagePath": "/images/drills/stage1_lesson7_drill2.jpg"
         },
         {
           "question": "Where's that pencil?",
@@ -975,7 +975,7 @@
           "questionZh": "那支铅笔在哪里？",
           "answerZh": "那支铅笔在墙壁上。",
           "prompt": "A beautiful clean vector illustration showing a wall, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/7/3"
+          "imagePath": "/images/drills/stage1_lesson7_drill3.jpg"
         },
         {
           "question": "Are we sitting?",
@@ -983,7 +983,7 @@
           "questionZh": "我们坐着吗？",
           "answerZh": "是的，我们正坐着。",
           "prompt": "A clean minimalist vector illustration of a person sitting, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/7/4"
+          "imagePath": "/images/drills/stage1_lesson7_drill4.jpg"
         },
         {
           "question": "Where are we sitting?",
@@ -991,7 +991,7 @@
           "questionZh": "我们坐在哪里？",
           "answerZh": "我们正坐在椅子上。",
           "prompt": "A clean minimalist vector illustration of a person sitting, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/7/5"
+          "imagePath": "/images/drills/stage1_lesson7_drill5.jpg"
         },
         {
           "question": "Are they standing?",
@@ -999,7 +999,7 @@
           "questionZh": "他们站着吗？",
           "answerZh": "是的，他们正站着。",
           "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/7/6"
+          "imagePath": "/images/drills/stage1_lesson7_drill6.jpg"
         },
         {
           "question": "Where are they standing?",
@@ -1007,7 +1007,7 @@
           "questionZh": "他们站在哪里？",
           "answerZh": "他们正站在房子前面。",
           "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
-          "imagePath": "/api/image/1/7/7"
+          "imagePath": "/images/drills/stage1_lesson7_drill7.jpg"
         },
         {
           "question": "What colour are these pencils?",
@@ -1015,7 +1015,7 @@
           "questionZh": "这些铅笔是什么颜色的？",
           "answerZh": "这些铅笔是黑色和绿色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What colour are these pencils, modern flat design style",
-          "imagePath": "/api/image/1/7/8"
+          "imagePath": "/images/drills/stage1_lesson7_drill8.jpg"
         },
         {
           "question": "What colour are those pencils?",
@@ -1023,7 +1023,7 @@
           "questionZh": "那些铅笔是什么颜色的？",
           "answerZh": "那些铅笔是白色和棕色的。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What colour are those pencils, modern flat design style",
-          "imagePath": "/api/image/1/7/9"
+          "imagePath": "/images/drills/stage1_lesson7_drill9.jpg"
         }
       ]
     },
@@ -1081,7 +1081,7 @@
           "questionZh": "'book'的复数形式是什么？",
           "answerZh": "'book'的复数形式是'books'。",
           "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/8/0"
+          "imagePath": "/images/drills/stage1_lesson8_drill0.jpg"
         },
         {
           "question": "What's the plural of 'man'?",
@@ -1089,7 +1089,7 @@
           "questionZh": "'man'的复数形式是什么？",
           "answerZh": "'man'的复数形式是'men'。",
           "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/8/1"
+          "imagePath": "/images/drills/stage1_lesson8_drill1.jpg"
         },
         {
           "question": "What's the plural of 'woman'?",
@@ -1097,7 +1097,7 @@
           "questionZh": "'woman'的复数形式是什么？",
           "answerZh": "'woman'的复数形式是'women'。",
           "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/8/2"
+          "imagePath": "/images/drills/stage1_lesson8_drill2.jpg"
         },
         {
           "question": "What are these?",
@@ -1105,7 +1105,7 @@
           "questionZh": "这些是什么？",
           "answerZh": "这些是衣服。",
           "prompt": "A clean symbolic vector illustration representing the concept of: What are these, modern flat design style",
-          "imagePath": "/api/image/1/8/3"
+          "imagePath": "/images/drills/stage1_lesson8_drill3.jpg"
         },
         {
           "question": "What letter's this?",
@@ -1113,7 +1113,7 @@
           "questionZh": "这是什么字母？",
           "answerZh": "这是字母 A。",
           "prompt": "A beautiful clean vector illustration showing a letter, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/8/4"
+          "imagePath": "/images/drills/stage1_lesson8_drill4.jpg"
         }
       ]
     },
@@ -1159,7 +1159,7 @@
           "questionZh": "哪五个是元音？",
           "answerZh": "五个元音是 A、E、I、O、U。",
           "prompt": "A beautiful clean vector illustration showing a five, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/9/0"
+          "imagePath": "/images/drills/stage1_lesson9_drill0.jpg"
         },
         {
           "question": "Is the letter B a vowel?",
@@ -1167,7 +1167,7 @@
           "questionZh": "字母 B 是元音吗？",
           "answerZh": "不，字母 B 不是元音；它是一个辅音。",
           "prompt": "A beautiful clean vector illustration showing a letter, simple colored background, modern flat design",
-          "imagePath": "/api/image/1/9/1"
+          "imagePath": "/images/drills/stage1_lesson9_drill1.jpg"
         },
         {
           "question": "Which letter's before E?",
@@ -1175,7 +1175,7 @@
           "questionZh": "哪个字母在 E 之前？",
           "answerZh": "D 在 E 之前。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Which letter's before E, modern flat design style",
-          "imagePath": "/api/image/1/9/2"
+          "imagePath": "/images/drills/stage1_lesson9_drill2.jpg"
         },
         {
           "question": "Which letter's after I?",
@@ -1183,7 +1183,7 @@
           "questionZh": "哪个字母在 I 之后？",
           "answerZh": "J 在 I 之后。",
           "prompt": "A clean symbolic vector illustration representing the concept of: Which letter's after I, modern flat design style",
-          "imagePath": "/api/image/1/9/3"
+          "imagePath": "/images/drills/stage1_lesson9_drill3.jpg"
         }
       ]
     }
@@ -1198,7 +1198,7 @@
       "questionTextZh": "这是一支钢笔吗？",
       "expectedAnswerZh": "不，它不是一支钢笔；它是一支铅笔。",
       "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/1/0"
+      "imagePath": "/images/drills/stage1_lesson1_drill0.jpg"
     },
     {
       "id": "s1_q2",
@@ -1209,7 +1209,7 @@
       "questionTextZh": "这是什么？",
       "expectedAnswerZh": "这是一支钢笔。",
       "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/1/1"
+      "imagePath": "/images/drills/stage1_lesson1_drill1.jpg"
     },
     {
       "id": "s1_q3",
@@ -1220,7 +1220,7 @@
       "questionTextZh": "这支钢笔短吗？",
       "expectedAnswerZh": "不，这支钢笔不短；它是长的。",
       "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/1/2"
+      "imagePath": "/images/drills/stage1_lesson1_drill2.jpg"
     },
     {
       "id": "s1_q4",
@@ -1231,7 +1231,7 @@
       "questionTextZh": "书在桌子上吗？",
       "expectedAnswerZh": "是的，书在桌子上。",
       "prompt": "A clean minimalist vector illustration of a pen in a book, simple colored background, modern flat design style",
-      "imagePath": "/api/image/1/2/0"
+      "imagePath": "/images/drills/stage1_lesson2_drill0.jpg"
     },
     {
       "id": "s1_q5",
@@ -1242,7 +1242,7 @@
       "questionTextZh": "钢笔在哪里？",
       "expectedAnswerZh": "钢笔在书上面。",
       "prompt": "A clean minimalist vector illustration of a pen under a book, simple colored background, modern flat design style",
-      "imagePath": "/api/image/1/2/1"
+      "imagePath": "/images/drills/stage1_lesson2_drill1.jpg"
     },
     {
       "id": "s1_q6",
@@ -1253,7 +1253,7 @@
       "questionTextZh": "钢笔在书本下面吗？",
       "expectedAnswerZh": "不，钢笔不在书下面；它在书上面。",
       "prompt": "A clean symbolic vector illustration representing the concept of: Is this Anna Brown, modern flat design style",
-      "imagePath": "/api/image/1/2/2"
+      "imagePath": "/images/drills/stage1_lesson2_drill2.jpg"
     },
     {
       "id": "s1_q7",
@@ -1264,7 +1264,7 @@
       "questionTextZh": "你是布朗先生吗？",
       "expectedAnswerZh": "不，我不是布朗先生；我是杰克·布朗。",
       "prompt": "A clean symbolic vector illustration representing the concept of: Am I Mr Smith, modern flat design style",
-      "imagePath": "/api/image/1/3/0"
+      "imagePath": "/images/drills/stage1_lesson3_drill0.jpg"
     },
     {
       "id": "s1_q8",
@@ -1275,7 +1275,7 @@
       "questionTextZh": "墙壁在你的前面吗？",
       "expectedAnswerZh": "不，墙壁不在我的前面；它在我的后面。",
       "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/4/0"
+      "imagePath": "/images/drills/stage1_lesson4_drill0.jpg"
     },
     {
       "id": "s1_q9",
@@ -1286,7 +1286,7 @@
       "questionTextZh": "你正站在地板上吗？",
       "expectedAnswerZh": "不，我不是站在地板上；我正坐在椅子上。",
       "prompt": "A clean minimalist vector illustration of a person standing floor, simple colored background, modern flat design style",
-      "imagePath": "/api/image/1/5/0"
+      "imagePath": "/images/drills/stage1_lesson5_drill0.jpg"
     },
     {
       "id": "s1_q10",
@@ -1297,7 +1297,7 @@
       "questionTextZh": "我正在做什么？",
       "expectedAnswerZh": "你正在从桌上拿走书本。",
       "prompt": "A clean minimalist vector illustration of a person opening door, simple colored background, modern flat design style",
-      "imagePath": "/api/image/1/6/0"
+      "imagePath": "/images/drills/stage1_lesson6_drill0.jpg"
     },
     {
       "id": "s1_q11",
@@ -1308,7 +1308,7 @@
       "questionTextZh": "我们坐在哪里？",
       "expectedAnswerZh": "我们正坐在椅子上。",
       "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
-      "imagePath": "/api/image/1/7/0"
+      "imagePath": "/images/drills/stage1_lesson7_drill0.jpg"
     },
     {
       "id": "s1_q12",
@@ -1319,7 +1319,7 @@
       "questionTextZh": "'man'的复数形式是什么？",
       "expectedAnswerZh": "'man'的复数形式是'men'。",
       "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/8/0"
+      "imagePath": "/images/drills/stage1_lesson8_drill0.jpg"
     },
     {
       "id": "s1_q13",
@@ -1330,7 +1330,7 @@
       "questionTextZh": "字母 B 是元音吗？",
       "expectedAnswerZh": "不，字母 B 不是元音；它是一个辅音。",
       "prompt": "A beautiful clean vector illustration showing a five, simple colored background, modern flat design",
-      "imagePath": "/api/image/1/9/0"
+      "imagePath": "/images/drills/stage1_lesson9_drill0.jpg"
     }
   ],
   "flashcards": [
