@@ -403,6 +403,21 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
   // Auto fallback speaking timer for environments without speech recognition API support
   const simulatedSpeechTimer = useRef<NodeJS.Timeout | null>(null);
+  const evaluationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clean up all speech-related timers when the question, tab, lesson, or stage changes, or on unmount
+  useEffect(() => {
+    return () => {
+      if (simulatedSpeechTimer.current) {
+        clearTimeout(simulatedSpeechTimer.current);
+        simulatedSpeechTimer.current = null;
+      }
+      if (evaluationTimeoutRef.current) {
+        clearTimeout(evaluationTimeoutRef.current);
+        evaluationTimeoutRef.current = null;
+      }
+    };
+  }, [activeQuestion?.id, subMode, progress.activeStageId, progress.activeLessonId]);
 
   // TYPING & DICTATION STATE
   const [drillType, setDrillType] = useState<'speak' | 'write'>('speak');
@@ -579,7 +594,10 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
     // Add realistic jitter so score feels dynamic and accurate
     const finalScore = Math.max(15, Math.min(100, matchesPercentage + Math.floor(Math.random() * 10)));
 
-    setTimeout(() => {
+    if (evaluationTimeoutRef.current) {
+      clearTimeout(evaluationTimeoutRef.current);
+    }
+    evaluationTimeoutRef.current = setTimeout(() => {
       setPronunciationScore(finalScore);
       setSpokenCorrectly(finalScore > 50);
       setDrillStatus('feedback');
@@ -595,6 +613,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
           [prev.activeStageId]: Math.min(95, (prev.stageProgress[prev.activeStageId] ?? (prev.stageProgress as any)[String(prev.activeStageId)] ?? 0) + 4)
         }
       }));
+      evaluationTimeoutRef.current = null;
     }, 1200);
   };
 
@@ -639,6 +658,14 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
   // Turn recording off
   const stopListening = (shouldFallbackSimulation = false) => {
+    if (simulatedSpeechTimer.current) {
+      clearTimeout(simulatedSpeechTimer.current);
+      simulatedSpeechTimer.current = null;
+    }
+    if (evaluationTimeoutRef.current) {
+      clearTimeout(evaluationTimeoutRef.current);
+      evaluationTimeoutRef.current = null;
+    }
     if (recognitionRef.current) {
       try {
         recognitionRef.current.stop();
@@ -865,6 +892,9 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
   // DRILLS ACTION ROUTERS
   const handleNextQuestion = () => {
+    // Stop recording and clear speech timers immediately
+    stopListening(false);
+
     // Reset state first
     setTranscript('');
     setDrillStatus('idle');
@@ -898,7 +928,10 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
     // Create a beautiful exit effect
     const cardElement = document.getElementById('flashcard');
     if (cardElement) {
-      cardElement.classList.add(action === 'review' ? '-translate-x-[150%] rotate-[-15deg] opacity-0' : 'translate-x-[150%] rotate-[15deg] opacity-0');
+      const classesToAdd = action === 'review'
+        ? ['-translate-x-[150%]', 'rotate-[-15deg]', 'opacity-0']
+        : ['translate-x-[150%]', 'rotate-[15deg]', 'opacity-0'];
+      cardElement.classList.add(...classesToAdd);
     }
 
     setTimeout(() => {
@@ -1065,7 +1098,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
           {/* Drill Question Card */}
           {activeQuestion ? (
-            <div className="bg-brand-ivory p-6 rounded-2xl shadow-[0_4px_24px_rgba(44,39,36,0.02)] border border-brand-beige mb-4 flex flex-col gap-3 transform transition-all relative overflow-hidden">
+            <div className="bg-brand-ivory p-4 sm:p-5 rounded-2xl shadow-[0_4px_24px_rgba(44,39,36,0.02)] border border-brand-beige mb-3 flex flex-col gap-2 sm:gap-3 transform transition-all relative overflow-hidden">
               <div className="flex items-center justify-between animate-fadeIn">
                 <div className="flex items-center gap-2">
                   <span className="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold">
@@ -1120,7 +1153,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                 <div 
                   id="drill-context-container" 
                   ref={drillContainerRef}
-                  className="relative group overflow-hidden rounded-2xl border border-brand-beige shadow-xs bg-[#FAF5EE] flex items-center justify-center transition-all duration-500 ease-out mt-1.5 h-52 sm:h-60 w-full"
+                  className="relative group overflow-hidden rounded-2xl border border-brand-beige shadow-xs bg-[#FAF5EE] flex items-center justify-center transition-all duration-500 ease-out mt-1 h-32 sm:h-36 w-full"
                 >
                   {/* Loading overlay with shimmering animation */}
                   {imageLoading && !imageError && (
@@ -1235,7 +1268,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
                   {/* Float-top-right Cascade Tag */}
                   {(QUESTION_FOCUS_TARGETS[activeQuestion.id] || activeQuestion.prompt) && (
-                    <div className="absolute top-3 right-3 bg-[#111827]/85 backdrop-blur-xs border border-amber-500/35 text-amber-300 font-sans text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-md z-2 transition-all group-hover:bg-[#111827]">
+                    <div className="absolute top-2 right-2 bg-[#111827]/85 backdrop-blur-xs border border-amber-500/35 text-amber-300 font-sans text-[9px] font-bold px-2 py-0.5 rounded-md shadow-md z-2 transition-all group-hover:bg-[#111827]">
                       {QUESTION_FOCUS_TARGETS[activeQuestion.id]
                         ? QUESTION_FOCUS_TARGETS[activeQuestion.id][locale === 'zh' ? 'zh' : 'en']
                         : (locale === 'zh' ? '看图说话' : 'Look & Speak')}
@@ -1243,22 +1276,22 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                   )}
 
                   {/* Rich Gradient and semi-opaque caption mapping context explicitly */}
-                  <div id="drill-context-overlay" className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 text-left z-2">
-                    <div className="flex flex-col gap-1">
+                  <div id="drill-context-overlay" className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-2 text-left z-2 transition-all duration-300">
+                    <div className="flex flex-col gap-0.5">
                       <div className="flex items-center gap-1.5">
-                        <span id="drill-context-tag" className="text-[9px] font-black text-white uppercase tracking-wider bg-[#d97706] px-1.5 py-0.5 rounded shadow-xs">
-                          {locale === 'zh' ? '📸 场景语境插画' : '📸 Scene Context'}
+                        <span id="drill-context-tag" className="text-[8.5px] font-black text-white uppercase tracking-wider bg-[#d97706] px-1 py-0.5 rounded shadow-xs">
+                          {locale === 'zh' ? '📸 场景语境' : '📸 Scene Context'}
                         </span>
                       </div>
                       {QUESTION_IMAGES_DESC[activeQuestion.id] ? (
-                        <p className="text-[11px] leading-relaxed text-slate-100 font-medium drop-shadow-xs">
+                        <p className="text-[10px] leading-relaxed text-slate-100 font-medium drop-shadow-xs line-clamp-1 group-hover:line-clamp-none transition-all duration-300">
                           {locale === 'zh' 
                             ? QUESTION_IMAGES_DESC[activeQuestion.id].zh 
                             : QUESTION_IMAGES_DESC[activeQuestion.id].en
                           }
                         </p>
                       ) : activeQuestion.prompt ? (
-                        <p className="text-[11px] leading-relaxed text-slate-100 font-medium drop-shadow-xs italic">
+                        <p className="text-[10px] leading-relaxed text-slate-100 font-medium drop-shadow-xs italic line-clamp-1 group-hover:line-clamp-none transition-all duration-300">
                           "{activeQuestion.prompt}"
                         </p>
                       ) : null}
@@ -1275,13 +1308,13 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               )}
 
               {/* Text prompt details */}
-              <div className="flex flex-col text-left gap-2.5 mt-1">
-                <p className="text-xl font-serif font-bold text-brand-dark leading-snug">
+              <div className="flex flex-col text-left gap-1.5 sm:gap-2 mt-1">
+                <p className="text-lg sm:text-xl font-serif font-bold text-brand-dark leading-snug">
                   "{activeQuestion.questionText}"
                 </p>
                 
                 {locale !== 'en' && getLocalizedQuestionText(activeQuestion, locale) && (
-                  <div className="text-xs font-semibold text-brand-dark/75 bg-brand-cream/30 p-2.5 rounded-lg border border-brand-beige/40 leading-relaxed font-sans mt-0.5">
+                  <div className="text-[11px] sm:text-xs font-semibold text-brand-dark/75 bg-brand-cream/30 p-2 rounded-lg border border-brand-beige/40 leading-relaxed font-sans mt-0.5">
                     <div className="text-[9px] text-[#944b00] font-black uppercase tracking-wider mb-0.5">
                       {locale === 'zh' ? '💡 语句直译助力' : '💡 Translation Assistant'}
                     </div>
@@ -1308,66 +1341,75 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
             </div>
           )}
 
-          {/* AI Explanation Accordion / Drawer (Highly accessible inside single view) */}
+          {/* AI Explanation Accordion / Drawer (Refactored into a high-end sliding bottom-sheet drawer with blur overlay) */}
           {showExplainPanel && (
-            <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 p-4 rounded-xl border border-blue-200 mb-4 transition-all duration-300">
-              <div className="flex justify-between items-center mb-3">
-                <span className="flex items-center gap-1.5 text-xs font-extrabold text-[#002045]">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                  AI STUDY COACH INSIGHT
-                </span>
-                <button 
-                  onClick={() => setShowExplainPanel(false)}
-                  className="text-[10px] text-gray-400 font-extrabold hover:text-red-500 cursor-pointer"
-                >
-                  ✕ Close
-                </button>
-              </div>
-
-              {explainLoading ? (
-                <div className="py-6 flex flex-col items-center justify-center gap-2">
-                  <span className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                  <span className="text-[10px] text-gray-400 font-bold animate-pulse uppercase tracking-wider">
-                    Consulting linguistic models...
+            <>
+              {/* Dimmed backdrop scrim overlay */}
+              <div 
+                className="fixed inset-0 bg-black/40 backdrop-blur-xs z-45 transition-opacity duration-300 animate-fade-in"
+                onClick={() => setShowExplainPanel(false)}
+              />
+              
+              {/* Bottom drawer panel */}
+              <div className="fixed inset-x-0 bottom-0 bg-brand-ivory/95 backdrop-blur-md p-5 rounded-t-3xl border-t border-brand-beige shadow-2xl z-50 transition-all duration-300 max-h-[75vh] overflow-y-auto max-w-md mx-auto text-left animate-slide-up">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="flex items-center gap-1.5 text-xs font-extrabold text-[#002045]">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500 animate-pulse" />
+                    AI STUDY COACH INSIGHT
                   </span>
+                  <button 
+                    onClick={() => setShowExplainPanel(false)}
+                    className="text-[10px] text-gray-400 font-extrabold hover:text-red-500 cursor-pointer p-1.5 hover:bg-brand-cream rounded-lg transition-colors"
+                  >
+                    ✕ Close
+                  </button>
                 </div>
-              ) : explainError ? (
-                <div className="text-xs text-red-600 bg-red-50 p-3 rounded-lg border border-red-100 select-all">
-                  {explainError}
-                </div>
-              ) : drillExplain ? (
-                <div className="flex flex-col gap-3 text-xs">
-                  {drillExplain.sentenceStress && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-[#944b00] block mb-0.5">🗣️ Sentence Rhythm & Stress</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.sentenceStress}</p>
-                    </div>
-                  )}
-                  {drillExplain.linkingSounds && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-blue-700 block mb-0.5">🔗 Phonetic Linking (Liaisons)</span>
-                      <p className="text-gray-700 font-mono text-[11px] leading-relaxed">{drillExplain.linkingSounds}</p>
-                    </div>
-                  )}
-                  {drillExplain.pronunciationTips && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-teal-700 block mb-0.5">👅 Mouth & Tongue Placement</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.pronunciationTips}</p>
-                    </div>
-                  )}
-                  {drillExplain.grammarTips && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-indigo-700 block mb-0.5">📖 Grammar Point Breakdown</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.grammarTips}</p>
-                    </div>
-                  )}
-                </div>
-              ) : null}
-            </div>
+
+                {explainLoading ? (
+                  <div className="py-8 flex flex-col items-center justify-center gap-2">
+                    <span className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+                    <span className="text-[10px] text-gray-400 font-bold animate-pulse uppercase tracking-wider">
+                      Consulting linguistic models...
+                    </span>
+                  </div>
+                ) : explainError ? (
+                  <div className="text-xs text-red-600 bg-red-50 p-3 rounded-lg border border-red-100 select-all">
+                    {explainError}
+                  </div>
+                ) : drillExplain ? (
+                  <div className="flex flex-col gap-3 text-xs">
+                    {drillExplain.sentenceStress && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-[#944b00] block mb-0.5">🗣️ Sentence Rhythm & Stress</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.sentenceStress}</p>
+                      </div>
+                    )}
+                    {drillExplain.linkingSounds && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-blue-700 block mb-0.5">🔗 Phonetic Linking (Liaisons)</span>
+                        <p className="text-gray-700 font-mono text-[11px] leading-relaxed">{drillExplain.linkingSounds}</p>
+                      </div>
+                    )}
+                    {drillExplain.pronunciationTips && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-teal-700 block mb-0.5">👅 Mouth & Tongue Placement</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.pronunciationTips}</p>
+                      </div>
+                    )}
+                    {drillExplain.grammarTips && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-indigo-700 block mb-0.5">📖 Grammar Point Breakdown</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{drillExplain.grammarTips}</p>
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+              </div>
+            </>
           )}
 
           {/* Drill Method Switcher: Speak vs Type */}
-          <div className="flex bg-brand-cream p-1 rounded-xl mb-4 border border-brand-beige/50 gap-1 select-none">
+          <div className="flex bg-brand-cream p-1 rounded-xl mb-3 border border-brand-beige/50 gap-1 select-none">
             <button
               onClick={() => setDrillType('speak')}
               className={`flex-1 py-1.5 rounded-lg text-[11px] font-bold tracking-tight transition-all text-center flex items-center justify-center gap-1 cursor-pointer ${
@@ -1395,7 +1437,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
             <div className="flex-1 flex flex-col justify-between animate-fadeIn">
               
               {/* Transcript & Scoring Feedback Bubble */}
-              <div className="flex-1 flex flex-col justify-center items-center py-4 select-none min-h-[140px]">
+              <div className="flex-1 flex flex-col justify-center items-center py-2 sm:py-3 select-none min-h-[100px] sm:min-h-[120px]">
                 {drillStatus === 'idle' && (
                   <p className="text-xs text-gray-400 italic text-center max-w-xs leading-relaxed font-semibold">
                     {locale === 'zh' 
@@ -1406,8 +1448,8 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
                 {drillStatus === 'listening' && (
                   <div className="text-center">
-                    <div className="flex items-center justify-center gap-1.5 mb-2">
-                      <span className="w-2.5 h-2.5 bg-red-600 rounded-full animate-ping" />
+                    <div className="flex items-center justify-center gap-1.5 mb-1.5">
+                      <span className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
                       <span className="text-xs font-bold text-red-600 animate-pulse uppercase tracking-wider">
                         {locale === 'zh' ? '正在录音阶段... 请速读！' : 'Listening... Speak Now'}
                       </span>
@@ -1420,22 +1462,22 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
                 {drillStatus === 'evaluating' && (
                   <div className="text-center animate-pulse">
-                    <span className="text-xs font-bold text-brand-primary uppercase tracking-widest block mb-2">
+                    <span className="text-xs font-bold text-brand-primary uppercase tracking-widest block mb-1.5">
                       {locale === 'zh' ? 'AI 老师正在评估发音与连读连击...' : 'Analyzing verbal cadence...'}
                     </span>
-                    <div className="flex gap-1 justify-center items-center h-4">
-                      <div className="w-1 bg-brand-primary rounded h-4 animate-[pulse_0.5s_infinite]" />
+                    <div className="flex gap-1 justify-center items-center h-3">
+                      <div className="w-1 bg-brand-primary rounded h-3 animate-[pulse_0.5s_infinite]" />
                       <div className="w-1 bg-brand-primary rounded h-2 animate-[pulse_0.7s_infinite]" />
-                      <div className="w-1 bg-brand-primary rounded h-5 animate-[pulse_0.4s_infinite]" />
-                      <div className="w-1 bg-brand-primary rounded h-3 animate-[pulse_0.6s_infinite]" />
+                      <div className="w-1 bg-brand-primary rounded h-4 animate-[pulse_0.4s_infinite]" />
+                      <div className="w-1 bg-brand-primary rounded h-2.5 animate-[pulse_0.6s_infinite]" />
                     </div>
                   </div>
                 )}
 
                 {drillStatus === 'feedback' && (
                   <div className="text-center animate-fadeIn">
-                    <div className="mb-2">
-                      <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+                    <div className="mb-1">
+                      <span className={`text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                         spokenCorrectly 
                           ? 'bg-brand-secondary/15 text-brand-secondary border border-brand-secondary/20' 
                           : 'bg-brand-primary/15 text-brand-primary border border-brand-primary/20'
@@ -1446,26 +1488,26 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                       </span>
                     </div>
 
-                    <div className="flex justify-center items-baseline gap-1 mt-3">
-                      <span className="text-4xl font-serif font-bold text-brand-dark">{pronunciationScore}%</span>
+                    <div className="flex justify-center items-baseline gap-1 mt-2">
+                      <span className="text-3xl font-serif font-bold text-brand-dark">{pronunciationScore}%</span>
                       <span className="text-xs text-brand-dark/40 font-bold">{locale === 'zh' ? '跟读准确度' : 'Accuracy'}</span>
                     </div>
 
-                    <p className="text-xs text-brand-dark/60 max-w-xs mx-auto mt-2 italic font-mono bg-brand-cream/60 p-2.5 rounded-lg border border-brand-beige/40">
+                    <p className="text-xs text-brand-dark/60 max-w-xs mx-auto mt-1.5 italic font-mono bg-brand-cream/60 p-2 rounded-lg border border-brand-beige/40">
                       {locale === 'zh' ? '你读的是: ' : 'You said: '}"{transcript}"
                     </p>
                   </div>
                 )}
 
                 {audioError && (
-                  <p className="text-xs text-red-500 font-semibold bg-red-50 py-1.5 px-3 rounded-lg border border-red-100 select-all text-center">
+                  <p className="text-xs text-red-500 font-semibold bg-red-50 py-1 px-3 rounded-lg border border-red-100 select-all text-center">
                     {audioError}
                   </p>
                 )}
               </div>
 
               {/* Audio Tempo & Speed Assist Selector */}
-              <div className="bg-brand-cream px-3 py-2 rounded-xl flex items-center justify-between mb-4 border border-brand-beige/50">
+              <div className="bg-brand-cream px-3 py-1.5 rounded-xl flex items-center justify-between mb-2 sm:mb-3 border border-brand-beige/50">
                 <span className="text-[10px] uppercase font-bold tracking-wider text-brand-dark/70 flex items-center gap-1">
                   <Clock className="w-3 h-3 text-brand-primary" />
                   {locale === 'zh' ? '口语体能反射语速:' : 'Vocal Reflex Gym Speed:'}
@@ -1479,7 +1521,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                     <button
                       key={opt.value}
                       onClick={() => setSpeechRate(opt.value)}
-                      className={`text-[9.5px] px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
+                      className={`text-[9.5px] px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
                         speechRate === opt.value
                           ? 'bg-gradient-to-r from-brand-secondary to-[#e57d2a] text-white shadow-sm scale-102'
                           : 'text-brand-dark/50 hover:text-brand-dark hover:bg-brand-ivory/50'
@@ -1492,7 +1534,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               </div>
 
               {/* Interactive Microphone Button Group */}
-              <div className="flex flex-col items-center gap-4 mb-6 select-none">
+              <div className="flex flex-col items-center gap-2 sm:gap-3 mb-3 sm:mb-4 select-none">
                 <div className="relative">
                   {/* Pulsing visual rings */}
                   {isListening && (
@@ -1514,29 +1556,29 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                 </div>
 
                 <div className="text-center w-full px-2">
-                  <span className="text-xs font-black text-[#002045]/70 block mb-2">
+                  <span className="text-xs font-black text-[#002045]/70 block mb-1.5">
                     {isListening 
                       ? (locale === 'zh' ? '🎙️ 正在录音... 请大声跟读回答 (再次点击结束)' : 'Tap to finish recording') 
                       : (locale === 'zh' ? '🎙️ 点按开始口语回答跟读' : 'Tap to start repeating')}
                   </span>
                   
                   {/* Expected response box showing standard answer card with Chinese translation */}
-                  <div className="mt-2 text-left bg-amber-50/70 p-3.5 rounded-xl border border-amber-200/50 max-w-md mx-auto shadow-sm relative group">
+                  <div className="mt-1.5 text-left bg-amber-50/70 p-2.5 sm:p-3 rounded-xl border border-amber-200/50 max-w-md mx-auto shadow-sm relative group">
                     <button 
                       onClick={handleRepeatDrill}
-                      className="absolute right-2 top-2 p-1.5 hover:bg-amber-100 text-[#944b00] rounded-lg transition-transform active:scale-95 cursor-pointer"
+                      className="absolute right-2 top-2 p-1 hover:bg-amber-100 text-[#944b00] rounded-lg transition-transform active:scale-95 cursor-pointer"
                       title="Listen Standard Sound"
                     >
                       <Volume2 className="w-4 h-4" />
                     </button>
-                    <span className="text-[10px] font-black text-[#944b00] block mb-1 uppercase tracking-widest animate-pulse">
+                    <span className="text-[10px] font-black text-[#944b00] block mb-0.5 uppercase tracking-widest animate-pulse">
                       🎯 {locale === 'zh' ? '官方标准原音回答 (Speak This Pattern)' : 'Expected Standard Answer'}
                     </span>
                     <p className="text-sm sm:text-base font-extrabold text-[#002045] leading-snug pr-7">
                       "{activeQuestion?.expectedAnswer}"
                     </p>
                     {locale !== 'en' && getLocalizedExpectedAnswer(activeQuestion, locale) && (
-                      <p className="text-xs font-bold text-slate-500 mt-1.5 border-t border-dashed border-gray-200 pt-1 leading-relaxed">
+                      <p className="text-[11px] font-semibold text-slate-500 mt-1 border-t border-dashed border-gray-200 pt-1 leading-relaxed">
                         {getLocalizedExpectedAnswer(activeQuestion, locale)}
                       </p>
                     )}
@@ -1545,17 +1587,17 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               </div>
 
               {/* Practice Action Control Buttons */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-gray-100">
                 <button
                   onClick={handleRepeatDrill}
-                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl border-2 border-[#002045] text-[#002045] font-bold text-xs hover:bg-[#ebeef0] transition-colors active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl border-2 border-[#002045] text-[#002045] font-bold text-xs hover:bg-[#ebeef0] transition-colors active:scale-95 cursor-pointer"
                 >
                   <RotateCcw className="w-4 h-4 stroke-[2.5px] text-[#fe9743]" />
                   {locale === 'zh' ? '原音发音示范' : 'Listen expected'}
                 </button>
                 <button
                   onClick={handleNextQuestion}
-                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#002045] hover:bg-[#002045]/90 text-white font-bold text-xs transition-opacity active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl bg-[#002045] hover:bg-[#002045]/90 text-white font-bold text-xs transition-opacity active:scale-95 cursor-pointer"
                 >
                   {locale === 'zh' ? '下一句 Dialogue' : 'Next question'}
                   <ArrowRight className="w-4 h-4 stroke-[2.5px] text-[#fe9743]" />
@@ -1728,17 +1770,17 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               </div>
 
               {/* Bottom Actions Row */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100 mt-6 md:mt-10">
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-gray-100 mt-4 sm:mt-6">
                 <button
                   onClick={() => handleSpeakSample(activeQuestion?.expectedAnswer || '')}
-                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl border-2 border-[#002045] text-[#002045] font-bold text-xs hover:bg-[#ebeef0] transition-colors active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl border-2 border-[#002045] text-[#002045] font-bold text-xs hover:bg-[#ebeef0] transition-colors active:scale-95 cursor-pointer"
                 >
                   <RotateCcw className="w-4 h-4 stroke-[2.5px] text-[#fe9743]" />
                   {locale === 'zh' ? '听示范发音' : 'Listen expected'}
                 </button>
                 <button
                   onClick={handleNextQuestion}
-                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#002045] hover:bg-[#002045]/90 text-white font-bold text-xs transition-opacity active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl bg-[#002045] hover:bg-[#002045]/90 text-white font-bold text-xs transition-opacity active:scale-95 cursor-pointer"
                 >
                   {locale === 'zh' ? '下一句 Dialogue' : 'Next question'}
                   <ArrowRight className="w-4 h-4 stroke-[2.5px] text-[#fe9743]" />
@@ -2262,62 +2304,71 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
             </div>
           </div>
 
-          {/* AI Explanation Accordion / Drawer */}
+          {/* AI Explanation Accordion / Drawer (Refactored into a high-end sliding bottom-sheet drawer with blur overlay) */}
           {showExplainPanel && (
-            <div className="bg-gradient-to-br from-slate-50 to-amber-50/20 p-4 rounded-xl border border-amber-200 mb-4 transition-all duration-300 text-left">
-              <div className="flex justify-between items-center mb-3">
-                <span className="flex items-center gap-1.5 text-xs font-extrabold text-[#002045]">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                  AI VOCABULARY DEEP INSIGHT
-                </span>
-                <button 
-                  onClick={() => setShowExplainPanel(false)}
-                  className="text-[10px] text-gray-400 font-extrabold hover:text-red-500 cursor-pointer"
-                >
-                  ✕ Close
-                </button>
-              </div>
-
-              {explainLoading ? (
-                <div className="py-6 flex flex-col items-center justify-center gap-2">
-                  <span className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                  <span className="text-[10px] text-gray-400 font-bold animate-pulse uppercase tracking-wider">
-                    Consulting linguistic models...
+            <>
+              {/* Dimmed backdrop scrim overlay */}
+              <div 
+                className="fixed inset-0 bg-black/40 backdrop-blur-xs z-45 transition-opacity duration-300 animate-fade-in"
+                onClick={() => setShowExplainPanel(false)}
+              />
+              
+              {/* Bottom drawer panel */}
+              <div className="fixed inset-x-0 bottom-0 bg-brand-ivory/95 backdrop-blur-md p-5 rounded-t-3xl border-t border-brand-beige shadow-2xl z-50 transition-all duration-300 max-h-[75vh] overflow-y-auto max-w-md mx-auto text-left animate-slide-up">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="flex items-center gap-1.5 text-xs font-extrabold text-[#002045]">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500 animate-pulse" />
+                    AI VOCABULARY DEEP INSIGHT
                   </span>
+                  <button 
+                    onClick={() => setShowExplainPanel(false)}
+                    className="text-[10px] text-gray-400 font-extrabold hover:text-red-500 cursor-pointer p-1.5 hover:bg-brand-cream rounded-lg transition-colors"
+                  >
+                    ✕ Close
+                  </button>
                 </div>
-              ) : explainError ? (
-                <div className="text-xs text-red-600 bg-red-50 p-3 rounded-lg border border-red-100 select-all">
-                  {explainError}
-                </div>
-              ) : cardExplain ? (
-                <div className="flex flex-col gap-3 text-xs">
-                  {cardExplain.spellingBreakdown && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-[#944b00] block mb-0.5">📚 Syllable & Stress Guide</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.spellingBreakdown}</p>
-                    </div>
-                  )}
-                  {cardExplain.pronunciationTips && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-blue-700 block mb-0.5">👅 Mouth & Tongue Placement</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.pronunciationTips}</p>
-                    </div>
-                  )}
-                  {cardExplain.commonMistakes && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-red-600 block mb-0.5">⚠️ Common Mistakes / Traps</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.commonMistakes}</p>
-                    </div>
-                  )}
-                  {cardExplain.grammarPoints && (
-                    <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                      <span className="font-extrabold text-teal-700 block mb-0.5">📖 Visual Grammar Points</span>
-                      <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.grammarPoints}</p>
-                    </div>
-                  )}
-                </div>
-              ) : null}
-            </div>
+
+                {explainLoading ? (
+                  <div className="py-8 flex flex-col items-center justify-center gap-2">
+                    <span className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+                    <span className="text-[10px] text-gray-400 font-bold animate-pulse uppercase tracking-wider">
+                      Consulting linguistic models...
+                    </span>
+                  </div>
+                ) : explainError ? (
+                  <div className="text-xs text-red-600 bg-red-50 p-3 rounded-lg border border-red-100 select-all">
+                    {explainError}
+                  </div>
+                ) : cardExplain ? (
+                  <div className="flex flex-col gap-3 text-xs">
+                    {cardExplain.spellingBreakdown && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-[#944b00] block mb-0.5">📚 Syllable & Stress Guide</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.spellingBreakdown}</p>
+                      </div>
+                    )}
+                    {cardExplain.pronunciationTips && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-blue-700 block mb-0.5">👅 Mouth & Tongue Placement</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.pronunciationTips}</p>
+                      </div>
+                    )}
+                    {cardExplain.commonMistakes && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-red-600 block mb-0.5">⚠️ Common Mistakes / Traps</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.commonMistakes}</p>
+                      </div>
+                    )}
+                    {cardExplain.grammarPoints && (
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                        <span className="font-extrabold text-teal-700 block mb-0.5">📖 Visual Grammar Points</span>
+                        <p className="text-gray-700 font-sans leading-relaxed">{cardExplain.grammarPoints}</p>
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+              </div>
+            </>
           )}
 
           {/* Action Choice Buttons */}
