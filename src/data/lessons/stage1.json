@@ -11,141 +11,307 @@
         "zh": "This（这个）用来指示靠近说话者的人或事物；That（那个）则指示距离较远的对象。卡伦方法提倡缩写式（如 isn't, it's）以达到连贯的语流速度。"
       },
       "vocabulary": [
-        { "word": "Pen", "phonetics": "/pen/", "meaningZh": "钢笔", "meaningEn": "An instrument for writing with ink." },
-        { "word": "Pencil", "phonetics": "/ˈpen.səl/", "meaningZh": "铅笔", "meaningEn": "A thin stick of graphite enclosed in wood." },
-        { "word": "Book", "phonetics": "/bʊk/", "meaningZh": "书本", "meaningEn": "A written or printed work consisting of pages." },
-        { "word": "Table", "phonetics": "/ˈteɪ.bəl/", "meaningZh": "桌子", "meaningEn": "A piece of furniture with a flat top and legs." },
-        { "word": "Chair", "phonetics": "/tʃeər/", "meaningZh": "椅子", "meaningEn": "A seat for one person, with a back." },
-        { "word": "Light", "phonetics": "/laɪt/", "meaningZh": "灯 / 光线", "meaningEn": "The natural agent that stimulates sight." },
-        { "word": "Wall", "phonetics": "/wɔːl/", "meaningZh": "墙壁", "meaningEn": "A continuous vertical structure protecting an area." },
-        { "word": "Floor", "phonetics": "/flɔːr/", "meaningZh": "地板", "meaningEn": "The lower surface of a room." },
-        { "word": "Room", "phonetics": "/ruːm/", "meaningZh": "房间", "meaningEn": "A part of a building enclosed by walls." },
-        { "word": "Ceiling", "phonetics": "/ˈsiː.lɪŋ/", "meaningZh": "天花板", "meaningEn": "The upper interior surface of a room." },
-        { "word": "Window", "phonetics": "/ˈwɪn.dəʊ/", "meaningZh": "窗户", "meaningEn": "An opening in a wall to let in light or air." },
-        { "word": "Door", "phonetics": "/dɔːr/", "meaningZh": "门", "meaningEn": "A hinged barrier used to close an entrance." },
-        { "word": "Clock", "phonetics": "/klɒk/", "meaningZh": "时钟", "meaningEn": "A device for measuring and showing time." },
-        { "word": "Box", "phonetics": "/bɒks/", "meaningZh": "盒子", "meaningEn": "A container with a flat base and sides." },
-        { "word": "Picture", "phonetics": "/ˈpɪk.tʃər/", "meaningZh": "照片 / 挂画", "meaningEn": "A painting or drawing of someone or something." },
-        { "word": "Long", "phonetics": "/lɒŋ/", "meaningZh": "长的", "meaningEn": "Measuring a great distance from end to end." },
-        { "word": "Short", "phonetics": "/ʃɔːt/", "meaningZh": "短的 / 矮的", "meaningEn": "Measuring a small distance from end to end." },
-        { "word": "Large", "phonetics": "/lɑːdʒ/", "meaningZh": "大的", "meaningEn": "Of relatively great size." },
-        { "word": "Small", "phonetics": "/smɔːl/", "meaningZh": "小的", "meaningEn": "Of size that is less than normal." },
-        { "word": "City", "phonetics": "/ˈsɪt.i/", "meaningZh": "大城市", "meaningEn": "A large and densely populated urban area." },
-        { "word": "Town", "phonetics": "/taʊn/", "meaningZh": "城镇", "meaningEn": "An urban area smaller than a city." },
-        { "word": "Village", "phonetics": "/ˈvɪl.ɪdʒ/", "meaningZh": "乡村", "meaningEn": "A group of houses in a rural area." },
-        { "word": "Man", "phonetics": "/mæn/", "meaningZh": "男人", "meaningEn": "An adult human male." },
-        { "word": "Woman", "phonetics": "/ˈwʊm.ən/", "meaningZh": "女人", "meaningEn": "An adult human female." },
-        { "word": "Boy", "phonetics": "/bɔɪ/", "meaningZh": "男孩", "meaningEn": "A male child or young man." },
-        { "word": "Girl", "phonetics": "/ɡɜːl/", "meaningZh": "女孩", "meaningEn": "A female child or young woman." }
+        {
+          "word": "Pen",
+          "phonetics": "/pen/",
+          "meaningZh": "钢笔",
+          "meaningEn": "An instrument for writing with ink."
+        },
+        {
+          "word": "Pencil",
+          "phonetics": "/ˈpen.səl/",
+          "meaningZh": "铅笔",
+          "meaningEn": "A thin stick of graphite enclosed in wood."
+        },
+        {
+          "word": "Book",
+          "phonetics": "/bʊk/",
+          "meaningZh": "书本",
+          "meaningEn": "A written or printed work consisting of pages."
+        },
+        {
+          "word": "Table",
+          "phonetics": "/ˈteɪ.bəl/",
+          "meaningZh": "桌子",
+          "meaningEn": "A piece of furniture with a flat top and legs."
+        },
+        {
+          "word": "Chair",
+          "phonetics": "/tʃeər/",
+          "meaningZh": "椅子",
+          "meaningEn": "A seat for one person, with a back."
+        },
+        {
+          "word": "Light",
+          "phonetics": "/laɪt/",
+          "meaningZh": "灯 / 光线",
+          "meaningEn": "The natural agent that stimulates sight."
+        },
+        {
+          "word": "Wall",
+          "phonetics": "/wɔːl/",
+          "meaningZh": "墙壁",
+          "meaningEn": "A continuous vertical structure protecting an area."
+        },
+        {
+          "word": "Floor",
+          "phonetics": "/flɔːr/",
+          "meaningZh": "地板",
+          "meaningEn": "The lower surface of a room."
+        },
+        {
+          "word": "Room",
+          "phonetics": "/ruːm/",
+          "meaningZh": "房间",
+          "meaningEn": "A part of a building enclosed by walls."
+        },
+        {
+          "word": "Ceiling",
+          "phonetics": "/ˈsiː.lɪŋ/",
+          "meaningZh": "天花板",
+          "meaningEn": "The upper interior surface of a room."
+        },
+        {
+          "word": "Window",
+          "phonetics": "/ˈwɪn.dəʊ/",
+          "meaningZh": "窗户",
+          "meaningEn": "An opening in a wall to let in light or air."
+        },
+        {
+          "word": "Door",
+          "phonetics": "/dɔːr/",
+          "meaningZh": "门",
+          "meaningEn": "A hinged barrier used to close an entrance."
+        },
+        {
+          "word": "Clock",
+          "phonetics": "/klɒk/",
+          "meaningZh": "时钟",
+          "meaningEn": "A device for measuring and showing time."
+        },
+        {
+          "word": "Box",
+          "phonetics": "/bɒks/",
+          "meaningZh": "盒子",
+          "meaningEn": "A container with a flat base and sides."
+        },
+        {
+          "word": "Picture",
+          "phonetics": "/ˈpɪk.tʃər/",
+          "meaningZh": "照片 / 挂画",
+          "meaningEn": "A painting or drawing of someone or something."
+        },
+        {
+          "word": "Long",
+          "phonetics": "/lɒŋ/",
+          "meaningZh": "长的",
+          "meaningEn": "Measuring a great distance from end to end."
+        },
+        {
+          "word": "Short",
+          "phonetics": "/ʃɔːt/",
+          "meaningZh": "短的 / 矮的",
+          "meaningEn": "Measuring a small distance from end to end."
+        },
+        {
+          "word": "Large",
+          "phonetics": "/lɑːdʒ/",
+          "meaningZh": "大的",
+          "meaningEn": "Of relatively great size."
+        },
+        {
+          "word": "Small",
+          "phonetics": "/smɔːl/",
+          "meaningZh": "小的",
+          "meaningEn": "Of size that is less than normal."
+        },
+        {
+          "word": "City",
+          "phonetics": "/ˈsɪt.i/",
+          "meaningZh": "大城市",
+          "meaningEn": "A large and densely populated urban area."
+        },
+        {
+          "word": "Town",
+          "phonetics": "/taʊn/",
+          "meaningZh": "城镇",
+          "meaningEn": "An urban area smaller than a city."
+        },
+        {
+          "word": "Village",
+          "phonetics": "/ˈvɪl.ɪdʒ/",
+          "meaningZh": "乡村",
+          "meaningEn": "A group of houses in a rural area."
+        },
+        {
+          "word": "Man",
+          "phonetics": "/mæn/",
+          "meaningZh": "男人",
+          "meaningEn": "An adult human male."
+        },
+        {
+          "word": "Woman",
+          "phonetics": "/ˈwʊm.ən/",
+          "meaningZh": "女人",
+          "meaningEn": "An adult human female."
+        },
+        {
+          "word": "Boy",
+          "phonetics": "/bɔɪ/",
+          "meaningZh": "男孩",
+          "meaningEn": "A male child or young man."
+        },
+        {
+          "word": "Girl",
+          "phonetics": "/ɡɜːl/",
+          "meaningZh": "女孩",
+          "meaningEn": "A female child or young woman."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "What's this?",
           "answer": "It's a pen.",
           "questionZh": "这是什么？",
-          "answerZh": "这是一支钢笔。"
+          "answerZh": "这是一支钢笔。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/0"
         },
         {
           "question": "Is this a pen?",
           "answer": "Yes, it's a pen.",
           "questionZh": "这是一支钢笔吗？",
-          "answerZh": "是的，这是一支钢笔。"
+          "answerZh": "是的，这是一支钢笔。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/1"
         },
         {
           "question": "Is this a pen?",
           "answer": "No, it isn't a pen; it's a pencil.",
           "questionZh": "这是一支钢笔吗？",
-          "answerZh": "不，它不是一支钢笔；它是一支铅笔。"
+          "answerZh": "不，它不是一支钢笔；它是一支铅笔。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/2"
         },
         {
           "question": "Is this a pencil?",
           "answer": "No, it isn't a pencil; it's a book.",
           "questionZh": "这是一支铅笔吗？",
-          "answerZh": "不，它不是一支铅笔；它是一本书。"
+          "answerZh": "不，它不是一支铅笔；它是一本书。",
+          "prompt": "A beautiful clean vector illustration showing a pencil, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/3"
         },
         {
           "question": "Is the pen short?",
           "answer": "No, the pen isn't short; it's long.",
           "questionZh": "这支钢笔短吗？",
-          "answerZh": "不，这支钢笔不短；它是长的。"
+          "answerZh": "不，这支钢笔不短；它是长的。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/4"
         },
         {
           "question": "Is the pencil long?",
           "answer": "No, the pencil isn't long; it's short.",
           "questionZh": "这支铅笔长吗？",
-          "answerZh": "不，这支铅笔不长；它是短的。"
+          "answerZh": "不，这支铅笔不长；它是短的。",
+          "prompt": "A beautiful clean vector illustration showing a pencil, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/5"
         },
         {
           "question": "Is the room short?",
           "answer": "No, the room isn't short; it's long.",
           "questionZh": "这个房间矮（窄）吗？",
-          "answerZh": "不，这个房间不矮（窄）；它是长（宽敞）的。"
+          "answerZh": "不，这个房间不矮（窄）；它是长（宽敞）的。",
+          "prompt": "A beautiful clean vector illustration showing a room, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/6"
         },
         {
           "question": "Is the table small?",
           "answer": "No, the table isn't small; it's large.",
           "questionZh": "这张桌子小吗？",
-          "answerZh": "不，这张桌子不小；它是大的。"
+          "answerZh": "不，这张桌子不小；它是大的。",
+          "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/7"
         },
         {
           "question": "Is the box large?",
           "answer": "No, the box isn't large; it's small.",
           "questionZh": "这个盒子大吗？",
-          "answerZh": "不，这个盒子不大；它是小的。"
+          "answerZh": "不，这个盒子不大；它是小的。",
+          "prompt": "A beautiful clean vector illustration showing a box, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/8"
         },
         {
           "question": "Is London a village?",
           "answer": "No, London isn't a village; it's a city.",
           "questionZh": "伦敦是个村庄吗？",
-          "answerZh": "不，伦敦不是个村庄；它是一个大城市。"
+          "answerZh": "不，伦敦不是个村庄；它是一个大城市。",
+          "prompt": "A beautiful clean vector illustration showing a village, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/9"
         },
         {
           "question": "Is Windsor a city?",
           "answer": "No, Windsor isn't a city; it's a town.",
           "questionZh": "温莎是一个大城市吗？",
-          "answerZh": "不，温莎不是一个大城市；它是一个城镇。"
+          "answerZh": "不，温莎不是一个大城市；它是一个城镇。",
+          "prompt": "A beautiful clean vector illustration showing a city, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/10"
         },
         {
           "question": "Is Grantchester a town?",
           "answer": "No, Grantchester isn't a town; it's a village.",
           "questionZh": "格兰切斯特是一个城镇吗？",
-          "answerZh": "不，格兰切斯特不是一个城镇；它是一个乡村。"
+          "answerZh": "不，格兰切斯特不是一个城镇；它是一个乡村。",
+          "prompt": "A beautiful clean vector illustration showing a town, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/11"
         },
         {
           "question": "Is the table long or short?",
           "answer": "The table's long.",
           "questionZh": "这张桌子是长还是短？",
-          "answerZh": "这张桌子是长的。"
+          "answerZh": "这张桌子是长的。",
+          "prompt": "A split-screen minimalist vector illustration comparing long on the left and short on the right, modern flat design style",
+          "imagePath": "/api/image/1/1/12"
         },
         {
           "question": "Is a city large or small?",
           "answer": "A city's large.",
           "questionZh": "一个城市是大大还是小小？",
-          "answerZh": "一个城市是大的。"
+          "answerZh": "一个城市是大的。",
+          "prompt": "A split-screen minimalist vector illustration comparing large on the left and small on the right, modern flat design style",
+          "imagePath": "/api/image/1/1/13"
         },
         {
           "question": "Is this a girl?",
           "answer": "No, it isn't a girl; it's a man.",
           "questionZh": "这是个女孩吗？",
-          "answerZh": "不，这不是个女孩；他是个男人。"
+          "answerZh": "不，这不是个女孩；他是个男人。",
+          "prompt": "A beautiful clean vector illustration showing a girl, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/14"
         },
         {
           "question": "Is this a man?",
           "answer": "No, it isn't a man; it's a woman.",
           "questionZh": "这是个男人吗？",
-          "answerZh": "不，这不是个男人；她是个女人。"
+          "answerZh": "不，这不是个男人；她是个女人。",
+          "prompt": "A beautiful clean vector illustration showing a man, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/15"
         },
         {
           "question": "Is this a woman?",
           "answer": "No, it isn't a woman; it's a boy.",
           "questionZh": "这是个女人吗？",
-          "answerZh": "不，这不是个女人；他是个男孩。"
+          "answerZh": "不，这不是个女人；他是个男孩。",
+          "prompt": "A beautiful clean vector illustration showing a woman, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/16"
         },
         {
           "question": "Is this a boy?",
           "answer": "No, it isn't a boy; it's a girl.",
           "questionZh": "这是个男孩吗？",
-          "answerZh": "不，这不是个男孩；她是个女孩。"
+          "answerZh": "不，这不是个男孩；她是个女孩。",
+          "prompt": "A beautiful clean vector illustration showing a boy, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/1/17"
         }
       ]
     },
@@ -159,90 +325,169 @@
         "zh": "方位介词 (on, under, in) 与身份名称标识 (Mr, Mrs) 肌肉条件连读。"
       },
       "vocabulary": [
-        { "word": "On", "phonetics": "/ɒn/", "meaningZh": "在...表面之上", "meaningEn": "Physically touching and supported by a surface." },
-        { "word": "Under", "phonetics": "/ˈʌn.dər/", "meaningZh": "在...正下方", "meaningEn": "Directly below something." },
-        { "word": "In", "phonetics": "/ɪn/", "meaningZh": "在...里面", "meaningEn": "Inside container dimensions." },
-        { "word": "Mr", "phonetics": "/ˈmɪs.tər/", "meaningZh": "先生", "meaningEn": "Title prefixed to a man's name." },
-        { "word": "Mrs", "phonetics": "/ˈmɪs.ɪz/", "meaningZh": "夫人 / 太太", "meaningEn": "Title prefixed to a married woman's name." },
-        { "word": "Black", "phonetics": "/blæk/", "meaningZh": "黑色", "meaningEn": "The darkest color." },
-        { "word": "White", "phonetics": "/waɪt/", "meaningZh": "白色", "meaningEn": "The color of milk or fresh snow." },
-        { "word": "Green", "phonetics": "/ɡriːn/", "meaningZh": "绿色", "meaningEn": "The color of growing grass." },
-        { "word": "Brown", "phonetics": "/braʊn/", "meaningZh": "棕色", "meaningEn": "The color of wood or earth." },
-        { "word": "What colour?", "phonetics": "/wɒt ˈkʌl.ər/", "meaningZh": "什么颜色？", "meaningEn": "Querying visual pigment." },
-        { "word": "Where", "phonetics": "/weər/", "meaningZh": "在哪里", "meaningEn": "In or to what place or position." }
+        {
+          "word": "On",
+          "phonetics": "/ɒn/",
+          "meaningZh": "在...表面之上",
+          "meaningEn": "Physically touching and supported by a surface."
+        },
+        {
+          "word": "Under",
+          "phonetics": "/ˈʌn.dər/",
+          "meaningZh": "在...正下方",
+          "meaningEn": "Directly below something."
+        },
+        {
+          "word": "In",
+          "phonetics": "/ɪn/",
+          "meaningZh": "在...里面",
+          "meaningEn": "Inside container dimensions."
+        },
+        {
+          "word": "Mr",
+          "phonetics": "/ˈmɪs.tər/",
+          "meaningZh": "先生",
+          "meaningEn": "Title prefixed to a man's name."
+        },
+        {
+          "word": "Mrs",
+          "phonetics": "/ˈmɪs.ɪz/",
+          "meaningZh": "夫人 / 太太",
+          "meaningEn": "Title prefixed to a married woman's name."
+        },
+        {
+          "word": "Black",
+          "phonetics": "/blæk/",
+          "meaningZh": "黑色",
+          "meaningEn": "The darkest color."
+        },
+        {
+          "word": "White",
+          "phonetics": "/waɪt/",
+          "meaningZh": "白色",
+          "meaningEn": "The color of milk or fresh snow."
+        },
+        {
+          "word": "Green",
+          "phonetics": "/ɡriːn/",
+          "meaningZh": "绿色",
+          "meaningEn": "The color of growing grass."
+        },
+        {
+          "word": "Brown",
+          "phonetics": "/braʊn/",
+          "meaningZh": "棕色",
+          "meaningEn": "The color of wood or earth."
+        },
+        {
+          "word": "What colour?",
+          "phonetics": "/wɒt ˈkʌl.ər/",
+          "meaningZh": "什么颜色？",
+          "meaningEn": "Querying visual pigment."
+        },
+        {
+          "word": "Where",
+          "phonetics": "/weər/",
+          "meaningZh": "在哪里",
+          "meaningEn": "In or to what place or position."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "Is the pen in the book?",
           "answer": "No, the pen isn't in the book; it's under the book.",
           "questionZh": "钢笔在书本里面吗？",
-          "answerZh": "不，钢笔不在书里；它在书下面。"
+          "answerZh": "不，钢笔不在书里；它在书下面。",
+          "prompt": "A clean minimalist vector illustration of a pen in a book, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/2/0"
         },
         {
           "question": "Is the pen under the book?",
           "answer": "No, the pen isn't under the book; it's on the book.",
           "questionZh": "钢笔在书本下面吗？",
-          "answerZh": "不，钢笔不在书下面；它在书上面。"
+          "answerZh": "不，钢笔不在书下面；它在书上面。",
+          "prompt": "A clean minimalist vector illustration of a pen under a book, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/2/1"
         },
         {
           "question": "Is this Anna Brown?",
           "answer": "No, it isn't Anna Brown; it's Mr Brown.",
           "questionZh": "这是安娜·布朗吗？",
-          "answerZh": "不，这不是安娜·布朗；他是布朗先生。"
+          "answerZh": "不，这不是安娜·布朗；他是布朗先生。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is this Anna Brown, modern flat design style",
+          "imagePath": "/api/image/1/2/2"
         },
         {
           "question": "Is this Mr Brown?",
           "answer": "No, it isn't Mr Brown; it's Mrs Brown.",
           "questionZh": "这是布朗先生吗？",
-          "answerZh": "不，这不是布朗先生；她是布朗太太。"
+          "answerZh": "不，这不是布朗先生；她是布朗太太。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is this Mr Brown, modern flat design style",
+          "imagePath": "/api/image/1/2/3"
         },
         {
           "question": "Is this Mrs Brown?",
           "answer": "No, it isn't Mrs Brown; it's Jack Brown.",
           "questionZh": "这是布朗太太吗？",
-          "answerZh": "不，这不是布朗太太；他是杰克·布朗。"
+          "answerZh": "不，这不是布朗太太；他是杰克·布朗。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is this Mrs Brown, modern flat design style",
+          "imagePath": "/api/image/1/2/4"
         },
         {
           "question": "Is this Jack Brown?",
           "answer": "No, it isn't Jack Brown; it's Anna Brown.",
           "questionZh": "这是杰克·布朗吗？",
-          "answerZh": "不，这不是杰克·布朗；她是安娜·布朗。"
+          "answerZh": "不，这不是杰克·布朗；她是安娜·布朗。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is this Jack Brown, modern flat design style",
+          "imagePath": "/api/image/1/2/5"
         },
         {
           "question": "What colour's this pencil?",
           "answer": "This pencil's black.",
           "questionZh": "这支铅笔是什么颜色的？",
-          "answerZh": "这支铅笔是黑色的。"
+          "answerZh": "这支铅笔是黑色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
+          "imagePath": "/api/image/1/2/6"
         },
         {
           "question": "Where's the pen?",
           "answer": "The pen's on the book.",
           "questionZh": "钢笔在哪里？",
-          "answerZh": "钢笔在书上面。"
+          "answerZh": "钢笔在书上面。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/2/7"
         },
         {
           "question": "Where's the book?",
           "answer": "The book's on the table.",
           "questionZh": "书本在哪里？",
-          "answerZh": "书本在桌子上面。"
+          "answerZh": "书本在桌子上面。",
+          "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/2/8"
         },
         {
           "question": "Where's the pen?",
           "answer": "The pen's under the table.",
           "questionZh": "钢笔在哪里？",
-          "answerZh": "钢笔在桌子下面。"
+          "answerZh": "钢笔在桌子下面。",
+          "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/2/9"
         },
         {
           "question": "Where's the picture?",
           "answer": "The picture's on the wall.",
           "questionZh": "挂画在哪里？",
-          "answerZh": "挂画在墙壁上。"
+          "answerZh": "挂画在墙壁上。",
+          "prompt": "A beautiful clean vector illustration showing a picture, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/2/10"
         },
         {
           "question": "Where's the light?",
           "answer": "The light's on the ceiling.",
           "questionZh": "电灯在哪里？",
-          "answerZh": "电灯在天花板上。"
+          "answerZh": "电灯在天花板上。",
+          "prompt": "A beautiful clean vector illustration showing a light, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/2/11"
         }
       ]
     },
@@ -256,40 +501,93 @@
         "zh": "人称代词主动表述 (I, you, he, she, it) 与否定缩写形式 (I'm not, aren't, isn't) 的肌肉记忆训练。"
       },
       "vocabulary": [
-        { "word": "I am / I'm", "phonetics": "/aɪ æm/ /aɪm/", "meaningZh": "我是", "meaningEn": "First person singular subject pronoun." },
-        { "word": "you are / you're", "phonetics": "/juː ɑːr/ /jɔːr/", "meaningZh": "你是 / 你们是", "meaningEn": "Second person singular/plural subject pronoun." },
-        { "word": "he is / he's", "phonetics": "/hiː ɪz/ /hiːz/", "meaningZh": "他是", "meaningEn": "Third person masculine singular subject pronoun." },
-        { "word": "she is / she's", "phonetics": "/ʃiː ɪz/ /ʃiːz/", "meaningZh": "她是", "meaningEn": "Third person feminine singular subject pronoun." },
-        { "word": "it is / it's", "phonetics": "/ɪt ɪz/ /ɪts/", "meaningZh": "它是", "meaningEn": "Third person neutral singular subject pronoun." },
-        { "word": "I am not / I'm not", "phonetics": "/aɪm nɒt/", "meaningZh": "我不是", "meaningEn": "First person singular negative form." },
-        { "word": "you are not / you aren't", "phonetics": "/juː ɑːr nɒt/ /juː ɑːnt/", "meaningZh": "你不是", "meaningEn": "Second person singular negative form." },
-        { "word": "he is not / he isn't", "phonetics": "/hiː ɪz nɒt/ /hiː ˈɪz.ənt/", "meaningZh": "他不是", "meaningEn": "Third person masculine negative form." },
-        { "word": "she is not / she isn't", "phonetics": "/ʃiː ɪz nɒt/ /ʃiː ˈɪz.ənt/", "meaningZh": "她不是", "meaningEn": "Third person feminine negative form." }
+        {
+          "word": "I am / I'm",
+          "phonetics": "/aɪ æm/ /aɪm/",
+          "meaningZh": "我是",
+          "meaningEn": "First person singular subject pronoun."
+        },
+        {
+          "word": "you are / you're",
+          "phonetics": "/juː ɑːr/ /jɔːr/",
+          "meaningZh": "你是 / 你们是",
+          "meaningEn": "Second person singular/plural subject pronoun."
+        },
+        {
+          "word": "he is / he's",
+          "phonetics": "/hiː ɪz/ /hiːz/",
+          "meaningZh": "他是",
+          "meaningEn": "Third person masculine singular subject pronoun."
+        },
+        {
+          "word": "she is / she's",
+          "phonetics": "/ʃiː ɪz/ /ʃiːz/",
+          "meaningZh": "她是",
+          "meaningEn": "Third person feminine singular subject pronoun."
+        },
+        {
+          "word": "it is / it's",
+          "phonetics": "/ɪt ɪz/ /ɪts/",
+          "meaningZh": "它是",
+          "meaningEn": "Third person neutral singular subject pronoun."
+        },
+        {
+          "word": "I am not / I'm not",
+          "phonetics": "/aɪm nɒt/",
+          "meaningZh": "我不是",
+          "meaningEn": "First person singular negative form."
+        },
+        {
+          "word": "you are not / you aren't",
+          "phonetics": "/juː ɑːr nɒt/ /juː ɑːnt/",
+          "meaningZh": "你不是",
+          "meaningEn": "Second person singular negative form."
+        },
+        {
+          "word": "he is not / he isn't",
+          "phonetics": "/hiː ɪz nɒt/ /hiː ˈɪz.ənt/",
+          "meaningZh": "他不是",
+          "meaningEn": "Third person masculine negative form."
+        },
+        {
+          "word": "she is not / she isn't",
+          "phonetics": "/ʃiː ɪz nɒt/ /ʃiː ˈɪz.ənt/",
+          "meaningZh": "她不是",
+          "meaningEn": "Third person feminine negative form."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "Am I Mr Smith?",
           "answer": "No, you aren't Mr Smith; you're Mr Brown.",
           "questionZh": "我是史密斯先生吗？",
-          "answerZh": "不，你不是史密斯先生；你是布朗先生。"
+          "answerZh": "不，你不是史密斯先生；你是布朗先生。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Am I Mr Smith, modern flat design style",
+          "imagePath": "/api/image/1/3/0"
         },
         {
           "question": "Are you Mr Brown?",
           "answer": "No, I'm not Mr Brown; I'm Jack Brown.",
           "questionZh": "你是布朗先生吗？",
-          "answerZh": "不，我不是布朗先生；我是杰克·布朗。"
+          "answerZh": "不，我不是布朗先生；我是杰克·布朗。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are you Mr Brown, modern flat design style",
+          "imagePath": "/api/image/1/3/1"
         },
         {
           "question": "Is he Mr Smith?",
           "answer": "No, he isn't Mr Smith; he's Mr Brown.",
           "questionZh": "他是史密斯先生吗？",
-          "answerZh": "不，他不是史密斯先生；他是布朗先生。"
+          "answerZh": "不，他不是史密斯先生；他是布朗先生。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is he Mr Smith, modern flat design style",
+          "imagePath": "/api/image/1/3/2"
         },
         {
           "question": "Is she Mr Brown?",
           "answer": "No, she isn't Mr Brown; she's Mrs Brown.",
           "questionZh": "她是布朗先生吗？",
-          "answerZh": "不，她不是布朗先生；她是布朗太太。"
+          "answerZh": "不，她不是布朗先生；她是布朗太太。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is she Mr Brown, modern flat design style",
+          "imagePath": "/api/image/1/3/3"
         }
       ]
     },
@@ -303,56 +601,105 @@
         "zh": "空间相对方位对比：在...前面 (in front of) 与在...后面 (behind)。宾格人称代词的使用。"
       },
       "vocabulary": [
-        { "word": "in front of", "phonetics": "/ɪn frʌnt ɒv/", "meaningZh": "在...前面", "meaningEn": "Close to the front part of something." },
-        { "word": "behind", "phonetics": "/bɪˈhaɪnd/", "meaningZh": "在...后面", "meaningEn": "At or to the far side of something." },
-        { "word": "me", "phonetics": "/miː/", "meaningZh": "我 (宾格)", "meaningEn": "Objective case of pronoun I." },
-        { "word": "you", "phonetics": "/juː/", "meaningZh": "你 / 你们 (宾格)", "meaningEn": "Objective case of pronoun you." },
-        { "word": "him", "phonetics": "/hɪm/", "meaningZh": "他 (宾格)", "meaningEn": "Objective case of pronoun he." },
-        { "word": "her", "phonetics": "/hɜːr/", "meaningZh": "她 (宾格)", "meaningEn": "Objective case of pronoun she." },
-        { "word": "house", "phonetics": "/haʊs/", "meaningZh": "房子", "meaningEn": "A building for human habitation." }
+        {
+          "word": "in front of",
+          "phonetics": "/ɪn frʌnt ɒv/",
+          "meaningZh": "在...前面",
+          "meaningEn": "Close to the front part of something."
+        },
+        {
+          "word": "behind",
+          "phonetics": "/bɪˈhaɪnd/",
+          "meaningZh": "在...后面",
+          "meaningEn": "At or to the far side of something."
+        },
+        {
+          "word": "me",
+          "phonetics": "/miː/",
+          "meaningZh": "我 (宾格)",
+          "meaningEn": "Objective case of pronoun I."
+        },
+        {
+          "word": "you",
+          "phonetics": "/juː/",
+          "meaningZh": "你 / 你们 (宾格)",
+          "meaningEn": "Objective case of pronoun you."
+        },
+        {
+          "word": "him",
+          "phonetics": "/hɪm/",
+          "meaningZh": "他 (宾格)",
+          "meaningEn": "Objective case of pronoun he."
+        },
+        {
+          "word": "her",
+          "phonetics": "/hɜːr/",
+          "meaningZh": "她 (宾格)",
+          "meaningEn": "Objective case of pronoun she."
+        },
+        {
+          "word": "house",
+          "phonetics": "/haʊs/",
+          "meaningZh": "房子",
+          "meaningEn": "A building for human habitation."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "Where's the table?",
           "answer": "The table's in front of me.",
           "questionZh": "桌子在哪里？",
-          "answerZh": "桌子在我的前面。"
+          "answerZh": "桌子在我的前面。",
+          "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/4/0"
         },
         {
           "question": "Is the wall in front of you?",
           "answer": "No, the wall isn't in front of me; it's behind me.",
           "questionZh": "墙壁在你的前面吗？",
-          "answerZh": "不，墙壁不在我的前面；它在我的后面。"
+          "answerZh": "不，墙壁不在我的前面；它在我的后面。",
+          "prompt": "A beautiful clean vector illustration showing a wall, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/4/1"
         },
         {
           "question": "Is the table behind me?",
           "answer": "No, the table isn't behind you; it's in front of you.",
           "questionZh": "桌子在我的后面吗？",
-          "answerZh": "不，桌子不在你的后面；它在你的前面。"
+          "answerZh": "不，桌子不在你的后面；它在你的前面。",
+          "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/4/2"
         },
         {
           "question": "Where's the house?",
           "answer": "The house is behind him.",
           "questionZh": "房子在哪里？",
-          "answerZh": "房子在他的后面。"
+          "answerZh": "房子在他的后面。",
+          "prompt": "A beautiful clean vector illustration showing a house, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/4/3"
         },
         {
           "question": "Where's the house?",
           "answer": "The house is behind her.",
           "questionZh": "房子在哪里？",
-          "answerZh": "房子在她的后面。"
+          "answerZh": "房子在她的后面。",
+          "prompt": "A beautiful clean vector illustration showing a house, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/4/4"
         },
         {
           "question": "Are you behind her?",
           "answer": "No, I'm not behind her; I'm in front of her.",
           "questionZh": "你在她的后面吗？",
-          "answerZh": "不，我不在她的后面；我在她的前面。"
+          "answerZh": "不，我不在她的后面；我在她的前面。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are you behind her, modern flat design style",
+          "imagePath": "/api/image/1/4/5"
         },
         {
           "question": "Am I in front of him?",
           "answer": "No, you aren't in front of him; you're behind him.",
           "questionZh": "我在他的前面吗？",
-          "answerZh": "不，你不在他的前面；你在他的后面。"
+          "answerZh": "不，你不在他的前面；你在他的后面。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Am I in front of him, modern flat design style",
+          "imagePath": "/api/image/1/4/6"
         }
       ]
     },
@@ -366,41 +713,71 @@
         "zh": "现在进行时的主动动作描述 (standing, sitting, taking from, putting on)。描述正在发生的物理行为。"
       },
       "vocabulary": [
-        { "word": "standing", "phonetics": "/ˈstæn.dɪŋ/", "meaningZh": "站立的 / 站着", "meaningEn": "Remaining upright on one's feet." },
-        { "word": "sitting", "phonetics": "/ˈsɪt.ɪŋ/", "meaningZh": "坐着的 / 坐着", "meaningEn": "Resting on buttocks with torso upright." },
-        { "word": "taking from", "phonetics": "/ˈteɪ.kɪŋ frɒm/", "meaningZh": "从...拿走", "meaningEn": "Removing or acquiring from a source." },
-        { "word": "putting on", "phonetics": "/ˈpʊt.ɪŋ ɒn/", "meaningZh": "把...放上", "meaningEn": "Placing something onto a surface." }
+        {
+          "word": "standing",
+          "phonetics": "/ˈstæn.dɪŋ/",
+          "meaningZh": "站立的 / 站着",
+          "meaningEn": "Remaining upright on one's feet."
+        },
+        {
+          "word": "sitting",
+          "phonetics": "/ˈsɪt.ɪŋ/",
+          "meaningZh": "坐着的 / 坐着",
+          "meaningEn": "Resting on buttocks with torso upright."
+        },
+        {
+          "word": "taking from",
+          "phonetics": "/ˈteɪ.kɪŋ frɒm/",
+          "meaningZh": "从...拿走",
+          "meaningEn": "Removing or acquiring from a source."
+        },
+        {
+          "word": "putting on",
+          "phonetics": "/ˈpʊt.ɪŋ ɒn/",
+          "meaningZh": "把...放上",
+          "meaningEn": "Placing something onto a surface."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "Are you standing on the floor?",
           "answer": "No, I'm not standing on the floor; I'm sitting on the chair.",
           "questionZh": "你正站在地板上吗？",
-          "answerZh": "不，我不是站在地板上；我正坐在椅子上。"
+          "answerZh": "不，我不是站在地板上；我正坐在椅子上。",
+          "prompt": "A clean minimalist vector illustration of a person standing floor, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/5/0"
         },
         {
           "question": "Am I sitting on the chair?",
           "answer": "No, you aren't sitting on the chair; you're standing on the floor.",
           "questionZh": "我正坐在椅子上吗？",
-          "answerZh": "不，你不是坐在椅子上；你正站在地板上。"
+          "answerZh": "不，你不是坐在椅子上；你正站在地板上。",
+          "prompt": "A clean minimalist vector illustration of a person standing chair, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/5/1"
         },
         {
           "question": "Are you standing in front of me?",
           "answer": "No, I'm not standing in front of you; I'm sitting in front of you.",
           "questionZh": "你正站在我的前面吗？",
-          "answerZh": "不，我不是站在你的前面；我正坐在你的前面。"
+          "answerZh": "不，我不是站在你的前面；我正坐在你的前面。",
+          "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/5/2"
         },
         {
           "question": "Am I putting the book on the floor?",
           "answer": "No, you aren't putting the book on the floor; you're taking the book from the table.",
           "questionZh": "我正把书放在地板上吗？",
-          "answerZh": "不，你不是把书放在地板上；你是从桌上把书拿起来。"
+          "answerZh": "不，你不是把书放在地板上；你是从桌上把书拿起来。",
+          "prompt": "A clean minimalist vector illustration of a book on a floor, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/5/3"
         },
         {
           "question": "Am I taking the pen from the table?",
           "answer": "No, you aren't taking the pen from the table; you're putting the book on the table.",
           "questionZh": "我正从桌上拿走钢笔吗？",
-          "answerZh": "不，你不是从桌上拿走钢笔；你是把书放在桌上。"
+          "answerZh": "不，你不是从桌上拿走钢笔；你是把书放在桌上。",
+          "prompt": "A clean minimalist vector illustration of a pen in a table, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/5/4"
         }
       ]
     },
@@ -414,65 +791,103 @@
         "zh": "使用 'what am I doing?' 句式查询正在发生的行为（打开 opening，关闭 closing，做 doing）。使用 'which' 区分已知选项。"
       },
       "vocabulary": [
-        { "word": "opening", "phonetics": "/ˈəʊ.pən.ɪŋ/", "meaningZh": "正在打开", "meaningEn": "Unclosing or unfolding something." },
-        { "word": "closing", "phonetics": "/ˈkləʊ.zɪŋ/", "meaningZh": "正在关闭", "meaningEn": "Moving a barrier to seal an opening." },
-        { "word": "doing", "phonetics": "/ˈduː.ɪŋ/", "meaningZh": "正在做", "meaningEn": "Performing an action or activity." },
-        { "word": "which", "phonetics": "/wɪtʃ/", "meaningZh": "哪一个", "meaningEn": "Asking for choice from a limited set." }
+        {
+          "word": "opening",
+          "phonetics": "/ˈəʊ.pən.ɪŋ/",
+          "meaningZh": "正在打开",
+          "meaningEn": "Unclosing or unfolding something."
+        },
+        {
+          "word": "closing",
+          "phonetics": "/ˈkləʊ.zɪŋ/",
+          "meaningZh": "正在关闭",
+          "meaningEn": "Moving a barrier to seal an opening."
+        },
+        {
+          "word": "doing",
+          "phonetics": "/ˈduː.ɪŋ/",
+          "meaningZh": "正在做",
+          "meaningEn": "Performing an action or activity."
+        },
+        {
+          "word": "which",
+          "phonetics": "/wɪtʃ/",
+          "meaningZh": "哪一个",
+          "meaningEn": "Asking for choice from a limited set."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "Am I closing the door?",
           "answer": "No, you aren't closing the door; you're opening the book.",
           "questionZh": "我正在关门吗？",
-          "answerZh": "不，你不是在关门；你正在打开书本。"
+          "answerZh": "不，你不是在关门；你正在打开书本。",
+          "prompt": "A clean minimalist vector illustration of a person opening door, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/6/0"
         },
         {
           "question": "Am I opening the window?",
           "answer": "No, you aren't opening the window; you're closing the book.",
           "questionZh": "我正在开窗户吗？",
-          "answerZh": "不，你不是在开窗户；你正在合上书本。"
+          "answerZh": "不，你不是在开窗户；你正在合上书本。",
+          "prompt": "A clean minimalist vector illustration of a person opening window, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/6/1"
         },
         {
           "question": "What am I doing?",
           "answer": "You're taking the book from the table.",
           "questionZh": "我正在做什么？",
-          "answerZh": "你正在从桌上拿走书本。"
+          "answerZh": "你正在从桌上拿走书本。",
+          "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/6/2"
         },
         {
           "question": "What am I doing?",
           "answer": "You're opening the book.",
           "questionZh": "我正在做什么？",
-          "answerZh": "你正在打开书本。"
+          "answerZh": "你正在打开书本。",
+          "prompt": "A clean minimalist vector illustration of a person opening, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/6/3"
         },
         {
           "question": "What am I doing?",
           "answer": "You're closing the book.",
           "questionZh": "我正在做什么？",
-          "answerZh": "你正在合上书本。"
+          "answerZh": "你正在合上书本。",
+          "prompt": "A clean minimalist vector illustration of a person closing, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/6/4"
         },
         {
           "question": "What am I doing?",
           "answer": "You're putting the book on the table.",
           "questionZh": "我正在做什么？",
-          "answerZh": "你正在把书本放到桌子上。"
+          "answerZh": "你正在把书本放到桌子上。",
+          "prompt": "A beautiful clean vector illustration showing a book, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/6/5"
         },
         {
           "question": "Which pencil's black?",
           "answer": "This pencil's black.",
           "questionZh": "哪支铅笔是黑色的？",
-          "answerZh": "这支铅笔是黑色的。"
+          "answerZh": "这支铅笔是黑色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which pencil's black, modern flat design style",
+          "imagePath": "/api/image/1/6/6"
         },
         {
           "question": "Which book's open?",
           "answer": "This book's open.",
           "questionZh": "哪本书是打开的？",
-          "answerZh": "这本书是打开的。"
+          "answerZh": "这本书是打开的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which book's open, modern flat design style",
+          "imagePath": "/api/image/1/6/7"
         },
         {
           "question": "Which book's closed?",
           "answer": "This book's closed.",
           "questionZh": "哪本书是合上的？",
-          "answerZh": "这本书是合上的。"
+          "answerZh": "这本书是合上的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which book's closed, modern flat design style",
+          "imagePath": "/api/image/1/6/8"
         }
       ]
     },
@@ -486,74 +901,129 @@
         "zh": "指示代词对比：this（这）与 that（那）。引入复数代词与动词一致关系（these, those, we're, they're）。"
       },
       "vocabulary": [
-        { "word": "this", "phonetics": "/ðɪs/", "meaningZh": "这 / 这个 (近指)", "meaningEn": "The person or thing nearby." },
-        { "word": "that", "phonetics": "/ðæt/", "meaningZh": "那 / 那个 (远指)", "meaningEn": "The person or thing further away." },
-        { "word": "chart", "phonetics": "/tʃɑːt/", "meaningZh": "图表 / 展示板", "meaningEn": "A sheet of information in form of table/diagram." },
-        { "word": "these", "phonetics": "/ðiːz/", "meaningZh": "这些 (近指复数)", "meaningEn": "Plural of this." },
-        { "word": "those", "phonetics": "/ðəʊz/", "meaningZh": "那些 (远指复数)", "meaningEn": "Plural of that." },
-        { "word": "we are / we're", "phonetics": "/wiː ɑːr/ /wɪər/", "meaningZh": "我们是", "meaningEn": "First person plural subject pronoun." },
-        { "word": "they are / they're", "phonetics": "/ðeɪ ɑːr/ /ðeər/", "meaningZh": "他们是", "meaningEn": "Third person plural subject pronoun." }
+        {
+          "word": "this",
+          "phonetics": "/ðɪs/",
+          "meaningZh": "这 / 这个 (近指)",
+          "meaningEn": "The person or thing nearby."
+        },
+        {
+          "word": "that",
+          "phonetics": "/ðæt/",
+          "meaningZh": "那 / 那个 (远指)",
+          "meaningEn": "The person or thing further away."
+        },
+        {
+          "word": "chart",
+          "phonetics": "/tʃɑːt/",
+          "meaningZh": "图表 / 展示板",
+          "meaningEn": "A sheet of information in form of table/diagram."
+        },
+        {
+          "word": "these",
+          "phonetics": "/ðiːz/",
+          "meaningZh": "这些 (近指复数)",
+          "meaningEn": "Plural of this."
+        },
+        {
+          "word": "those",
+          "phonetics": "/ðəʊz/",
+          "meaningZh": "那些 (远指复数)",
+          "meaningEn": "Plural of that."
+        },
+        {
+          "word": "we are / we're",
+          "phonetics": "/wiː ɑːr/ /wɪər/",
+          "meaningZh": "我们是",
+          "meaningEn": "First person plural subject pronoun."
+        },
+        {
+          "word": "they are / they're",
+          "phonetics": "/ðeɪ ɑːr/ /ðeər/",
+          "meaningZh": "他们是",
+          "meaningEn": "Third person plural subject pronoun."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "What colour's this pencil?",
           "answer": "This pencil's black.",
           "questionZh": "这支铅笔是什么颜色的？",
-          "answerZh": "这支铅笔是黑色的。"
+          "answerZh": "这支铅笔是黑色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
+          "imagePath": "/api/image/1/7/0"
         },
         {
           "question": "What colour's that pencil?",
           "answer": "That pencil's white.",
           "questionZh": "那支铅笔是什么颜色的？",
-          "answerZh": "那支铅笔是白色的。"
+          "answerZh": "那支铅笔是白色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour's that pencil, modern flat design style",
+          "imagePath": "/api/image/1/7/1"
         },
         {
           "question": "Where's this pencil?",
           "answer": "This pencil's on the chart.",
           "questionZh": "这支铅笔在哪里？",
-          "answerZh": "这支铅笔在挂图上。"
+          "answerZh": "这支铅笔在挂图上。",
+          "prompt": "A beautiful clean vector illustration showing a chart, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/7/2"
         },
         {
           "question": "Where's that pencil?",
           "answer": "That pencil's on the wall.",
           "questionZh": "那支铅笔在哪里？",
-          "answerZh": "那支铅笔在墙壁上。"
+          "answerZh": "那支铅笔在墙壁上。",
+          "prompt": "A beautiful clean vector illustration showing a wall, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/7/3"
         },
         {
           "question": "Are we sitting?",
           "answer": "Yes, we're sitting.",
           "questionZh": "我们坐着吗？",
-          "answerZh": "是的，我们正坐着。"
+          "answerZh": "是的，我们正坐着。",
+          "prompt": "A clean minimalist vector illustration of a person sitting, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/7/4"
         },
         {
           "question": "Where are we sitting?",
           "answer": "We're sitting on the chairs.",
           "questionZh": "我们坐在哪里？",
-          "answerZh": "我们正坐在椅子上。"
+          "answerZh": "我们正坐在椅子上。",
+          "prompt": "A clean minimalist vector illustration of a person sitting, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/7/5"
         },
         {
           "question": "Are they standing?",
           "answer": "Yes, they're standing.",
           "questionZh": "他们站着吗？",
-          "answerZh": "是的，他们正站着。"
+          "answerZh": "是的，他们正站着。",
+          "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/7/6"
         },
         {
           "question": "Where are they standing?",
           "answer": "They're standing in front of the house.",
           "questionZh": "他们站在哪里？",
-          "answerZh": "他们正站在房子前面。"
+          "answerZh": "他们正站在房子前面。",
+          "prompt": "A clean minimalist vector illustration of a person standing, simple colored background, modern flat design style",
+          "imagePath": "/api/image/1/7/7"
         },
         {
           "question": "What colour are these pencils?",
           "answer": "These pencils are black and green.",
           "questionZh": "这些铅笔是什么颜色的？",
-          "answerZh": "这些铅笔是黑色和绿色的。"
+          "answerZh": "这些铅笔是黑色和绿色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour are these pencils, modern flat design style",
+          "imagePath": "/api/image/1/7/8"
         },
         {
           "question": "What colour are those pencils?",
           "answer": "Those pencils are white and brown.",
           "questionZh": "那些铅笔是什么颜色的？",
-          "answerZh": "那些铅笔是白色和棕色的。"
+          "answerZh": "那些铅笔是白色和棕色的。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour are those pencils, modern flat design style",
+          "imagePath": "/api/image/1/7/9"
         }
       ]
     },
@@ -567,43 +1037,83 @@
         "zh": "规则及不规则复数名词变化（如 books, men, women）。元辅音的连读发音规则。"
       },
       "vocabulary": [
-        { "word": "plural", "phonetics": "/ˈplʊə.rəl/", "meaningZh": "复数", "meaningEn": "More than one in number." },
-        { "word": "men", "phonetics": "/men/", "meaningZh": "男人 (复数)", "meaningEn": "Plural of man." },
-        { "word": "women", "phonetics": "/ˈwɪm.ɪn/", "meaningZh": "女人 (复数)", "meaningEn": "Plural of woman." },
-        { "word": "clothes", "phonetics": "/kləʊðz/", "meaningZh": "衣服 / 服装", "meaningEn": "Items worn to cover the body." },
-        { "word": "alphabet", "phonetics": "/ˈæl.fə.bet/", "meaningZh": "字母表", "meaningEn": "A set of letters in fixed order." },
-        { "word": "letter", "phonetics": "/ˈlet.ər/", "meaningZh": "字母 / 信件", "meaningEn": "A character representing one or more sounds." }
+        {
+          "word": "plural",
+          "phonetics": "/ˈplʊə.rəl/",
+          "meaningZh": "复数",
+          "meaningEn": "More than one in number."
+        },
+        {
+          "word": "men",
+          "phonetics": "/men/",
+          "meaningZh": "男人 (复数)",
+          "meaningEn": "Plural of man."
+        },
+        {
+          "word": "women",
+          "phonetics": "/ˈwɪm.ɪn/",
+          "meaningZh": "女人 (复数)",
+          "meaningEn": "Plural of woman."
+        },
+        {
+          "word": "clothes",
+          "phonetics": "/kləʊðz/",
+          "meaningZh": "衣服 / 服装",
+          "meaningEn": "Items worn to cover the body."
+        },
+        {
+          "word": "alphabet",
+          "phonetics": "/ˈæl.fə.bet/",
+          "meaningZh": "字母表",
+          "meaningEn": "A set of letters in fixed order."
+        },
+        {
+          "word": "letter",
+          "phonetics": "/ˈlet.ər/",
+          "meaningZh": "字母 / 信件",
+          "meaningEn": "A character representing one or more sounds."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "What's the plural of 'book'?",
           "answer": "The plural of 'book' is 'books'.",
           "questionZh": "'book'的复数形式是什么？",
-          "answerZh": "'book'的复数形式是'books'。"
+          "answerZh": "'book'的复数形式是'books'。",
+          "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/8/0"
         },
         {
           "question": "What's the plural of 'man'?",
           "answer": "The plural of 'man' is 'men'.",
           "questionZh": "'man'的复数形式是什么？",
-          "answerZh": "'man'的复数形式是'men'。"
+          "answerZh": "'man'的复数形式是'men'。",
+          "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/8/1"
         },
         {
           "question": "What's the plural of 'woman'?",
           "answer": "The plural of 'woman' is 'women'.",
           "questionZh": "'woman'的复数形式是什么？",
-          "answerZh": "'woman'的复数形式是'women'。"
+          "answerZh": "'woman'的复数形式是'women'。",
+          "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/8/2"
         },
         {
           "question": "What are these?",
           "answer": "These are clothes.",
           "questionZh": "这些是什么？",
-          "answerZh": "这些是衣服。"
+          "answerZh": "这些是衣服。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What are these, modern flat design style",
+          "imagePath": "/api/image/1/8/3"
         },
         {
           "question": "What letter's this?",
           "answer": "It's the letter A.",
           "questionZh": "这是什么字母？",
-          "answerZh": "这是字母 A。"
+          "answerZh": "这是字母 A。",
+          "prompt": "A beautiful clean vector illustration showing a letter, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/8/4"
         }
       ]
     },
@@ -617,35 +1127,63 @@
         "zh": "元音（A, E, I, O, U）与辅音（consonants）的语音辨析。Stage 1 所有核心句型与词汇综合复习。"
       },
       "vocabulary": [
-        { "word": "vowel", "phonetics": "/ˈvaʊ.əl/", "meaningZh": "元音", "meaningEn": "A speech sound produced without friction." },
-        { "word": "consonant", "phonetics": "/ˈkɒn.sə.nənt/", "meaningZh": "辅音", "meaningEn": "A basic speech sound that can be combined with a vowel." },
-        { "word": "before", "phonetics": "/bɪˈfɔːr/", "meaningZh": "在...之前", "meaningEn": "During the period of time preceding." },
-        { "word": "after", "phonetics": "/ˈɑːf.tər/", "meaningZh": "在...之后", "meaningEn": "Later in time than." }
+        {
+          "word": "vowel",
+          "phonetics": "/ˈvaʊ.əl/",
+          "meaningZh": "元音",
+          "meaningEn": "A speech sound produced without friction."
+        },
+        {
+          "word": "consonant",
+          "phonetics": "/ˈkɒn.sə.nənt/",
+          "meaningZh": "辅音",
+          "meaningEn": "A basic speech sound that can be combined with a vowel."
+        },
+        {
+          "word": "before",
+          "phonetics": "/bɪˈfɔːr/",
+          "meaningZh": "在...之前",
+          "meaningEn": "During the period of time preceding."
+        },
+        {
+          "word": "after",
+          "phonetics": "/ˈɑːf.tər/",
+          "meaningZh": "在...之后",
+          "meaningEn": "Later in time than."
+        }
       ],
       "drillParagraphs": [
         {
           "question": "What are the five vowels?",
           "answer": "The five vowels are A, E, I, O, U.",
           "questionZh": "哪五个是元音？",
-          "answerZh": "五个元音是 A、E、I、O、U。"
+          "answerZh": "五个元音是 A、E、I、O、U。",
+          "prompt": "A beautiful clean vector illustration showing a five, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/9/0"
         },
         {
           "question": "Is the letter B a vowel?",
           "answer": "No, the letter B isn't a vowel; it's a consonant.",
           "questionZh": "字母 B 是元音吗？",
-          "answerZh": "不，字母 B 不是元音；它是一个辅音。"
+          "answerZh": "不，字母 B 不是元音；它是一个辅音。",
+          "prompt": "A beautiful clean vector illustration showing a letter, simple colored background, modern flat design",
+          "imagePath": "/api/image/1/9/1"
         },
         {
           "question": "Which letter's before E?",
           "answer": "D's before E.",
           "questionZh": "哪个字母在 E 之前？",
-          "answerZh": "D 在 E 之前。"
+          "answerZh": "D 在 E 之前。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which letter's before E, modern flat design style",
+          "imagePath": "/api/image/1/9/2"
         },
         {
           "question": "Which letter's after I?",
           "answer": "J's after I.",
           "questionZh": "哪个字母在 I 之后？",
-          "answerZh": "J 在 I 之后。"
+          "answerZh": "J 在 I 之后。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which letter's after I, modern flat design style",
+          "imagePath": "/api/image/1/9/3"
         }
       ]
     }
@@ -658,7 +1196,9 @@
       "questionText": "Is this a pen?",
       "expectedAnswer": "No, it isn't a pen; it's a pencil.",
       "questionTextZh": "这是一支钢笔吗？",
-      "expectedAnswerZh": "不，它不是一支钢笔；它是一支铅笔。"
+      "expectedAnswerZh": "不，它不是一支钢笔；它是一支铅笔。",
+      "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/1/0"
     },
     {
       "id": "s1_q2",
@@ -667,7 +1207,9 @@
       "questionText": "What's this?",
       "expectedAnswer": "It's a pen.",
       "questionTextZh": "这是什么？",
-      "expectedAnswerZh": "这是一支钢笔。"
+      "expectedAnswerZh": "这是一支钢笔。",
+      "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/1/1"
     },
     {
       "id": "s1_q3",
@@ -676,7 +1218,9 @@
       "questionText": "Is the pen short?",
       "expectedAnswer": "No, the pen isn't short; it's long.",
       "questionTextZh": "这支钢笔短吗？",
-      "expectedAnswerZh": "不，这支钢笔不短；它是长的。"
+      "expectedAnswerZh": "不，这支钢笔不短；它是长的。",
+      "prompt": "A beautiful clean vector illustration showing a pen, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/1/2"
     },
     {
       "id": "s1_q4",
@@ -685,7 +1229,9 @@
       "questionText": "Is the book on the table?",
       "expectedAnswer": "Yes, the book is on the table.",
       "questionTextZh": "书在桌子上吗？",
-      "expectedAnswerZh": "是的，书在桌子上。"
+      "expectedAnswerZh": "是的，书在桌子上。",
+      "prompt": "A clean minimalist vector illustration of a pen in a book, simple colored background, modern flat design style",
+      "imagePath": "/api/image/1/2/0"
     },
     {
       "id": "s1_q5",
@@ -694,7 +1240,9 @@
       "questionText": "Where's the pen?",
       "expectedAnswer": "The pen's on the book.",
       "questionTextZh": "钢笔在哪里？",
-      "expectedAnswerZh": "钢笔在书上面。"
+      "expectedAnswerZh": "钢笔在书上面。",
+      "prompt": "A clean minimalist vector illustration of a pen under a book, simple colored background, modern flat design style",
+      "imagePath": "/api/image/1/2/1"
     },
     {
       "id": "s1_q6",
@@ -703,7 +1251,9 @@
       "questionText": "Is the pen under the book?",
       "expectedAnswer": "No, the pen isn't under the book; it's on the book.",
       "questionTextZh": "钢笔在书本下面吗？",
-      "expectedAnswerZh": "不，钢笔不在书下面；它在书上面。"
+      "expectedAnswerZh": "不，钢笔不在书下面；它在书上面。",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Is this Anna Brown, modern flat design style",
+      "imagePath": "/api/image/1/2/2"
     },
     {
       "id": "s1_q7",
@@ -712,7 +1262,9 @@
       "questionText": "Are you Mr Brown?",
       "expectedAnswer": "No, I'm not Mr Brown; I'm Jack Brown.",
       "questionTextZh": "你是布朗先生吗？",
-      "expectedAnswerZh": "不，我不是布朗先生；我是杰克·布朗。"
+      "expectedAnswerZh": "不，我不是布朗先生；我是杰克·布朗。",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Am I Mr Smith, modern flat design style",
+      "imagePath": "/api/image/1/3/0"
     },
     {
       "id": "s1_q8",
@@ -721,7 +1273,9 @@
       "questionText": "Is the wall in front of you?",
       "expectedAnswer": "No, the wall isn't in front of me; it's behind me.",
       "questionTextZh": "墙壁在你的前面吗？",
-      "expectedAnswerZh": "不，墙壁不在我的前面；它在我的后面。"
+      "expectedAnswerZh": "不，墙壁不在我的前面；它在我的后面。",
+      "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/4/0"
     },
     {
       "id": "s1_q9",
@@ -730,7 +1284,9 @@
       "questionText": "Are you standing on the floor?",
       "expectedAnswer": "No, I'm not standing on the floor; I'm sitting on the chair.",
       "questionTextZh": "你正站在地板上吗？",
-      "expectedAnswerZh": "不，我不是站在地板上；我正坐在椅子上。"
+      "expectedAnswerZh": "不，我不是站在地板上；我正坐在椅子上。",
+      "prompt": "A clean minimalist vector illustration of a person standing floor, simple colored background, modern flat design style",
+      "imagePath": "/api/image/1/5/0"
     },
     {
       "id": "s1_q10",
@@ -739,7 +1295,9 @@
       "questionText": "What am I doing?",
       "expectedAnswer": "You're taking the book from the table.",
       "questionTextZh": "我正在做什么？",
-      "expectedAnswerZh": "你正在从桌上拿走书本。"
+      "expectedAnswerZh": "你正在从桌上拿走书本。",
+      "prompt": "A clean minimalist vector illustration of a person opening door, simple colored background, modern flat design style",
+      "imagePath": "/api/image/1/6/0"
     },
     {
       "id": "s1_q11",
@@ -748,7 +1306,9 @@
       "questionText": "Where are we sitting?",
       "expectedAnswer": "We're sitting on the chairs.",
       "questionTextZh": "我们坐在哪里？",
-      "expectedAnswerZh": "我们正坐在椅子上。"
+      "expectedAnswerZh": "我们正坐在椅子上。",
+      "prompt": "A clean symbolic vector illustration representing the concept of: What colour's this pencil, modern flat design style",
+      "imagePath": "/api/image/1/7/0"
     },
     {
       "id": "s1_q12",
@@ -757,7 +1317,9 @@
       "questionText": "What's the plural of 'man'?",
       "expectedAnswer": "The plural of 'man' is 'men'.",
       "questionTextZh": "'man'的复数形式是什么？",
-      "expectedAnswerZh": "'man'的复数形式是'men'。"
+      "expectedAnswerZh": "'man'的复数形式是'men'。",
+      "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/8/0"
     },
     {
       "id": "s1_q13",
@@ -766,7 +1328,9 @@
       "questionText": "Is the letter B a vowel?",
       "expectedAnswer": "No, the letter B isn't a vowel; it's a consonant.",
       "questionTextZh": "字母 B 是元音吗？",
-      "expectedAnswerZh": "不，字母 B 不是元音；它是一个辅音。"
+      "expectedAnswerZh": "不，字母 B 不是元音；它是一个辅音。",
+      "prompt": "A beautiful clean vector illustration showing a five, simple colored background, modern flat design",
+      "imagePath": "/api/image/1/9/0"
     }
   ],
   "flashcards": [

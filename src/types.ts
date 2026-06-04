@@ -16,6 +16,8 @@ export interface Question {
   expectedAnswerId?: string;
   questionTextHi?: string;
   expectedAnswerHi?: string;
+  prompt?: string;
+  imagePath?: string;
 }
 
 export interface Flashcard {
@@ -126,6 +128,8 @@ export interface TextbookLesson {
     answerId?: string;
     questionHi?: string;
     answerHi?: string;
+    prompt?: string;
+    imagePath?: string;
   }>;
 }
 

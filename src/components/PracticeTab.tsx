@@ -362,6 +362,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
   }
   const currentQuestionIndex = progress.activeQuestionIndex % (questions.length || 1);
   const activeQuestion: Question | undefined = questions[currentQuestionIndex];
+  const activeImageUrl = activeQuestion?.imagePath || (activeQuestion ? QUESTION_IMAGES[activeQuestion.id] : undefined);
 
   // Get current flashcards
   const flashcards = stageFlashcards;
@@ -370,6 +371,15 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
 
   // 3D card flipped state
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
+
+  // Reset loading/error state when activeQuestion changes
+  useEffect(() => {
+    setImageLoading(true);
+    setImageError(false);
+  }, [activeQuestion?.id]);
 
   // AI COACH STATE
   const [explainLoading, setExplainLoading] = useState(false);
@@ -1068,7 +1078,7 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                 
                 <div className="flex items-center gap-1.5 flex-wrap justify-end">
                   {/* Context Image Toggle */}
-                  {QUESTION_IMAGES[activeQuestion.id] && (
+                  {activeImageUrl && (
                     <button
                       onClick={() => setShowDrillImage(!showDrillImage)}
                       className={`flex items-center gap-1 px-2 py-0.5 rounded-lg text-[10.5px] font-bold h-7 border cursor-pointer active:scale-95 transition-all ${
@@ -1106,81 +1116,116 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               </div>
 
               {/* Contextual Illustration Card (Sleek Photographic Exhibition frame displaying the full focal image with absolute elegance) */}
-              {showDrillImage && QUESTION_IMAGES[activeQuestion.id] && (
+              {showDrillImage && activeImageUrl && (
                 <div 
                   id="drill-context-container" 
                   ref={drillContainerRef}
-                   className="relative group overflow-hidden rounded-2xl border border-brand-beige shadow-xs bg-[#FAF5EE] flex items-center justify-center transition-all duration-500 ease-out mt-1.5 h-52 sm:h-60 w-full"
+                  className="relative group overflow-hidden rounded-2xl border border-brand-beige shadow-xs bg-[#FAF5EE] flex items-center justify-center transition-all duration-500 ease-out mt-1.5 h-52 sm:h-60 w-full"
                 >
+                  {/* Loading overlay with shimmering animation */}
+                  {imageLoading && !imageError && (
+                    <div className="absolute inset-0 bg-brand-cream/60 flex flex-col items-center justify-center text-center p-4 z-10 animate-pulse">
+                      <div className="w-8 h-8 rounded-full border-4 border-brand-primary/20 border-t-brand-primary animate-spin mb-2" />
+                      <span className="text-[10px] font-bold text-brand-dark/50 tracking-wider">
+                        {locale === 'zh' ? 'AI 正在智能构图绘制中...' : 'AI is painting this scene...'}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Error / Fallback info overlay */}
+                  {imageError && (
+                    <div className="absolute inset-0 bg-brand-cream/90 flex flex-col items-center justify-center text-center p-5 z-10 border border-brand-beige/50">
+                      <span className="text-2xl mb-1">🎨</span>
+                      <span className="text-xs font-bold text-brand-dark">
+                        {locale === 'zh' ? '场景概念关键词' : 'Visual Scene Prompt'}
+                      </span>
+                      <p className="text-[11px] text-brand-dark/60 font-semibold max-w-xs leading-normal mt-1 italic">
+                        "{activeQuestion.prompt || activeQuestion.questionText}"
+                      </p>
+                      <p className="text-[9.5px] text-[#ff6b00] font-mono mt-3 uppercase tracking-wider">
+                        {locale === 'zh' ? '提示：AI生图接口仅在云端部署有效' : 'Notice: Live Image API active in cloud deployment'}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Blurry Ambient Light Halo matching the photo colors behind the subject */}
-                  <img 
-                    src={QUESTION_IMAGES[activeQuestion.id].replace('fit=crop', 'fit=max')} 
-                    alt="Scenic Background Ambient" 
-                    className="absolute blur-2xl scale-110 opacity-30 pointer-events-none select-none"
-                    style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
-                      width: `${drillContainerSize.height}px`,
-                      height: `${drillContainerSize.width}px`,
-                      transform: 'translate(-50%, -50%) rotate(90deg)',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                    } : {
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
-                    referrerPolicy="no-referrer"
-                  />
+                  {!imageError && (
+                    <img 
+                      src={activeImageUrl} 
+                      alt="Scenic Background Ambient" 
+                      className={`absolute blur-2xl scale-110 opacity-30 pointer-events-none select-none transition-opacity duration-700 ${imageLoading ? 'opacity-0' : 'opacity-30'}`}
+                      style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
+                        width: `${drillContainerSize.height}px`,
+                        height: `${drillContainerSize.width}px`,
+                        transform: 'translate(-50%, -50%) rotate(90deg)',
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                      } : {
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
 
                   {/* High-end Minimalist Cream Grid background pattern indicating structural layout focus */}
                   <div className="absolute inset-0 bg-[radial-gradient(#E5D5C5_1.2px,transparent_1.2px)] [background-size:20px_20px] opacity-25 pointer-events-none" />
 
-                  {/* Fully Visible Foreground image scaled perfectly with zero unwanted server cropping */}
-                  <img 
-                    id="drill-context-image"
-                    src={QUESTION_IMAGES[activeQuestion.id].replace('fit=crop', 'fit=max')} 
-                    alt="Scenic Context" 
-                    onLoad={(e) => {
-                      const img = e.currentTarget;
-                      const portrait = img.naturalHeight > img.naturalWidth;
-                      setImageAspectMap(prev => ({
-                        ...prev,
-                        [activeQuestion.id]: portrait ? 'portrait' : 'landscape'
-                      }));
-                    }}
-                    className={`absolute w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out`}
-                    style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
-                      width: `${drillContainerSize.height}px`,
-                      height: `${drillContainerSize.width}px`,
-                      transform: 'translate(-50%, -50%) rotate(90deg)',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                    } : {
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
-                    referrerPolicy="no-referrer"
-                  />
+                  {/* Fully Visible Foreground image scaled perfectly */}
+                  {!imageError && (
+                    <img 
+                      id="drill-context-image"
+                      src={activeImageUrl} 
+                      alt="Scenic Context" 
+                      onLoad={(e) => {
+                        setImageLoading(false);
+                        const img = e.currentTarget;
+                        const portrait = img.naturalHeight > img.naturalWidth;
+                        setImageAspectMap(prev => ({
+                          ...prev,
+                          [activeQuestion.id]: portrait ? 'portrait' : 'landscape'
+                        }));
+                      }}
+                      onError={() => {
+                        setImageError(true);
+                        setImageLoading(false);
+                      }}
+                      className={`absolute w-full h-full object-cover transition-all duration-700 ease-out ${imageLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100 group-hover:scale-103'}`}
+                      style={imageAspectMap[activeQuestion.id] === 'portrait' ? {
+                        width: `${drillContainerSize.height}px`,
+                        height: `${drillContainerSize.width}px`,
+                        transform: 'translate(-50%, -50%) rotate(90deg)',
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                      } : {
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
 
                   {/* Dark elegant vignetting overlay for cinematic picture exposure contrast */}
                   <div className="absolute inset-0 bg-black/10 mix-blend-multiply pointer-events-none" />
 
-                  {/* Camera Viewfinder Focus Corners Grid overlay expanded beautifully to cover the entire layout region */}
+                  {/* Camera Viewfinder Focus Corners Grid overlay */}
                   <div className="absolute inset-0 p-4 pointer-events-none flex items-center justify-center z-1">
                     <div className="w-[92%] h-[88%] border border-dashed border-white/35 rounded-xl relative flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                      {/* Elegant focal corners targeting the wide subject layout */}
+                      {/* Elegant focal corners */}
                       <span className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-amber-400 shadow-xs" />
                       <span className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-amber-400 shadow-xs" />
                       <span className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-2 border-l-2 border-amber-400 shadow-xs" />
                       <span className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-2 border-r-2 border-amber-400 shadow-xs" />
 
-                      {/* Centered pulsing focal tracking reticle representing camera physical capture focus */}
+                      {/* Centered pulsing focal tracking reticle */}
                       <div className="flex items-center justify-center relative">
                         <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping absolute" />
                         <span className="w-2.5 h-2.5 bg-red-600 rounded-full border border-white/60 relative" />
@@ -1188,10 +1233,12 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                     </div>
                   </div>
 
-                  {/* Float-top-right Cascade Tag explicitly mapping the corresponding exact question target */}
-                  {QUESTION_FOCUS_TARGETS[activeQuestion.id] && (
+                  {/* Float-top-right Cascade Tag */}
+                  {(QUESTION_FOCUS_TARGETS[activeQuestion.id] || activeQuestion.prompt) && (
                     <div className="absolute top-3 right-3 bg-[#111827]/85 backdrop-blur-xs border border-amber-500/35 text-amber-300 font-sans text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-md z-2 transition-all group-hover:bg-[#111827]">
-                      {QUESTION_FOCUS_TARGETS[activeQuestion.id][locale === 'zh' ? 'zh' : 'en']}
+                      {QUESTION_FOCUS_TARGETS[activeQuestion.id]
+                        ? QUESTION_FOCUS_TARGETS[activeQuestion.id][locale === 'zh' ? 'zh' : 'en']
+                        : (locale === 'zh' ? '看图说话' : 'Look & Speak')}
                     </div>
                   )}
 
@@ -1200,24 +1247,28 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center gap-1.5">
                         <span id="drill-context-tag" className="text-[9px] font-black text-white uppercase tracking-wider bg-[#d97706] px-1.5 py-0.5 rounded shadow-xs">
-                          {locale === 'zh' ? '📸 场景极联主导' : '📸 Context Focal Node'}
+                          {locale === 'zh' ? '📸 场景语境插画' : '📸 Scene Context'}
                         </span>
                       </div>
-                      {QUESTION_IMAGES_DESC[activeQuestion.id] && (
+                      {QUESTION_IMAGES_DESC[activeQuestion.id] ? (
                         <p className="text-[11px] leading-relaxed text-slate-100 font-medium drop-shadow-xs">
                           {locale === 'zh' 
                             ? QUESTION_IMAGES_DESC[activeQuestion.id].zh 
                             : QUESTION_IMAGES_DESC[activeQuestion.id].en
                           }
                         </p>
-                      )}
+                      ) : activeQuestion.prompt ? (
+                        <p className="text-[11px] leading-relaxed text-slate-100 font-medium drop-shadow-xs italic">
+                          "{activeQuestion.prompt}"
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                 </div>
               )}
 
               {/* Cascade Visual Coupling Indicator to signify 1-to-1 linkage down to current conversation dialogue */}
-              {showDrillImage && QUESTION_IMAGES[activeQuestion.id] && (
+              {showDrillImage && activeImageUrl && (
                 <div className="flex justify-start ml-8 pointer-events-none -mt-1 -mb-1 animate-fadeIn">
                   <div className="w-0.5 h-4 bg-gradient-to-b from-brand-secondary to-brand-beige" />
                 </div>
@@ -2424,37 +2475,54 @@ export default function PracticeTab({ progress, locale, onUpdateProgress }: Prac
               {activeChapterObj.drillParagraphs && activeChapterObj.drillParagraphs.length > 0 ? (
                 <div className="space-y-3">
                   {activeChapterObj.drillParagraphs.map((drill, i) => (
-                    <div key={i} className="p-3 bg-brand-cream/30 rounded-xl border border-brand-beige/30 relative group">
-                      <div className="absolute right-2 top-2">
-                        <button
-                          onClick={() => handleSpeakSample(drill.question + ". " + drill.answer)}
-                          className="text-brand-primary hover:text-brand-dark p-1 border border-transparent hover:border-brand-beige hover:bg-brand-ivory rounded-lg active:scale-95 transition-all cursor-pointer"
-                          title="Speak full paragraph"
-                        >
-                          <Volume2 className="w-3.5 h-3.5" />
-                        </button>
+                    <div key={i} className="p-3 bg-brand-cream/30 rounded-xl border border-brand-beige/30 group flex gap-3 items-center">
+                      <div className="flex-1 min-w-0 relative pr-6 text-left">
+                        <div className="absolute right-0 top-0">
+                          <button
+                            onClick={() => handleSpeakSample(drill.question + ". " + drill.answer)}
+                            className="text-brand-primary hover:text-brand-dark p-1 border border-transparent hover:border-brand-beige hover:bg-brand-ivory rounded-lg active:scale-95 transition-all cursor-pointer"
+                            title="Speak full paragraph"
+                          >
+                            <Volume2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+
+                        {/* Question */}
+                        <div className="text-xs text-brand-dark/60 font-semibold flex gap-1 items-center pr-2">
+                          <span className="text-brand-primary font-bold">Q:</span>
+                          <span>{drill.question}</span>
+                        </div>
+                        {locale !== 'en' && getLocalizedTextbookQuestion(drill, locale) && (
+                          <p className="text-[10px] text-brand-dark/40 italic mb-1.5 pl-3">
+                            {getLocalizedTextbookQuestion(drill, locale)}
+                          </p>
+                        )}
+
+                        {/* Answer */}
+                        <div className="text-xs text-brand-dark font-serif font-bold flex gap-1 items-start leading-snug mt-1 pr-2">
+                          <span className="text-brand-primary font-bold shrink-0 font-sans">A:</span>
+                          <span>{drill.answer}</span>
+                        </div>
+                        {locale !== 'en' && getLocalizedTextbookAnswer(drill, locale) && (
+                          <p className="text-[10px] text-brand-dark/60 font-medium leading-relaxed mt-0.5 border-t border-dashed border-brand-beige/40 pt-0.5 pl-3">
+                            {getLocalizedTextbookAnswer(drill, locale)}
+                          </p>
+                        )}
                       </div>
 
-                      {/* Question */}
-                      <div className="text-xs text-brand-dark/60 font-semibold flex gap-1 items-center pr-8">
-                        <span className="text-brand-primary font-bold">Q:</span>
-                        <span>{drill.question}</span>
-                      </div>
-                      {locale !== 'en' && getLocalizedTextbookQuestion(drill, locale) && (
-                        <p className="text-[10px] text-brand-dark/40 italic mb-1.5 pl-3">
-                          {getLocalizedTextbookQuestion(drill, locale)}
-                        </p>
-                      )}
-
-                      {/* Answer */}
-                      <div className="text-xs text-brand-dark font-serif font-bold flex gap-1 items-start leading-snug mt-1 pr-8">
-                        <span className="text-brand-primary font-bold shrink-0 font-sans">A:</span>
-                        <span>{drill.answer}</span>
-                      </div>
-                      {locale !== 'en' && getLocalizedTextbookAnswer(drill, locale) && (
-                        <p className="text-[10px] text-brand-dark/60 font-medium leading-relaxed mt-0.5 border-t border-dashed border-brand-beige/40 pt-0.5 pl-3">
-                          {getLocalizedTextbookAnswer(drill, locale)}
-                        </p>
+                      {drill.imagePath && (
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border border-brand-beige overflow-hidden shadow-2xs shrink-0 bg-brand-cream flex items-center justify-center relative group/img">
+                          <img 
+                            src={drill.imagePath} 
+                            alt="Visual Drill Preview" 
+                            className="w-full h-full object-cover transition-transform duration-350 group-hover/img:scale-108"
+                            loading="lazy"
+                            onError={(e) => {
+                              // Hide the image preview container if it fails to load or return 404/500
+                              e.currentTarget.parentElement!.style.display = 'none';
+                            }}
+                          />
+                        </div>
                       )}
                     </div>
                   ))}

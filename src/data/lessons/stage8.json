@@ -263,115 +263,153 @@
           "question": "Do you like people who are always laughing and joking?",
           "answer": "Yes, I like … ~ No, I don't like …",
           "questionZh": "你喜欢总是开怀大笑的人吗？",
-          "answerZh": "是的，我喜欢……～不，我不喜欢……"
+          "answerZh": "是的，我喜欢……～不，我不喜欢……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you like people who are always laughing and joking, modern flat design style",
+          "imagePath": "/api/image/8/112/0"
         },
         {
           "question": "Can you tell us a joke?",
           "answer": "Yes, I can tell you a joke ~ No, I can't tell you a joke",
           "questionZh": "你能给我们讲个笑话吗？",
-          "answerZh": "是的，我可以给你讲个笑话~不，我不能给你讲个笑话"
+          "answerZh": "是的，我可以给你讲个笑话~不，我不能给你讲个笑话",
+          "prompt": "A beautiful clean vector illustration showing a joke, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/1"
         },
         {
           "question": "What am I pretending to do?",
           "answer": "You're pretending to play the piano, kick a football etc.",
           "questionZh": "我假装在做什么？",
-          "answerZh": "你假装弹钢琴、踢足球等。"
+          "answerZh": "你假装弹钢琴、踢足球等。",
+          "prompt": "A beautiful clean vector illustration showing a piano, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/2"
         },
         {
           "question": "What am I pretending to do?",
           "answer": "You're pretending to stamp a piece of paper with a stamp",
           "questionZh": "我假装在做什么？",
-          "answerZh": "你假装在一张纸上盖上邮票"
+          "answerZh": "你假装在一张纸上盖上邮票",
+          "prompt": "A beautiful clean vector illustration showing a piece, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/3"
         },
         {
           "question": "What do I mean if I say \"Naturally she was pleased about passing the?",
           "answer": "test\" If you say \"Naturally, she …\", you mean \"Of course, she …\"",
           "questionZh": "如果我说“她自然很高兴通过考试”，这是什么意思？",
-          "answerZh": "测试”如果你说“Naturally, she …”，你的意思是“Of course, she …”"
+          "answerZh": "测试”如果你说“Naturally, she …”，你的意思是“Of course, she …”",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do I mean if I say \"Naturally she was pleased about passing the, modern flat design style",
+          "imagePath": "/api/image/8/112/4"
         },
         {
           "question": "What is the most recent film you have seen?",
           "answer": "The most recent …",
           "questionZh": "你最近看过的电影是什么？",
-          "answerZh": "最近的…"
+          "answerZh": "最近的…",
+          "prompt": "A beautiful clean vector illustration showing a most, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/5"
         },
         {
           "question": "What was it like Ǹ that is was it good bad or just so-so?",
           "answer": "It was …",
           "questionZh": "感觉怎么样，是好是坏还是一般？",
-          "answerZh": "这是……"
+          "answerZh": "这是……",
+          "prompt": "A split-screen minimalist vector illustration comparing bad on the left and just on the right, modern flat design style",
+          "imagePath": "/api/image/8/112/6"
         },
         {
           "question": "Have you been to any concerts recently?",
           "answer": "Yes, I've been … ~ No, I haven't been …",
           "questionZh": "你最近去过任何音乐会吗？",
-          "answerZh": "是的，我曾经……〜不，我没有……"
+          "answerZh": "是的，我曾经……〜不，我没有……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Have you been to any concerts recently, modern flat design style",
+          "imagePath": "/api/image/8/112/7"
         },
         {
           "question": "What's a housemate or flatmate?",
           "answer": "A housemate or flatmate is someone who we live with",
           "questionZh": "什么是室友或室友？",
-          "answerZh": "室友或室友是与我们住在一起的人"
+          "answerZh": "室友或室友是与我们住在一起的人",
+          "prompt": "A split-screen minimalist vector illustration comparing housemate on the left and flatmate on the right, modern flat design style",
+          "imagePath": "/api/image/8/112/8"
         },
         {
           "question": "Do you know the names of all your classmates?",
           "answer": "Yes, I know … ~ No, I don't know …",
           "questionZh": "你知道你所有同学的名字吗？",
-          "answerZh": "是的，我知道……～不，我不知道……"
+          "answerZh": "是的，我知道……～不，我不知道……",
+          "prompt": "A beautiful clean vector illustration showing a names, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/9"
         },
         {
           "question": "Is there anything you're really looking forward to doing at the moment?",
           "answer": "Yes, there's something … ~ No, there isn't anything …",
           "questionZh": "目前有什么事情是你真正期待做的吗？",
-          "answerZh": "是的，有东西……～不，什么也没有……"
+          "answerZh": "是的，有东西……～不，什么也没有……",
+          "prompt": "A beautiful clean vector illustration showing a moment, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/10"
         },
         {
           "question": "What kind of things do you look forward to most?",
           "answer": "The kind of things I … are … let me see",
           "questionZh": "你最期待什么样的事情？",
-          "answerZh": "我……是这样的事情……让我看看"
+          "answerZh": "我……是这样的事情……让我看看",
+          "prompt": "A beautiful clean vector illustration showing a kind, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/11"
         },
         {
           "question": "What does the expression \"Let me see\" mean?",
           "answer": "The expression joke \"Give me time to think for a minute\"",
           "questionZh": "“让我看看”这句话是什么意思？",
-          "answerZh": "表情笑话“给我时间思考一分钟”"
+          "answerZh": "表情笑话“给我时间思考一分钟”",
+          "prompt": "A beautiful clean vector illustration showing a expression, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/12"
         },
         {
           "question": "What am I doing?",
           "answer": "You're whistling",
           "questionZh": "我在做什么？",
-          "answerZh": "你吹着口哨"
+          "answerZh": "你吹着口哨",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What am I doing, modern flat design style",
+          "imagePath": "/api/image/8/112/13"
         },
         {
           "question": "What do we use grease for?",
           "answer": "We use joke to make the different parts of a machine move smoothly",
           "questionZh": "我们用油脂来做什么？",
-          "answerZh": "我们用笑话让机器的不同部分顺利运转"
+          "answerZh": "我们用笑话让机器的不同部分顺利运转",
+          "prompt": "A beautiful clean vector illustration showing a different, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/14"
         },
         {
           "question": "What do we use a pair of scissors for?",
           "answer": "We use a pair of scissors for cutting paper etc.",
           "questionZh": "我们用剪刀做什么？",
-          "answerZh": "我们用剪刀来剪纸等。"
+          "answerZh": "我们用剪刀来剪纸等。",
+          "prompt": "A beautiful clean vector illustration showing a pair, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/15"
         },
         {
           "question": "Why don't trains always arrive when they are due?",
           "answer": "Trains don't joke because of bad weather, breakdowns etc.",
           "questionZh": "为什么火车总是不准时到达？",
-          "answerZh": "火车不会因为恶劣天气、故障等而开玩笑。"
+          "answerZh": "火车不会因为恶劣天气、故障等而开玩笑。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Why don't trains always arrive when they are due, modern flat design style",
+          "imagePath": "/api/image/8/112/16"
         },
         {
           "question": "What do we call our grandfather's father?",
           "answer": "We call joke our great-grandfather",
           "questionZh": "我们如何称呼祖父的父亲？",
-          "answerZh": "我们称笑话为我们的曾祖父"
+          "answerZh": "我们称笑话为我们的曾祖父",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do we call our grandfather's father, modern flat design style",
+          "imagePath": "/api/image/8/112/17"
         },
         {
           "question": "What does the idiom \"let yourself go\" mean?",
           "answer": "The idiom joke",
           "questionZh": "成语“放飞自我”是什么意思？",
-          "answerZh": "成语笑话"
+          "answerZh": "成语笑话",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/112/18"
         }
       ]
     },
@@ -541,55 +579,73 @@
           "question": "Do you enjoy discussing politics?",
           "answer": "Yes, I enjoy … ~ No, I don't enjoy …",
           "questionZh": "你喜欢讨论政治吗？",
-          "answerZh": "是的，我喜欢……〜不，我不喜欢……"
+          "answerZh": "是的，我喜欢……〜不，我不喜欢……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you enjoy discussing politics, modern flat design style",
+          "imagePath": "/api/image/8/113/0"
         },
         {
           "question": "What does it mean \"to live a regular life\"?",
           "answer": "\"To live a regular life\" means that we eat, sleep and work etc. at more or less the same times every day",
           "questionZh": "“过有规律的生活”是什么意思？",
-          "answerZh": "“生活有规律”是指我们每天吃饭、睡觉、工作等时间大致相同。"
+          "answerZh": "“生活有规律”是指我们每天吃饭、睡觉、工作等时间大致相同。",
+          "prompt": "A beautiful clean vector illustration showing a regular, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/113/1"
         },
         {
           "question": "Do you work or study?",
           "answer": "irregular hours Yes, I work ~ No, I don't study",
           "questionZh": "你工作还是学习？",
-          "answerZh": "工作时间不规律 是的，我工作 ~ 不，我不学习"
+          "answerZh": "工作时间不规律 是的，我工作 ~ 不，我不学习",
+          "prompt": "A split-screen minimalist vector illustration comparing work on the left and study on the right, modern flat design style",
+          "imagePath": "/api/image/8/113/2"
         },
         {
           "question": "What's the difference between \"dust\" and \"powder\"?",
           "answer": "The difference between dust and powder is that \"dust\" is natural and collects on objects, whereas \"powder\" is something that is made",
           "questionZh": "“灰尘”和“粉末”有什么区别？",
-          "answerZh": "灰尘和粉末之间的区别在于“灰尘”是自然的并聚集在物体上，而“粉末”是制造的东西"
+          "answerZh": "灰尘和粉末之间的区别在于“灰尘”是自然的并聚集在物体上，而“粉末”是制造的东西",
+          "prompt": "A beautiful clean vector illustration showing a difference, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/113/3"
         },
         {
           "question": "Have you ever collected stamps or anything like that?",
           "answer": "Yes, I've collected stamps ~ No, I've never collected anything",
           "questionZh": "你收集过邮票或类似的东西吗？",
-          "answerZh": "是的，我收集过邮票~不，我从来没有收集过任何东西"
+          "answerZh": "是的，我收集过邮票~不，我从来没有收集过任何东西",
+          "prompt": "A split-screen minimalist vector illustration comparing stamps on the left and anything on the right, modern flat design style",
+          "imagePath": "/api/image/8/113/4"
         },
         {
           "question": "Do they collect money in the streets in your country for different causes,?",
           "answer": "such as for the Red Cross the poor etc. Yes, they collect … ~ No, they don't collect …",
           "questionZh": "他们是否出于不同原因在你们国家的街道上收钱？",
-          "answerZh": "例如红十字会和穷人等。是的，他们收集……〜不，他们不收集……"
+          "answerZh": "例如红十字会和穷人等。是的，他们收集……〜不，他们不收集……",
+          "prompt": "A beautiful clean vector illustration showing a streets, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/113/5"
         },
         {
           "question": "What do we mean by the rush hour in a large city?",
           "answer": "By the rush hour discuss, we mean the time when everyone rushes to work or home from work",
           "questionZh": "大城市的高峰时间是什么意思？",
-          "answerZh": "我们所说的高峰时间是指每个人都赶去上班或下班回家的时间"
+          "answerZh": "我们所说的高峰时间是指每个人都赶去上班或下班回家的时间",
+          "prompt": "A clean minimalist vector illustration of a rush in a large, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/113/6"
         },
         {
           "question": "Who were your heroes when you were a child?",
           "answer": "My heroes when I discuss were … 8IZ",
           "questionZh": "你小时候的英雄是谁？",
-          "answerZh": "当我讨论时我的英雄是……8IZ"
+          "answerZh": "当我讨论时我的英雄是……8IZ",
+          "prompt": "A beautiful clean vector illustration showing a child, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/113/7"
         },
         {
           "question": "What does the idiom \"pull someone's leg\" mean?",
           "answer": "The idiom discuss \"joke with someone discuss\"",
           "questionZh": "成语“拉别人的腿”是什么意思？",
-          "answerZh": "成语讨论“与某人讨论笑话”"
+          "answerZh": "成语讨论“与某人讨论笑话”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/113/8"
         }
       ]
     },
@@ -837,115 +893,153 @@
           "question": "What's the difference between a dish and a plate?",
           "answer": "The difference between … is that …",
           "questionZh": "盘子和盘子有什么区别？",
-          "answerZh": "……之间的区别在于……"
+          "answerZh": "……之间的区别在于……",
+          "prompt": "A clean minimalist vector illustration of a difference at a dish, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/114/0"
         },
         {
           "question": "What's your favourite dish?",
           "answer": "My favourite dish is …",
           "questionZh": "你最喜欢的菜是什么？",
-          "answerZh": "我最喜欢的菜是……"
+          "answerZh": "我最喜欢的菜是……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What's your favourite dish, modern flat design style",
+          "imagePath": "/api/image/8/114/1"
         },
         {
           "question": "Do you know how to make it?",
           "answer": "Yes, I know … ~ No, I don't know …",
           "questionZh": "你知道怎么做吗？",
-          "answerZh": "是的，我知道……～不，我不知道……"
+          "answerZh": "是的，我知道……～不，我不知道……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you know how to make it, modern flat design style",
+          "imagePath": "/api/image/8/114/2"
         },
         {
           "question": "Are you for or against the police carrying arms when they're walking?",
           "answer": "around the streets on duty I'm for for ~ I'm against against",
           "questionZh": "你支持还是反对警察走路时携带武器？",
-          "answerZh": "绕街执勤 我赞成 赞成 ~ 我反对 反对"
+          "answerZh": "绕街执勤 我赞成 赞成 ~ 我反对 反对",
+          "prompt": "A split-screen minimalist vector illustration comparing for on the left and against on the right, modern flat design style",
+          "imagePath": "/api/image/8/114/3"
         },
         {
           "question": "Are you for or against fox hunting?",
           "answer": "I'm for for ~ I'm against against",
           "questionZh": "你支持还是反对猎狐？",
-          "answerZh": "我赞成～我反对 反对"
+          "answerZh": "我赞成～我反对 反对",
+          "prompt": "A split-screen minimalist vector illustration comparing for on the left and against on the right, modern flat design style",
+          "imagePath": "/api/image/8/114/4"
         },
         {
           "question": "What do members of the general public do when they see a criminal seize?",
           "answer": "a woman's handbag in the street When members of the general public see dish, some run after the criminal or shout for help, but most people just stand and look too surprised to do anything",
           "questionZh": "当普通民众看到犯罪分子抓获犯罪行为时，他们会怎么做？",
-          "answerZh": "街上的一个女人的手提包 当公众看到这道菜时，有些人会追赶罪犯或大声呼救，但大多数人只是站着，看起来很惊讶而无能为力"
+          "answerZh": "街上的一个女人的手提包 当公众看到这道菜时，有些人会追赶罪犯或大声呼救，但大多数人只是站着，看起来很惊讶而无能为力",
+          "prompt": "A clean minimalist vector illustration of a general in a criminal, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/114/5"
         },
         {
           "question": "What would you do if another world war broke out?",
           "answer": "If another world war broke out, I'd …",
           "questionZh": "如果另一次世界大战爆发，你会怎么做？",
-          "answerZh": "如果另一次世界大战爆发，我会……"
+          "answerZh": "如果另一次世界大战爆发，我会……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What would you do if another world war broke out, modern flat design style",
+          "imagePath": "/api/image/8/114/6"
         },
         {
           "question": "What's the difference between \"wage\" and \"salary\"?",
           "answer": "The difference between … is that dish",
           "questionZh": "“工资”和“薪水”有什么区别？",
-          "answerZh": "……的区别在于那道菜"
+          "answerZh": "……的区别在于那道菜",
+          "prompt": "A beautiful clean vector illustration showing a difference, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/7"
         },
         {
           "question": "What kind of people don't earn a steady wage or salary?",
           "answer": "The kind of people who … are actors, artists, writers etc.",
           "questionZh": "什么样的人没有稳定的工资或薪水？",
-          "answerZh": "这类人……是演员、艺术家、作家等。"
+          "answerZh": "这类人……是演员、艺术家、作家等。",
+          "prompt": "A split-screen minimalist vector illustration comparing wage on the left and salary on the right, modern flat design style",
+          "imagePath": "/api/image/8/114/8"
         },
         {
           "question": "What kind of jobs do we need a steady hand for?",
           "answer": "The kind of jobs we need a steady hand for are painter, surgeon, pianist etc.",
           "questionZh": "什么样的工作需要稳定的双手？",
-          "answerZh": "我们需要稳定手的工作有画家、外科医生、钢琴家等。"
+          "answerZh": "我们需要稳定手的工作有画家、外科医生、钢琴家等。",
+          "prompt": "A beautiful clean vector illustration showing a steady, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/9"
         },
         {
           "question": "What are three common exceptions to this rule?",
           "answer": "Three common exceptions to … are \"chefs\", \"cliffs\" and \"roofs\"",
           "questionZh": "此规则的三个常见例外情况是什么？",
-          "answerZh": "……的三个常见例外是“厨师”、“悬崖”和“屋顶”"
+          "answerZh": "……的三个常见例外是“厨师”、“悬崖”和“屋顶”",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What are three common exceptions to this rule, modern flat design style",
+          "imagePath": "/api/image/8/114/10"
         },
         {
           "question": "What's the plural of \"deer\"?",
           "answer": "The plural of \"deer\" is \"deer\"",
           "questionZh": "“鹿”的复数是什么？",
-          "answerZh": "“鹿”的复数是“鹿”"
+          "answerZh": "“鹿”的复数是“鹿”",
+          "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/11"
         },
         {
           "question": "What kind of things do people often mention when they're telling you?",
           "answer": "about a holiday they've just been on People often mention the weather, the food etc. when …",
           "questionZh": "人们告诉你时经常提到哪些事情？",
-          "answerZh": "关于他们刚刚度过的假期 人们经常在……时提到天气、食物等。"
+          "answerZh": "关于他们刚刚度过的假期 人们经常在……时提到天气、食物等。",
+          "prompt": "A beautiful clean vector illustration showing a holiday, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/12"
         },
         {
           "question": "What's the basic meaning of the word \"board\"?",
           "answer": "The basic … a flat",
           "questionZh": "“板”这个词的基本含义是什么？",
-          "answerZh": "基本的……一套公寓"
+          "answerZh": "基本的……一套公寓",
+          "prompt": "A clean minimalist vector illustration of a basic in a word, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/114/13"
         },
         {
           "question": "What do we use a noticeboard for?",
           "answer": "We use a noticeboard for putting notices on. It is a quick and easy way of giving news and information to everybody",
           "questionZh": "我们用布告栏做什么？",
-          "answerZh": "我们使用布告栏来张贴通知。这是向每个人提供新闻和信息的快速而简单的方式"
+          "answerZh": "我们使用布告栏来张贴通知。这是向每个人提供新闻和信息的快速而简单的方式",
+          "prompt": "A beautiful clean vector illustration showing a noticeboard, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/14"
         },
         {
           "question": "What would happen if you went on board ship to say goodbye to a friend?",
           "answer": "and you remained on board after the ship had left port If I went …, I'd have to leave the ship at the next available port",
           "questionZh": "如果你上船去告别朋友会发生什么？",
-          "answerZh": "船离开港口后你仍留在船上如果我去……，我必须在下一个可用港口离开船"
+          "answerZh": "船离开港口后你仍留在船上如果我去……，我必须在下一个可用港口离开船",
+          "prompt": "A beautiful clean vector illustration showing a friend, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/15"
         },
         {
           "question": "What do we mean by a \"board of directors\"?",
           "answer": "By a dish we mean a group dish",
           "questionZh": "“董事会”是什么意思？",
-          "answerZh": "我们所说的菜肴是指团体菜肴"
+          "answerZh": "我们所说的菜肴是指团体菜肴",
+          "prompt": "A beautiful clean vector illustration showing a dish, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/16"
         },
         {
           "question": "What do we mean by a \"board meeting\"?",
           "answer": "By a dish we mean a meeting of company directors round a table",
           "questionZh": "“董事会会议”是什么意思？",
-          "answerZh": "我们所说的一道菜是指公司董事围桌开会"
+          "answerZh": "我们所说的一道菜是指公司董事围桌开会",
+          "prompt": "A beautiful clean vector illustration showing a dish, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/17"
         },
         {
           "question": "What does the idiom \"see eye to eye\" mean?",
           "answer": "The idiom dish \"agree with someone\"",
           "questionZh": "成语“眼见为实”是什么意思？",
-          "answerZh": "成语菜“同意某人”"
+          "answerZh": "成语菜“同意某人”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/114/18"
         }
       ]
     },
@@ -1055,79 +1149,105 @@
           "question": "Do you have a bank account?",
           "answer": "Yes, I have timetable ~ No, I don't have timetable",
           "questionZh": "您有银行账户吗？",
-          "answerZh": "是的，我有时间表~不，我没有时间表"
+          "answerZh": "是的，我有时间表~不，我没有时间表",
+          "prompt": "A beautiful clean vector illustration showing a bank, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/0"
         },
         {
           "question": "Do you have an account at any shop?",
           "answer": "Yes, I have … ~ No, I don't have …",
           "questionZh": "您在任何商店都有帐户吗？",
-          "answerZh": "是的，我有……～不，我没有……"
+          "answerZh": "是的，我有……～不，我没有……",
+          "prompt": "A beautiful clean vector illustration showing a account, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/1"
         },
         {
           "question": "Do you keep an account of all the money you spend?",
           "answer": "Yes, I keep … ~ No, I don't keep timetable",
           "questionZh": "你花的所有钱都记在账上吗？",
-          "answerZh": "是的，我保留……〜不，我不保留时间表"
+          "answerZh": "是的，我保留……〜不，我不保留时间表",
+          "prompt": "A clean minimalist vector illustration of a account on a money, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/115/2"
         },
         {
           "question": "Why is a farmer never satisfied with the weather?",
           "answer": "A farmer is never satisfied … because, whatever the weather is like, it's never perfect for every type of crop that he's growing",
           "questionZh": "为什么农民对天气永远不满意？",
-          "answerZh": "农民永远不会满足……因为，无论天气如何，他种植的每种作物都不会完美"
+          "answerZh": "农民永远不会满足……因为，无论天气如何，他种植的每种作物都不会完美",
+          "prompt": "A clean minimalist vector illustration of a farmer at a weather, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/115/3"
         },
         {
           "question": "Do your eyes differ in colour from mine?",
           "answer": "Yes, my eyes differ … ~ No, my eyes don't differ …",
           "questionZh": "你的眼睛颜色和我的不一样吗？",
-          "answerZh": "是的，我的眼睛不同……〜不，我的眼睛没有不同……"
+          "answerZh": "是的，我的眼睛不同……〜不，我的眼睛没有不同……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do your eyes differ in colour from mine, modern flat design style",
+          "imagePath": "/api/image/8/115/4"
         },
         {
           "question": "What sometimes happens if two people differ greatly in their opinions on?",
           "answer": "a particular subject If two people differ greatly …, they sometimes have an argument",
           "questionZh": "如果两个人的意见分歧很大，有时会发生什么？",
-          "answerZh": "某个特定主题如果两个人差异很大……，他们有时会发生争执"
+          "answerZh": "某个特定主题如果两个人差异很大……，他们有时会发生争执",
+          "prompt": "A beautiful clean vector illustration showing a particular, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/5"
         },
         {
           "question": "Have you ever had private English lessons?",
           "answer": "Yes, I've had timetable ~ No, I've never had …",
           "questionZh": "您上过私人英语课吗？",
-          "answerZh": "是的，我有时间表〜不，我从来没有......"
+          "answerZh": "是的，我有时间表〜不，我从来没有......",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Have you ever had private English lessons, modern flat design style",
+          "imagePath": "/api/image/8/115/6"
         },
         {
           "question": "Is it impolite to ask questions about someone's private life unless you?",
           "answer": "know them very well Yes, it's impolite to … Relative clauses 3",
           "questionZh": "除非你自己，否则询问别人的私生活是不礼貌的吗？",
-          "answerZh": "非常了解他们 是的，这是不礼貌的…… 关系从句 3"
+          "answerZh": "非常了解他们 是的，这是不礼貌的…… 关系从句 3",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it impolite to ask questions about someone's private life unless you, modern flat design style",
+          "imagePath": "/api/image/8/115/7"
         },
         {
           "question": "Do you know the nationality of all the students with whom you are?",
           "answer": "studying at the moment Yes, I know … ~ No, I don't know …",
           "questionZh": "您知道与您一起的所有学生的国籍吗？",
-          "answerZh": "此刻正在学习 是的，我知道……～不，我不知道……"
+          "answerZh": "此刻正在学习 是的，我知道……～不，我不知道……",
+          "prompt": "A clean minimalist vector illustration of a nationality on a students, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/115/8"
         },
         {
           "question": "Have you ever been searched at an airport?",
           "answer": "Yes, I've been … ~ No, I've never been …",
           "questionZh": "您曾经在机场被搜查过吗？",
-          "answerZh": "是的，我曾经……〜不，我从来没有……"
+          "answerZh": "是的，我曾经……〜不，我从来没有……",
+          "prompt": "A beautiful clean vector illustration showing a airport, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/9"
         },
         {
           "question": "What supports this ceiling?",
           "answer": "The walls support …",
           "questionZh": "是什么支撑着这个天花板？",
-          "answerZh": "墙壁支撑着……"
+          "answerZh": "墙壁支撑着……",
+          "prompt": "A beautiful clean vector illustration showing a walls, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/10"
         },
         {
           "question": "Do you support any particular football team?",
           "answer": "Yes, I support … ~ No, I don't support …",
           "questionZh": "您支持任何特定的足球队吗？",
-          "answerZh": "是的，我支持……～不，我不支持……"
+          "answerZh": "是的，我支持……～不，我不支持……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you support any particular football team, modern flat design style",
+          "imagePath": "/api/image/8/115/11"
         },
         {
           "question": "What does the idiom \"watch your step\" mean?",
           "answer": "The idiom timetable \"be careful\"",
           "questionZh": "成语“小心脚步”是什么意思？",
-          "answerZh": "成语时间表“小心”"
+          "answerZh": "成语时间表“小心”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/115/12"
         }
       ]
     },
@@ -1363,97 +1483,129 @@
           "question": "Do you think it's always wise to declare your future plans to other?",
           "answer": "people Yes, I think it's … ~ No, I don't think it's … 8IZPSXIZOPU",
           "questionZh": "您认为向他人宣布您的未来计划总是明智的吗？",
-          "answerZh": "人们是的，我认为这是……〜不，我不认为这是……8IZPSXIZOPU"
+          "answerZh": "人们是的，我认为这是……〜不，我不认为这是……8IZPSXIZOPU",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you think it's always wise to declare your future plans to other, modern flat design style",
+          "imagePath": "/api/image/8/116/0"
         },
         {
           "question": "What do we call the three classes into which many societies in the world?",
           "answer": "are divided We call the three … the upper class, middle class and working class",
           "questionZh": "我们将世界上许多社会分为哪三个阶级？",
-          "answerZh": "我们称之为三者……上层阶级、中产阶级和工人阶级"
+          "answerZh": "我们称之为三者……上层阶级、中产阶级和工人阶级",
+          "prompt": "A clean minimalist vector illustration of a three in a world, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/116/1"
         },
         {
           "question": "Is this the upper part of my head?",
           "answer": "No, that isn't the …; it's the lower …",
           "questionZh": "这是我头的上半部分吗？",
-          "answerZh": "不，那不是……；这是较低的…"
+          "answerZh": "不，那不是……；这是较低的…",
+          "prompt": "A beautiful clean vector illustration showing a upper, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/2"
         },
         {
           "question": "What's another word we can use instead of \"lift\"?",
           "answer": "Another word … \"raise\"",
           "questionZh": "我们还可以用什么词来代替“lift”？",
-          "answerZh": "另一个词……“提高”"
+          "answerZh": "另一个词……“提高”",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What's another word we can use instead of \"lift\", modern flat design style",
+          "imagePath": "/api/image/8/116/3"
         },
         {
           "question": "What does it generally mean when a pupil raises their hand in the air?",
           "answer": "during a lesson When a pupil …, it generally means they want to ask a question, or to be excused; that is, to be given permission to leave the room",
           "questionZh": "当学生举起手来时，通常意味着什么？",
-          "answerZh": "上课时，当学生……时，通常意味着他们想问问题，或者想请假；也就是说，获得离开房间的许可"
+          "answerZh": "上课时，当学生……时，通常意味着他们想问问题，或者想请假；也就是说，获得离开房间的许可",
+          "prompt": "A clean minimalist vector illustration of a pupil in a air, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/116/4"
         },
         {
           "question": "Is the object of a transitive verb always stated?",
           "answer": "No, the object of … (JWFNFBOFYBNQMFQMFBTF He ate quickly",
           "questionZh": "及物动词的宾语总是被陈述吗？",
-          "answerZh": "不，对象是……（JWFNFBOFYBNQMFQMFBTF 他吃得很快"
+          "answerZh": "不，对象是……（JWFNFBOFYBNQMFQMFBTF 他吃得很快",
+          "prompt": "A clean minimalist vector illustration of a object at a transitive, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/116/5"
         },
         {
           "question": "Do you think it's more important for managers to have the respect of?",
           "answer": "employees or to be liked by employees I think it's …",
           "questionZh": "您认为管理者受到尊重更重要吗？",
-          "answerZh": "员工或被员工喜欢我认为这是......"
+          "answerZh": "员工或被员工喜欢我认为这是......",
+          "prompt": "A beautiful clean vector illustration showing a respect, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/6"
         },
         {
           "question": "What is scorn?",
           "answer": "Scorn is a feeling that somebody or something is not worthy of our respect",
           "questionZh": "什么是蔑视？",
-          "answerZh": "蔑视是一种感觉，认为某人或某事不值得我们尊重"
+          "answerZh": "蔑视是一种感觉，认为某人或某事不值得我们尊重",
+          "prompt": "A beautiful clean vector illustration showing a feeling, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/7"
         },
         {
           "question": "Which school term are children in at the moment?",
           "answer": "Children are in the … term at the moment",
           "questionZh": "孩子们现在在哪个学期？",
-          "answerZh": "孩子们现在处于……学期"
+          "answerZh": "孩子们现在处于……学期",
+          "prompt": "A beautiful clean vector illustration showing a moment, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/8"
         },
         {
           "question": "What happens at harvest time?",
           "answer": "Farmers gather their crops …",
           "questionZh": "收获时节会发生什么？",
-          "answerZh": "农民们收割庄稼……"
+          "answerZh": "农民们收割庄稼……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What happens at harvest time, modern flat design style",
+          "imagePath": "/api/image/8/116/9"
         },
         {
           "question": "What's a brother-in-law?",
           "answer": "A brother-in-law is the brother of our wife or husband, or the husband of our brother or sister",
           "questionZh": "什么是姐夫？",
-          "answerZh": "姐夫是我们妻子或丈夫的兄弟，或者我们兄弟或姐妹的丈夫"
+          "answerZh": "姐夫是我们妻子或丈夫的兄弟，或者我们兄弟或姐妹的丈夫",
+          "prompt": "A beautiful clean vector illustration showing a brother-in-law, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/10"
         },
         {
           "question": "What's the plural of \"brother-in-law\"?",
           "answer": "The plural … is \"brothers-in-law\"",
           "questionZh": "“姐夫”的复数形式是什么？",
-          "answerZh": "复数……是“姐夫”"
+          "answerZh": "复数……是“姐夫”",
+          "prompt": "A beautiful clean vector illustration showing a plural, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/11"
         },
         {
           "question": "What's a rail?",
           "answer": "A rail is a piece of declare",
           "questionZh": "什么是铁轨？",
-          "answerZh": "铁轨是一块声明"
+          "answerZh": "铁轨是一块声明",
+          "prompt": "A beautiful clean vector illustration showing a rail, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/116/12"
         },
         {
           "question": "Why do we call a train a railway train?",
           "answer": "We call a train a railway train because it runs on rails",
           "questionZh": "为什么我们称火车为铁路列车？",
-          "answerZh": "我们称火车为铁路列车，因为它在铁轨上运行"
+          "answerZh": "我们称火车为铁路列车，因为它在铁轨上运行",
+          "prompt": "A clean minimalist vector illustration of a train in a railway, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/116/13"
         },
         {
           "question": "What are railings?",
           "answer": "Railings are several pieces …",
           "questionZh": "什么是栏杆？",
-          "answerZh": "栏杆有好几块……"
+          "answerZh": "栏杆有好几块……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What are railings, modern flat design style",
+          "imagePath": "/api/image/8/116/14"
         },
         {
           "question": "What's the meaning of the idiom \"to be on about\"?",
           "answer": "The meaning …",
           "questionZh": "成语“to be on about”是什么意思？",
-          "answerZh": "意思是……"
+          "answerZh": "意思是……",
+          "prompt": "A clean minimalist vector illustration of a meaning on a idiom, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/116/15"
         }
       ]
     },
@@ -1737,85 +1889,113 @@
           "question": "Which of these sentences is correct: \"He hasn't made many progresses\"?",
           "answer": "or \"He hasn't made much progress\" \"He hasn't made much",
           "questionZh": "以下哪句话是正确的：“他没有取得很多进步”？",
-          "answerZh": "或“他没有取得多大进步”“他没有取得多大进步”"
+          "answerZh": "或“他没有取得多大进步”“他没有取得多大进步”",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which of these sentences is correct: \"He hasn't made many progresses\", modern flat design style",
+          "imagePath": "/api/image/8/117/0"
         },
         {
           "question": "Do you agree that a little knowledge can sometimes be a dangerous?",
           "answer": "thing Yes, I agree that … ~ No, I don't agree that …",
           "questionZh": "您是否同意一点知识有时可能是危险的？",
-          "answerZh": "是的，我同意……〜不，我不同意……"
+          "answerZh": "是的，我同意……〜不，我不同意……",
+          "prompt": "A clean minimalist vector illustration of a little at a dangerous, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/117/1"
         },
         {
           "question": "Why or why not?",
           "answer": "Because we might get completely the wrong idea about something if we only know half the facts ~ Because knowing a little about something is better than knowing nothing",
           "questionZh": "为什么或为什么不呢？",
-          "answerZh": "因为如果我们只知道一半的事实，我们可能会对某件事产生完全错误的想法〜因为对某事了解一点总比什么都不知道要好"
+          "answerZh": "因为如果我们只知道一半的事实，我们可能会对某件事产生完全错误的想法〜因为对某事了解一点总比什么都不知道要好",
+          "prompt": "A split-screen minimalist vector illustration comparing why on the left and why on the right, modern flat design style",
+          "imagePath": "/api/image/8/117/2"
         },
         {
           "question": "Does an encyclopedia contain pieces of information about all kinds of?",
           "answer": "TVCKFDUT Yes, an encyclopedia contains pieces of … mass advantage disadvantage",
           "questionZh": "百科全书是否包含各种信息？",
-          "answerZh": "TVCKFDUT 是的，百科全书包含……质量优势劣势的片段"
+          "answerZh": "TVCKFDUT 是的，百科全书包含……质量优势劣势的片段",
+          "prompt": "A beautiful clean vector illustration showing a encyclopedia, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/3"
         },
         {
           "question": "What am I doing?",
           "answer": "You're picking your pen up from the floor",
           "questionZh": "我在做什么？",
-          "answerZh": "你从地板上捡起笔"
+          "answerZh": "你从地板上捡起笔",
+          "prompt": "A beautiful clean vector illustration showing a floor, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/4"
         },
         {
           "question": "What am I doing?",
           "answer": "You're drumming your fingers on the table",
           "questionZh": "我在做什么？",
-          "answerZh": "你用手指敲击着桌子"
+          "answerZh": "你用手指敲击着桌子",
+          "prompt": "A beautiful clean vector illustration showing a table, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/5"
         },
         {
           "question": "What would you do if your next-door neighbour played the drums loudly?",
           "answer": "every evening If my …, I'd …",
           "questionZh": "如果你的隔壁邻居打鼓声音很大你会怎么做？",
-          "answerZh": "每天晚上如果我……，我会……"
+          "answerZh": "每天晚上如果我……，我会……",
+          "prompt": "A beautiful clean vector illustration showing a drums, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/6"
         },
         {
           "question": "What do we mean if we say that someone is nosey?",
           "answer": "If we say …, we mean that they are too interested in other people's private matters",
           "questionZh": "如果我们说某人爱管闲事，这是什么意思？",
-          "answerZh": "如果我们说……，我们的意思是他们对别人的私人事务太感兴趣"
+          "answerZh": "如果我们说……，我们的意思是他们对别人的私人事务太感兴趣",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do we mean if we say that someone is nosey, modern flat design style",
+          "imagePath": "/api/image/8/117/7"
         },
         {
           "question": "Have you got nosey neighbours?",
           "answer": "Yes, I've got … ~ No, I haven't got …",
           "questionZh": "你有爱管闲事的邻居吗？",
-          "answerZh": "是的，我有……〜不，我没有……"
+          "answerZh": "是的，我有……〜不，我没有……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Have you got nosey neighbours, modern flat design style",
+          "imagePath": "/api/image/8/117/8"
         },
         {
           "question": "What are the feminine forms of \"actor\" \"host\" etc?",
           "answer": "The feminine forms of … are \"actress\", \"hostess\", \"princess\", \"waitress\" and \"goddess\"",
           "questionZh": "“演员”“主持人”等的女性形式是什么？",
-          "answerZh": "……的女性形式是“演员”、“女主人”、“公主”、“女服务员”和“女神”"
+          "answerZh": "……的女性形式是“演员”、“女主人”、“公主”、“女服务员”和“女神”",
+          "prompt": "A beautiful clean vector illustration showing a feminine, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/9"
         },
         {
           "question": "What type of sports event do you like to watch most?",
           "answer": "I like to watch … most",
           "questionZh": "您最喜欢观看什么类型的体育赛事？",
-          "answerZh": "我最喜欢看……"
+          "answerZh": "我最喜欢看……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What type of sports event do you like to watch most, modern flat design style",
+          "imagePath": "/api/image/8/117/10"
         },
         {
           "question": "Are you the kind of person who likes to put his nose into things that don't?",
           "answer": "concern him Yes, I'm the kind of … ~ No, I'm not the kind of … celebrate celebration New Year's Eve",
           "questionZh": "你是那种喜欢对不喜欢的事情插手的人吗？",
-          "answerZh": "关心他 是的，我是那种……～不，我不是那种……庆祝除夕夜"
+          "answerZh": "关心他 是的，我是那种……～不，我不是那种……庆祝除夕夜",
+          "prompt": "A beautiful clean vector illustration showing a kind, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/117/11"
         },
         {
           "question": "Do you always buy clothes that are up to date?",
           "answer": "Yes, I always knowledge ~ No, I don't always knowledge",
           "questionZh": "你总是买最新的衣服吗？",
-          "answerZh": "是的，我总是知识〜不，我并不总是知识"
+          "answerZh": "是的，我总是知识〜不，我并不总是知识",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you always buy clothes that are up to date, modern flat design style",
+          "imagePath": "/api/image/8/117/12"
         },
         {
           "question": "What does the idiom \"a piece of cake\" mean?",
           "answer": "The idiom knowledge \"extremely easy to do\" (JWFNFBOFYBNQMFQMFBTF Most of the questions in the exam were really difficult, but the first three were a piece of cake",
           "questionZh": "成语“小菜一碟”是什么意思？",
-          "answerZh": "成语知识“极其容易做”（JWFNFBOFYBNQMFQMFBTF 考试的大部分题确实很难，但前三道小菜一碟"
+          "answerZh": "成语知识“极其容易做”（JWFNFBOFYBNQMFQMFBTF 考试的大部分题确实很难，但前三道小菜一碟",
+          "prompt": "A clean minimalist vector illustration of a idiom at a piece, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/117/13"
         }
       ]
     },
@@ -1979,121 +2159,161 @@
           "question": "What do we do if a noun doesn't have a plural form?",
           "answer": "If a noun …, we simply use it on its own, also without an article",
           "questionZh": "如果名词没有复数形式怎么办？",
-          "answerZh": "如果名词……，我们只是单独使用它，也不带冠词"
+          "answerZh": "如果名词……，我们只是单独使用它，也不带冠词",
+          "prompt": "A clean minimalist vector illustration of a noun at a plural, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/118/0"
         },
         {
           "question": "Is it correct to say \"The water is necessary for the life\"?",
           "answer": "No, it isn't …",
           "questionZh": "“水是生命所必需的”这句话正确吗？",
-          "answerZh": "不，这不是……"
+          "answerZh": "不，这不是……",
+          "prompt": "A clean minimalist vector illustration of a water at a life, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/118/1"
         },
         {
           "question": "What must we say instead?",
           "answer": "We must say \"Water is necessary for life\" instead",
           "questionZh": "我们必须说什么？",
-          "answerZh": "我们必须说“水是生命所必需的”"
+          "answerZh": "我们必须说“水是生命所必需的”",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What must we say instead, modern flat design style",
+          "imagePath": "/api/image/8/118/2"
         },
         {
           "question": "What are the articles in English?",
           "answer": "The articles in English are \"the\", \"a\" and \"an\"",
           "questionZh": "英文文章有哪些？",
-          "answerZh": "英文冠词是“the”、“a”和“an”"
+          "answerZh": "英文冠词是“the”、“a”和“an”",
+          "prompt": "A beautiful clean vector illustration showing a articles, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/3"
         },
         {
           "question": "What do we call the word \"the\"?",
           "answer": "We call the word \"the\" the definite article",
           "questionZh": "我们怎么称呼“the”这个词呢？",
-          "answerZh": "我们称“the”为定冠词"
+          "answerZh": "我们称“the”为定冠词",
+          "prompt": "A beautiful clean vector illustration showing a word, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/4"
         },
         {
           "question": "What do we call the words \"a\" and \"an\"?",
           "answer": "We call the words \"a\" and \"an\" the indefinite articles",
           "questionZh": "我们怎么称呼“a”和“an”这两个词？",
-          "answerZh": "我们称“a”和“an”为不定冠词"
+          "answerZh": "我们称“a”和“an”为不定冠词",
+          "prompt": "A beautiful clean vector illustration showing a words, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/5"
         },
         {
           "question": "What's the difference between \"a\" and \"an\"?",
           "answer": "The difference … we use \"a\" … consonant sound, whereas we use \"an\" … vowel sound",
           "questionZh": "“一”和“一”有什么区别？",
-          "answerZh": "区别...我们使用“a”...辅音，而我们使用“an”...元音"
+          "answerZh": "区别...我们使用“a”...辅音，而我们使用“an”...元音",
+          "prompt": "A beautiful clean vector illustration showing a difference, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/6"
         },
         {
           "question": "What kind of worms are there?",
           "answer": "There are earthworms, silkworms, woodworms etc.",
           "questionZh": "那里有哪些蠕虫？",
-          "answerZh": "有蚯蚓、蚕、木蚕等。"
+          "answerZh": "有蚯蚓、蚕、木蚕等。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What kind of worms are there, modern flat design style",
+          "imagePath": "/api/image/8/118/7"
         },
         {
           "question": "What kind of things are often made of silk?",
           "answer": "Ties, scarves etc. are often …",
           "questionZh": "丝绸常用来制作哪些东西？",
-          "answerZh": "领带、围巾等经常..."
+          "answerZh": "领带、围巾等经常...",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What kind of things are often made of silk, modern flat design style",
+          "imagePath": "/api/image/8/118/8"
         },
         {
           "question": "How many limbs do humans have?",
           "answer": "Humans have four limbs",
           "questionZh": "人类有多少条四肢？",
-          "answerZh": "人类有四个肢体"
+          "answerZh": "人类有四个肢体",
+          "prompt": "A clean symbolic vector illustration representing the concept of: How many limbs do humans have, modern flat design style",
+          "imagePath": "/api/image/8/118/9"
         },
         {
           "question": "Do you think some people deserve more of the good things in life than?",
           "answer": "others Yes, I think some people … ~ No, I don't think some people …",
           "questionZh": "你认为有些人值得拥有更多生活中的美好事物吗？",
-          "answerZh": "其他人是的，我认为有些人……〜不，我不认为有些人……"
+          "answerZh": "其他人是的，我认为有些人……〜不，我不认为有些人……",
+          "prompt": "A beautiful clean vector illustration showing a good, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/10"
         },
         {
           "question": "Is there anything you think you deserve but have never received?",
           "answer": "Yes, there is something I think I article ~ No, there isn't anything I think I article",
           "questionZh": "有没有什么东西是你认为你应得的但从未得到过的？",
-          "answerZh": "是的，我认为我写了一些东西〜不，我认为我没有写任何东西"
+          "answerZh": "是的，我认为我写了一些东西〜不，我认为我没有写任何东西",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is there anything you think you deserve but have never received, modern flat design style",
+          "imagePath": "/api/image/8/118/11"
         },
         {
           "question": "Do you frequent any clubs?",
           "answer": "Yes, I frequent … ~ No, I don't frequent …",
           "questionZh": "你经常去俱乐部吗？",
-          "answerZh": "是的，我经常……〜不，我不经常……"
+          "answerZh": "是的，我经常……〜不，我不经常……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you frequent any clubs, modern flat design style",
+          "imagePath": "/api/image/8/118/12"
         },
         {
           "question": "Do you pay frequent visits to your doctor?",
           "answer": "Yes, I pay frequent … ~ No, I don't pay frequent …",
           "questionZh": "您经常去看医生吗？",
-          "answerZh": "是的，我经常付款……〜不，我不经常付款……"
+          "answerZh": "是的，我经常付款……〜不，我不经常付款……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you pay frequent visits to your doctor, modern flat design style",
+          "imagePath": "/api/image/8/118/13"
         },
         {
           "question": "What's the best way to attract people's attention in the street?",
           "answer": "The best way article is to shout loudly to them and wave",
           "questionZh": "在街上吸引人们注意力的最佳方式是什么？",
-          "answerZh": "文章最好的方式就是向他们大声喊叫并挥手"
+          "answerZh": "文章最好的方式就是向他们大声喊叫并挥手",
+          "prompt": "A clean minimalist vector illustration of a best on a street, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/118/14"
         },
         {
           "question": "Do you think most people these days are too busy with their own lives to?",
           "answer": "care about the rest of the people in the world Yes, I think most people … ~ No, I don't think most people …",
           "questionZh": "你认为现在大多数人都忙于自己的生活吗？",
-          "answerZh": "关心世界上其他人是的，我认为大多数人......〜不，我不认为大多数人......"
+          "answerZh": "关心世界上其他人是的，我认为大多数人......〜不，我不认为大多数人......",
+          "prompt": "A beautiful clean vector illustration showing a rest, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/15"
         },
         {
           "question": "What kind of things make you feel miserable?",
           "answer": "The kind of things that … are …",
           "questionZh": "什么样的事情让你感到痛苦？",
-          "answerZh": "这类事情……是……"
+          "answerZh": "这类事情……是……",
+          "prompt": "A beautiful clean vector illustration showing a kind, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/16"
         },
         {
           "question": "Which do you think's the most miserable place on earth?",
           "answer": "I think … is the most …",
           "questionZh": "你认为世界上最悲惨的地方是哪里？",
-          "answerZh": "我认为……是最……"
+          "answerZh": "我认为……是最……",
+          "prompt": "A beautiful clean vector illustration showing a most, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/17"
         },
         {
           "question": "What do we mean by \"miserable weather\"?",
           "answer": "By \"miserable weather\" we mean cold and rainy weather",
           "questionZh": "“恶劣的天气”是什么意思？",
-          "answerZh": "我们所说的“恶劣天气”是指寒冷多雨的天气"
+          "answerZh": "我们所说的“恶劣天气”是指寒冷多雨的天气",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do we mean by \"miserable weather\", modern flat design style",
+          "imagePath": "/api/image/8/118/18"
         },
         {
           "question": "What does the idiom \"look before you leap\" mean?",
           "answer": "The idiom article \"think carefully article\"",
           "questionZh": "成语“三思而后行”是什么意思？",
-          "answerZh": "成语文章“仔细思考文章”"
+          "answerZh": "成语文章“仔细思考文章”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/118/19"
         }
       ]
     },
@@ -2281,133 +2501,177 @@
           "question": "What are two common uses of the structure \"to be\" infinitive with?",
           "answer": "\"to\" Two common uses … are to communicate an arrangement or an obligation",
           "questionZh": "不定式“to be”结构有哪两种常见用法？",
-          "answerZh": "“to”的两个常见用法……是传达安排或义务"
+          "answerZh": "“to”的两个常见用法……是传达安排或义务",
+          "prompt": "A beautiful clean vector illustration showing a structure, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/0"
         },
         {
           "question": "What does this sentence mean: \"The Prime Minister is to speak to the?",
           "answer": "press at noon\" That sentence means that there is an arrangement for the Prime Minister to speak to the press at noon",
           "questionZh": "这句话是什么意思：“总理是要讲话的？",
-          "answerZh": "press at noon”这句话的意思是，有安排首相在中午向新闻界发表讲话"
+          "answerZh": "press at noon”这句话的意思是，有安排首相在中午向新闻界发表讲话",
+          "prompt": "A beautiful clean vector illustration showing a prime, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/1"
         },
         {
           "question": "What am I doing?",
           "answer": "You're nursing your elbow",
           "questionZh": "我在做什么？",
-          "answerZh": "你正在护理你的肘部"
+          "answerZh": "你正在护理你的肘部",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What am I doing, modern flat design style",
+          "imagePath": "/api/image/8/119/2"
         },
         {
           "question": "Have you ever had to nurse a sick person?",
           "answer": "Yes, I've had to … ~ No, I've never had to firstly",
           "questionZh": "您曾经需要护理病人吗？",
-          "answerZh": "是的，我必须……〜不，我从来没有必须首先"
+          "answerZh": "是的，我必须……〜不，我从来没有必须首先",
+          "prompt": "A beautiful clean vector illustration showing a sick, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/3"
         },
         {
           "question": "What's a nursery or nursery school?",
           "answer": "A nursery, or nursery school, is a place for very small children to play while their parents go to work",
           "questionZh": "什么是托儿所或托儿所？",
-          "answerZh": "托儿所或托儿所是父母上班时供很小的孩子玩耍的地方"
+          "answerZh": "托儿所或托儿所是父母上班时供很小的孩子玩耍的地方",
+          "prompt": "A split-screen minimalist vector illustration comparing nursery on the left and nursery on the right, modern flat design style",
+          "imagePath": "/api/image/8/119/4"
         },
         {
           "question": "What is unemployment?",
           "answer": "Unemployment is when there's not enough work for everyone",
           "questionZh": "什么是失业？",
-          "answerZh": "失业是指没有足够的工作供每个人使用"
+          "answerZh": "失业是指没有足够的工作供每个人使用",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What is unemployment, modern flat design style",
+          "imagePath": "/api/image/8/119/5"
         },
         {
           "question": "What happens to the unemployed in your country?",
           "answer": "The unemployed",
           "questionZh": "你们国家的失业者会怎样？",
-          "answerZh": "失业者"
+          "answerZh": "失业者",
+          "prompt": "A beautiful clean vector illustration showing a unemployed, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/6"
         },
         {
           "question": "What's the opposite of \"theory\"?",
           "answer": "The opposite … \"practice\"",
           "questionZh": "“理论”的反义词是什么？",
-          "answerZh": "相反……“练习”"
+          "answerZh": "相反……“练习”",
+          "prompt": "A beautiful clean vector illustration showing a opposite, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/7"
         },
         {
           "question": "Is it always possible to put theory into practice?",
           "answer": "No, it isn't …",
           "questionZh": "理论是否总是能够付诸实践？",
-          "answerZh": "不，这不是……"
+          "answerZh": "不，这不是……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it always possible to put theory into practice, modern flat design style",
+          "imagePath": "/api/image/8/119/8"
         },
         {
           "question": "Why not?",
           "answer": "Because what works in theory might not work in practice, because of something that has not been taken into account",
           "questionZh": "为什么不呢？",
-          "answerZh": "因为理论上行得通的东西在实践中可能行不通，因为某些事情没有被考虑到"
+          "answerZh": "因为理论上行得通的东西在实践中可能行不通，因为某些事情没有被考虑到",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Why not, modern flat design style",
+          "imagePath": "/api/image/8/119/9"
         },
         {
           "question": "What do we mean by a practical person?",
           "answer": "By a practical person we mean someone who is good at doing things with their hands, or is good at organizing their ideas and making things happen in real life",
           "questionZh": "我们所说的务实的人是什么意思？",
-          "answerZh": "务实的人是指善于用手做事，或者善于组织自己的想法并在现实生活中实现事情的人。"
+          "answerZh": "务实的人是指善于用手做事，或者善于组织自己的想法并在现实生活中实现事情的人。",
+          "prompt": "A beautiful clean vector illustration showing a practical, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/10"
         },
         {
           "question": "What do we use instead?",
           "answer": "We use \"was able\", \"managed\" or \"succeeded\" instead",
           "questionZh": "我们用什么来代替呢？",
-          "answerZh": "我们使用“能够”、“管理”或“成功”来代替"
+          "answerZh": "我们使用“能够”、“管理”或“成功”来代替",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do we use instead, modern flat design style",
+          "imagePath": "/api/image/8/119/11"
         },
         {
           "question": "What happens when a sentence is negative?",
           "answer": "When a sentence is negative, we can use either \"couldn't\" or \"wasn't able\"",
           "questionZh": "当一个句子是否定的时候会发生什么？",
-          "answerZh": "当一个句子是否定的时候，我们可以使用“couldn't”或“wasn't beable”"
+          "answerZh": "当一个句子是否定的时候，我们可以使用“couldn't”或“wasn't beable”",
+          "prompt": "A beautiful clean vector illustration showing a sentence, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/12"
         },
         {
           "question": "Is it in your nature to worry about things too much?",
           "answer": "Yes, it's in … ~ No, it isn't in …",
           "questionZh": "你的本性是担心事情太多吗？",
-          "answerZh": "是的，它在……〜不，它不在……"
+          "answerZh": "是的，它在……〜不，它不在……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it in your nature to worry about things too much, modern flat design style",
+          "imagePath": "/api/image/8/119/13"
         },
         {
           "question": "Do you think human nature can be changed?",
           "answer": "Yes, I think firstly ~ No, I don't think firstly",
           "questionZh": "你认为人性是可以改变的吗？",
-          "answerZh": "是的，我首先想到〜不，我首先不认为"
+          "answerZh": "是的，我首先想到〜不，我首先不认为",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you think human nature can be changed, modern flat design style",
+          "imagePath": "/api/image/8/119/14"
         },
         {
           "question": "Do you think it's a good thing to make children compete against each?",
           "answer": "other at school Yes, I think it's … ~ No, I don't think it's firstly",
           "questionZh": "你认为让孩子们相互竞争是件好事吗？",
-          "answerZh": "学校里的其他人 是的，我认为这是……〜不，我不认为这是首先"
+          "answerZh": "学校里的其他人 是的，我认为这是……〜不，我不认为这是首先",
+          "prompt": "A beautiful clean vector illustration showing a good, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/15"
         },
         {
           "question": "Have you ever won a competition?",
           "answer": "Yes, I've won … ~ No, I've never won …",
           "questionZh": "你曾经赢得过比赛吗？",
-          "answerZh": "是的，我赢了……〜不，我从来没有赢过……"
+          "answerZh": "是的，我赢了……〜不，我从来没有赢过……",
+          "prompt": "A beautiful clean vector illustration showing a competition, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/16"
         },
         {
           "question": "Are you full of energy at the moment?",
           "answer": "Yes, I'm full of … ~ No, I'm not full of firstly",
           "questionZh": "此刻的你是否充满活力？",
-          "answerZh": "是的，我充满了……〜不，我首先没有充满"
+          "answerZh": "是的，我充满了……〜不，我首先没有充满",
+          "prompt": "A beautiful clean vector illustration showing a moment, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/17"
         },
         {
           "question": "What colour clothes do you think suit you best?",
           "answer": "I think … clothes suit me best",
           "questionZh": "你认为什么颜色的衣服最适合你？",
-          "answerZh": "我认为……衣服最适合我"
+          "answerZh": "我认为……衣服最适合我",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What colour clothes do you think suit you best, modern flat design style",
+          "imagePath": "/api/image/8/119/18"
         },
         {
           "question": "Do you think regular physical exercise can have any effect on how happy?",
           "answer": "someone feels Yes, I think … ~ No, I don't think …",
           "questionZh": "你认为经常进行体育锻炼对快乐有什么影响吗？",
-          "answerZh": "有人觉得是的，我认为……〜不，我不认为……"
+          "answerZh": "有人觉得是的，我认为……〜不，我不认为……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you think regular physical exercise can have any effect on how happy, modern flat design style",
+          "imagePath": "/api/image/8/119/19"
         },
         {
           "question": "What effect do you suppose it'd have on a perfect stranger if you went?",
           "answer": "up to him in the street and hit him with a rolled-up newspaper",
           "questionZh": "如果你去了，你认为会对一个完全陌生的人产生什么影响？",
-          "answerZh": "在街上找到他并用卷起来的报纸打他"
+          "answerZh": "在街上找到他并用卷起来的报纸打他",
+          "prompt": "A beautiful clean vector illustration showing a perfect, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/119/20"
         },
         {
           "question": "What does the idiom \"drop a line\" mean?",
           "answer": "The idiom firstly \"write a short letter\"",
           "questionZh": "成语“掉线”是什么意思？",
-          "answerZh": "成语先“写一封短信”"
+          "answerZh": "成语先“写一封短信”",
+          "prompt": "A clean minimalist vector illustration of a idiom in a line, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/119/21"
         }
       ]
     },
@@ -2541,97 +2805,129 @@
           "question": "Is there anything you should have done yesterday but didn't do?",
           "answer": "Yes, there's polish ~ No, there isn't … If so what",
           "questionZh": "昨天有什么事情是你应该做但没有做的吗？",
-          "answerZh": "是的，有抛光剂〜不，没有……如果有的话怎么办"
+          "answerZh": "是的，有抛光剂〜不，没有……如果有的话怎么办",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is there anything you should have done yesterday but didn't do, modern flat design style",
+          "imagePath": "/api/image/8/120/0"
         },
         {
           "question": "Is there anything you know you should do tomorrow but perhaps won't?",
           "answer": "do Yes, there's something … ~ No, there isn't anything …",
           "questionZh": "有什么事情是你知道明天应该做但也许不会做的吗？",
-          "answerZh": "是的，有东西……〜不，什么也没有……"
+          "answerZh": "是的，有东西……〜不，什么也没有……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is there anything you know you should do tomorrow but perhaps won't, modern flat design style",
+          "imagePath": "/api/image/8/120/1"
         },
         {
           "question": "What's the biggest expense in your daily life?",
           "answer": "The biggest polish is polish",
           "questionZh": "你日常生活中最大的开支是什么？",
-          "answerZh": "最大的抛光是抛光"
+          "answerZh": "最大的抛光是抛光",
+          "prompt": "A beautiful clean vector illustration showing a biggest, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/2"
         },
         {
           "question": "What does the verb \"to postpone\" mean?",
           "answer": "The verb polish to delay something until a better time",
           "questionZh": "动词“推迟”是什么意思？",
-          "answerZh": "动词 Polish 推迟某事直到更好的时间"
+          "answerZh": "动词 Polish 推迟某事直到更好的时间",
+          "prompt": "A beautiful clean vector illustration showing a verb, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/3"
         },
         {
           "question": "Why are football matches sometimes postponed?",
           "answer": "Football matches polish due to bad weather",
           "questionZh": "为什么足球比赛有时会推迟？",
-          "answerZh": "足球比赛因恶劣天气而抛光"
+          "answerZh": "足球比赛因恶劣天气而抛光",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Why are football matches sometimes postponed, modern flat design style",
+          "imagePath": "/api/image/8/120/4"
         },
         {
           "question": "Do you think people suffer from stress more these days than they used?",
           "answer": "to Yes, I think … ~ No, I don't think …",
           "questionZh": "您认为现在人们承受的压力比以前更大吗？",
-          "answerZh": "是的，我认为……〜不，我不认为……"
+          "answerZh": "是的，我认为……〜不，我不认为……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you think people suffer from stress more these days than they used, modern flat design style",
+          "imagePath": "/api/image/8/120/5"
         },
         {
           "question": "The word \"afterwards\" expresses the idea of \"after that\". For example, \"Shall we have dinner now? Afterwards, we can watch a film on TV if you?",
           "answer": "like\".",
           "questionZh": "“之后”这个词表达了“之后”的意思。例如，“我们现在吃晚饭吧？之后我们可以看电视上的电影，如果可以的话？”",
-          "answerZh": "喜欢”。"
+          "answerZh": "喜欢”。",
+          "prompt": "A clean minimalist vector illustration of a word on a idea, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/120/6"
         },
         {
           "question": "What does the word \"afterwards\" express?",
           "answer": "The word \"afterwards\" expresses the idea of \"after that\"",
           "questionZh": "“后来”这个词表达什么？",
-          "answerZh": "“之后”这个词表达了“之后”的意思"
+          "answerZh": "“之后”这个词表达了“之后”的意思",
+          "prompt": "A beautiful clean vector illustration showing a word, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/7"
         },
         {
           "question": "Why should shopkeepers always try to be polite when they attend to?",
           "answer": "customers Shopkeepers should … because they want the customers to come back again",
           "questionZh": "为什么店主在服务时总是尽量保持礼貌？",
-          "answerZh": "顾客店主应该……因为他们希望顾客再次回来"
+          "answerZh": "顾客店主应该……因为他们希望顾客再次回来",
+          "prompt": "A beautiful clean vector illustration showing a customers, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/8"
         },
         {
           "question": "Do you attend to everything the teacher says during the lesson?",
           "answer": "Yes, I attend to … ~ No, I don't attend to … move tear",
           "questionZh": "上课时老师说的一切你都认真听吗？",
-          "answerZh": "是的，我顾及…~不，我不顾…动泪"
+          "answerZh": "是的，我顾及…~不，我不顾…动泪",
+          "prompt": "A clean minimalist vector illustration of a teacher on a lesson, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/120/9"
         },
         {
           "question": "What kind of things move people to tears?",
           "answer": "The kind of things that … are music, sad films, weddings etc.",
           "questionZh": "什么样的事情能让人感动落泪？",
-          "answerZh": "诸如音乐、悲伤的电影、婚礼等。"
+          "answerZh": "诸如音乐、悲伤的电影、婚礼等。",
+          "prompt": "A beautiful clean vector illustration showing a kind, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/10"
         },
         {
           "question": "There are many ways of requesting that somebody does something, but one common way is to say \"Can you …?\" or \"Could you …?\" In a request,?",
           "answer": "\"could\" is more polite than \"can\", and so we often use \"could\" when we are speaking to people we don't know very well. For example, we say \"Excuse me, could you tell me the way to the station, please?\"",
           "questionZh": "请求某人做某事的方式有很多种，但一种常见的方式是说“Can you ...?”或“你能……吗？”在请求中，?",
-          "answerZh": "“could”比“can”更有礼貌，因此当我们与不太熟悉的人交谈时，我们经常使用“could”。例如，我们说“对不起，请问你能告诉我去车站的路吗？”"
+          "answerZh": "“could”比“can”更有礼貌，因此当我们与不太熟悉的人交谈时，我们经常使用“could”。例如，我们说“对不起，请问你能告诉我去车站的路吗？”",
+          "prompt": "A beautiful clean vector illustration showing a request, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/120/11"
         },
         {
           "question": "Which is more polite: \"can\" or \"could\"?",
           "answer": "\"Could\" is more polite than \"can\"",
           "questionZh": "“can”和“could”哪个更礼貌？",
-          "answerZh": "“Could”比“can”更有礼貌"
+          "answerZh": "“Could”比“can”更有礼貌",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Which is more polite: \"can\" or \"could\", modern flat design style",
+          "imagePath": "/api/image/8/120/12"
         },
         {
           "question": "Another common way of making a request is to say \"Do you mind …?\" or?",
           "answer": "\"Would you mind …?\" For example, \"Do you mind opening the window, please?\" or \"Would you mind moving your chair a little, please?\" The difference is that \"Would you mind …?\" is perhaps more polite. Notice that we put a gerund after the verb \"mind\" in this type of request.",
           "questionZh": "提出请求的另一种常见方式是说“你介意……吗？”或者？",
-          "answerZh": "“你会介意的 …？”例如，“您介意打开窗户吗？”或者“您介意把椅子挪动一下吗？”不同之处在于“你介意……吗？”也许更有礼貌。请注意，在此类请求中，我们在动词“mind”后面放置了一个动名词。"
+          "answerZh": "“你会介意的 …？”例如，“您介意打开窗户吗？”或者“您介意把椅子挪动一下吗？”不同之处在于“你介意……吗？”也许更有礼貌。请注意，在此类请求中，我们在动词“mind”后面放置了一个动名词。",
+          "prompt": "A clean minimalist vector illustration of a person opening request, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/120/13"
         },
         {
           "question": "What'd you do if you wanted to spoil someone's pleasure in eating their?",
           "answer": "lunch If I wanted to …, I'd talk about something unpleasant",
           "questionZh": "如果你想破坏别人吃饭的乐趣，你会怎么做？",
-          "answerZh": "午餐 如果我想……，我会谈论一些不愉快的事情"
+          "answerZh": "午餐 如果我想……，我会谈论一些不愉快的事情",
+          "prompt": "A clean minimalist vector illustration of a person eating, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/120/14"
         },
         {
           "question": "Have you got any shares in any companies?",
           "answer": "Yes, I've got some … ~ No, I haven't got any …",
           "questionZh": "您有任何公司的股份吗？",
-          "answerZh": "是的，我有一些……〜不，我没有……"
+          "answerZh": "是的，我有一些……〜不，我没有……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Have you got any shares in any companies, modern flat design style",
+          "imagePath": "/api/image/8/120/15"
         }
       ]
     },
@@ -2801,127 +3097,169 @@
           "question": "The verb \"need\" can sometimes be used as a modal verb in questions and negative sentences (but not normally in positive sentences). For example, instead of asking \"Does she need to fill in a form?\", we can ask \"Need she?",
           "answer": "fill in a form?\", and instead of saying \"You don't need to pay the bill yet\", we can say \"You needn't pay the bill yet\".",
           "questionZh": "动词“need”有时可以在疑问句和否定句中用作情态动词（但通常不在肯定句中）。例如，我们可以问“她需要吗？”，而不是问“她需要填写表格吗？”",
-          "answerZh": "填写表格吗？”，而不是说“您还不需要支付账单”，我们可以说“您还不需要支付账单”。"
+          "answerZh": "填写表格吗？”，而不是说“您还不需要支付账单”，我们可以说“您还不需要支付账单”。",
+          "prompt": "A clean minimalist vector illustration of a verb on a modal, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/121/0"
         },
         {
           "question": "What does somebody mean if they say that they needn't have done?",
           "answer": "something If somebody says that …, it means that they did it, but it was, in fact, not necessary",
           "questionZh": "如果有人说他们不必这样做，那是什么意思？",
-          "answerZh": "某事如果有人这么说……，则意味着他们做到了，但实际上没有必要"
+          "answerZh": "某事如果有人这么说……，则意味着他们做到了，但实际上没有必要",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What does somebody mean if they say that they needn't have done, modern flat design style",
+          "imagePath": "/api/image/8/121/1"
         },
         {
           "question": "What kind of associations are there?",
           "answer": "There are automobile associations, football associations etc.",
           "questionZh": "都有哪些类型的协会？",
-          "answerZh": "有汽车协会、足球协会等。"
+          "answerZh": "有汽车协会、足球协会等。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What kind of associations are there, modern flat design style",
+          "imagePath": "/api/image/8/121/2"
         },
         {
           "question": "Do you belong to any associations?",
           "answer": "Yes, I belong to … ~ No, I don't belong to … *GTPXIJDI",
           "questionZh": "您属于任何协会吗？",
-          "answerZh": "是的，我属于……〜不，我不属于……*GTPXIJDI"
+          "answerZh": "是的，我属于……〜不，我不属于……*GTPXIJDI",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you belong to any associations, modern flat design style",
+          "imagePath": "/api/image/8/121/3"
         },
         {
           "question": "Why or why not?",
           "answer": "Because I can't concentrate … ~ Because I can concentrate in spite of the noise",
           "questionZh": "为什么或为什么不呢？",
-          "answerZh": "因为我无法集中注意力……〜因为即使有噪音我也能集中注意力"
+          "answerZh": "因为我无法集中注意力……〜因为即使有噪音我也能集中注意力",
+          "prompt": "A split-screen minimalist vector illustration comparing why on the left and why on the right, modern flat design style",
+          "imagePath": "/api/image/8/121/4"
         },
         {
           "question": "Do you think it takes a lot of courage to act on the stage?",
           "answer": "Yes, I think … ~ No, I don't think …",
           "questionZh": "你觉得在舞台上表演需要很大的勇气吗？",
-          "answerZh": "是的，我认为……〜不，我不认为……"
+          "answerZh": "是的，我认为……〜不，我不认为……",
+          "prompt": "A clean minimalist vector illustration of a lot on a stage, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/121/5"
         },
         {
           "question": "Why is courage considered by some people the greatest of all the virtues?",
           "answer": "Courage is considered … because one needs it to be able to practise the other virtues",
           "questionZh": "为什么有些人认为勇气是所有美德中最伟大的？",
-          "answerZh": "勇气被认为是……因为一个人需要它才能实践其他美德"
+          "answerZh": "勇气被认为是……因为一个人需要它才能实践其他美德",
+          "prompt": "A clean minimalist vector illustration of a greatest on a virtues, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/121/6"
         },
         {
           "question": "What do we mean by being loyal to someone?",
           "answer": "By being loyal to someone, we mean that we are true and faithful to them and give them our support",
           "questionZh": "我们所说的对某人忠诚是什么意思？",
-          "answerZh": "忠诚于某人意味着我们对他们真诚、忠诚并给予他们支持"
+          "answerZh": "忠诚于某人意味着我们对他们真诚、忠诚并给予他们支持",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What do we mean by being loyal to someone, modern flat design style",
+          "imagePath": "/api/image/8/121/7"
         },
         {
           "question": "What's the noun of the adjective \"loyal\"?",
           "answer": "The noun of the adjective \"loyal\" is \"loyalty\"",
           "questionZh": "“忠诚”这个形容词的名词是什么？",
-          "answerZh": "形容词“忠诚”的名词是“忠诚”"
+          "answerZh": "形容词“忠诚”的名词是“忠诚”",
+          "prompt": "A clean minimalist vector illustration of a noun at a adjective, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/121/8"
         },
         {
           "question": "Which animal is man's most loyal companion?",
           "answer": "The dog is … spirit spiritual evil",
           "questionZh": "哪种动物是人类最忠实的伴侣？",
-          "answerZh": "狗是……精神上的邪恶"
+          "answerZh": "狗是……精神上的邪恶",
+          "prompt": "A beautiful clean vector illustration showing a dog, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/9"
         },
         {
           "question": "Do you believe in evil spirits?",
           "answer": "Yes, I believe in … ~ No, I don't believe in …",
           "questionZh": "你相信邪灵存在吗？",
-          "answerZh": "是的，我相信……〜不，我不相信……"
+          "answerZh": "是的，我相信……〜不，我不相信……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you believe in evil spirits, modern flat design style",
+          "imagePath": "/api/image/8/121/10"
         },
         {
           "question": "What kind of things put you in high spirits and what kind of things put?",
           "answer": "you in low spirits The kind of things that put me in high spirits are …, and the kind … are …",
           "questionZh": "什么样的事情让你精神抖擞，什么样的事情放？",
-          "answerZh": "你情绪低落，那种让我情绪高涨的事情是……，而那种……是……"
+          "answerZh": "你情绪低落，那种让我情绪高涨的事情是……，而那种……是……",
+          "prompt": "A beautiful clean vector illustration showing a kind, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/11"
         },
         {
           "question": "Do you drink spirits?",
           "answer": "Yes, I drink association ~ No, I don't drink association",
           "questionZh": "你喝烈酒吗？",
-          "answerZh": "是的，我喝协会~不，我不喝协会"
+          "answerZh": "是的，我喝协会~不，我不喝协会",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you drink spirits, modern flat design style",
+          "imagePath": "/api/image/8/121/12"
         },
         {
           "question": "Which river flows through London?",
           "answer": "The River Thames flows association",
           "questionZh": "哪条河流经伦敦？",
-          "answerZh": "泰晤士河水流协会"
+          "answerZh": "泰晤士河水流协会",
+          "prompt": "A beautiful clean vector illustration showing a river, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/13"
         },
         {
           "question": "What's a festival?",
           "answer": "A festival is …",
           "questionZh": "什么是节日？",
-          "answerZh": "一个节日是……"
+          "answerZh": "一个节日是……",
+          "prompt": "A beautiful clean vector illustration showing a festival, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/14"
         },
         {
           "question": "Have you ever been to a big music festival?",
           "answer": "Yes, I've … ~ No, I've never …",
           "questionZh": "你参加过大型音乐节吗？",
-          "answerZh": "是的，我……不，我从来没有……"
+          "answerZh": "是的，我……不，我从来没有……",
+          "prompt": "A beautiful clean vector illustration showing a big, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/15"
         },
         {
           "question": "What's a feast?",
           "answer": "A feast is … dare challenge",
           "questionZh": "什么是盛宴？",
-          "answerZh": "一场盛宴是……敢于挑战"
+          "answerZh": "一场盛宴是……敢于挑战",
+          "prompt": "A beautiful clean vector illustration showing a feast, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/16"
         },
         {
           "question": "The verb \"dare\", like the verb \"need\", can be used as both an ordinary verb and a modal verb. For example, instead of asking \"Do you dare to try it?\", we can ask \"Dare you try it?\", and instead of saying \"She doesn't?",
           "answer": "dare to tell her father what happened\", we can say \"She daren't tell her father what happened\". As a modal verb, \"dare\" is generally only used in questions and negative sentences, not in positive sentences.",
           "questionZh": "动词“敢”与动词“需要”一样，既可以用作普通动词，也可以用作情态动词。例如，我们可以问“你敢尝试吗？”，而不是问“你敢尝试吗？”，而不是说“她不敢？”",
-          "answerZh": "敢于告诉她父亲发生了什么事”，我们可以说“她不敢告诉她父亲发生了什么事”。作为情态动词，“dare”一般只用在疑问句和否定句中，而不用在肯定句中。"
+          "answerZh": "敢于告诉她父亲发生了什么事”，我们可以说“她不敢告诉她父亲发生了什么事”。作为情态动词，“dare”一般只用在疑问句和否定句中，而不用在肯定句中。",
+          "prompt": "A clean minimalist vector illustration of a verb in a verb, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/121/17"
         },
         {
           "question": "Is it difficult for most people to solve mathematical problems without?",
           "answer": "using a calculator Yes, it's difficult …",
           "questionZh": "对于大多数人来说，如果没有的话，很难解决数学问题吗？",
-          "answerZh": "使用计算器 是的，这很难……"
+          "answerZh": "使用计算器 是的，这很难……",
+          "prompt": "A beautiful clean vector illustration showing a calculator, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/18"
         },
         {
           "question": "What's this?",
           "answer": "It's a fingernail",
           "questionZh": "这是什么？",
-          "answerZh": "这是一个指甲盖"
+          "answerZh": "这是一个指甲盖",
+          "prompt": "A beautiful clean vector illustration showing a fingernail, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/19"
         },
         {
           "question": "What does the idiom \"fall to pieces\" mean?",
           "answer": "The idiom association \"lose control association\"",
           "questionZh": "成语“摔得粉碎”是什么意思？",
-          "answerZh": "成语协会“失控协会”"
+          "answerZh": "成语协会“失控协会”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/121/20"
         }
       ]
     },
@@ -3223,109 +3561,145 @@
           "question": "What is a \"backyard\"?",
           "answer": "A \"backyard\" is an enclosed space behind a house",
           "questionZh": "什么是“后院”？",
-          "answerZh": "“后院”是房屋后面的封闭空间"
+          "answerZh": "“后院”是房屋后面的封闭空间",
+          "prompt": "A beautiful clean vector illustration showing a enclosed, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/0"
         },
         {
           "question": "What's a courtyard?",
           "answer": "A courtyard is … and is usually found in colleges, castles or very large houses",
           "questionZh": "什么是庭院？",
-          "answerZh": "庭院是……通常出现在大学、城堡或非常大的房子里"
+          "answerZh": "庭院是……通常出现在大学、城堡或非常大的房子里",
+          "prompt": "A beautiful clean vector illustration showing a courtyard, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/1"
         },
         {
           "question": "What does the expression \"to amuse yourself\" mean?",
           "answer": "The expression \"to amuse yourself\" means …",
           "questionZh": "“自娱自乐”这句话是什么意思？",
-          "answerZh": "“自娱自乐”这个词的意思是……"
+          "answerZh": "“自娱自乐”这个词的意思是……",
+          "prompt": "A beautiful clean vector illustration showing a expression, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/2"
         },
         {
           "question": "What's a hobby?",
           "answer": "A hobby is a regular activity that people do in their free time for their own amusement rather than for making money",
           "questionZh": "什么是爱好？",
-          "answerZh": "爱好是人们在空闲时间为了自己娱乐而不是为了赚钱而进行的常规活动"
+          "answerZh": "爱好是人们在空闲时间为了自己娱乐而不是为了赚钱而进行的常规活动",
+          "prompt": "A beautiful clean vector illustration showing a hobby, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/3"
         },
         {
           "question": "Why do some people arrange their CDs or books in alphabetical order on?",
           "answer": "the shelf Some people … so that they are easy to find",
           "questionZh": "为什么有些人按字母顺序排列 CD 或书籍？",
-          "answerZh": "架子上有些人……这样很容易找到他们"
+          "answerZh": "架子上有些人……这样很容易找到他们",
+          "prompt": "A split-screen minimalist vector illustration comparing cds on the left and books on the right, modern flat design style",
+          "imagePath": "/api/image/8/122/4"
         },
         {
           "question": "Do you like watching a film in a packed cinema?",
           "answer": "Yes, I like yard ~ No, I don't like yard",
           "questionZh": "您喜欢在拥挤的电影院里看电影吗？",
-          "answerZh": "是的，我喜欢院子~不，我不喜欢院子"
+          "answerZh": "是的，我喜欢院子~不，我不喜欢院子",
+          "prompt": "A clean minimalist vector illustration of a film in a packed, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/122/5"
         },
         {
           "question": "Why is leather a good material for making bags from?",
           "answer": "Leather is … because it's soft but also very strong",
           "questionZh": "为什么皮革是制作包包的好材料？",
-          "answerZh": "皮革……因为它柔软但也非常坚固"
+          "answerZh": "皮革……因为它柔软但也非常坚固",
+          "prompt": "A beautiful clean vector illustration showing a good, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/6"
         },
         {
           "question": "Is it important to you to have every modern convenience in your home?",
           "answer": "Yes, it's important … ~ No, it isn't important …",
           "questionZh": "家里拥有一切现代便利设施对您来说重要吗？",
-          "answerZh": "是的，很重要……～不，不重要……"
+          "answerZh": "是的，很重要……～不，不重要……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it important to you to have every modern convenience in your home, modern flat design style",
+          "imagePath": "/api/image/8/122/7"
         },
         {
           "question": "What do we mean by a sensitive thermometer?",
           "answer": "By a …, we mean a thermometer that can measure very small changes in temperature",
           "questionZh": "灵敏温度计是什么意思？",
-          "answerZh": "我们所说的……是指可以测量非常微小的温度变化的温度计"
+          "answerZh": "我们所说的……是指可以测量非常微小的温度变化的温度计",
+          "prompt": "A beautiful clean vector illustration showing a sensitive, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/8"
         },
         {
           "question": "Are your eyes sensitive to bright light?",
           "answer": "Yes, my eyes are … ~ No, my eyes aren't …",
           "questionZh": "您的眼睛对强光敏感吗？",
-          "answerZh": "是的，我的眼睛是……〜不，我的眼睛不是……"
+          "answerZh": "是的，我的眼睛是……〜不，我的眼睛不是……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are your eyes sensitive to bright light, modern flat design style",
+          "imagePath": "/api/image/8/122/9"
         },
         {
           "question": "Is it important for teachers to be sensitive to their pupils' feelings?",
           "answer": "Yes, it's important for … 8IBUEPXFNFBOJGXFTBZUIBUTPNFCPEZJTWFSZTFOTJUJWFUPDSJUJDJTN",
           "questionZh": "教师对学生的感受敏感重要吗？",
-          "answerZh": "是的，这对于...... 8IBUEPXFNFBOJGXFTBZUIBUTPNFCPEZJTWFSZTFOTJUJWFUPDSJUJDJTN 很重要"
+          "answerZh": "是的，这对于...... 8IBUEPXFNFBOJGXFTBZUIBUTPNFCPEZJTWFSZTFOTJUJWFUPDSJUJDJTN 很重要",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it important for teachers to be sensitive to their pupils' feelings, modern flat design style",
+          "imagePath": "/api/image/8/122/10"
         },
         {
           "question": "Are you sensible with money?",
           "answer": "Yes, I'm sensible … ~ No, I'm not sensible …",
           "questionZh": "你对金钱有理智吗？",
-          "answerZh": "是的，我懂事了……～不，我不懂事……"
+          "answerZh": "是的，我懂事了……～不，我不懂事……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are you sensible with money, modern flat design style",
+          "imagePath": "/api/image/8/122/11"
         },
         {
           "question": "Is it sensible to run across the road without looking?",
           "answer": "No, it isn't sensible to …",
           "questionZh": "不看就跑过马路明智吗？",
-          "answerZh": "不，这是不明智的……"
+          "answerZh": "不，这是不明智的……",
+          "prompt": "A beautiful clean vector illustration showing a road, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/12"
         },
         {
           "question": "Why not?",
           "answer": "Because we could be hit by a car",
           "questionZh": "为什么不呢？",
-          "answerZh": "因为我们可能会被车撞到"
+          "answerZh": "因为我们可能会被车撞到",
+          "prompt": "A beautiful clean vector illustration showing a car, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/13"
         },
         {
           "question": "Is there a big shopping centre in this town?",
           "answer": "Yes, there's a … ~ No, there isn't a … balance add up",
           "questionZh": "这个镇上有一个大的购物中心吗？",
-          "answerZh": "是的，有……〜不，没有……余额加起来"
+          "answerZh": "是的，有……〜不，没有……余额加起来",
+          "prompt": "A beautiful clean vector illustration showing a big, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/14"
         },
         {
           "question": "What am I doing?",
           "answer": "You're balancing your pen on your finger",
           "questionZh": "我在做什么？",
-          "answerZh": "你用手指平衡笔"
+          "answerZh": "你用手指平衡笔",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What am I doing, modern flat design style",
+          "imagePath": "/api/image/8/122/15"
         },
         {
           "question": "What is basically the meaning of the verb \"to bind\"?",
           "answer": "Basically, the meaning … is \"to tie\"",
           "questionZh": "动词“绑定”的基本含义是什么？",
-          "answerZh": "基本上，意思是“捆绑”"
+          "answerZh": "基本上，意思是“捆绑”",
+          "prompt": "A clean minimalist vector illustration of a meaning in a verb, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/122/16"
         },
         {
           "question": "What are the three forms of \"bind\"?",
           "answer": "The three forms of \"bind\" are \"bind, bound, bound\"",
           "questionZh": "“绑定”有哪三种形式？",
-          "answerZh": "“绑定”的三种形式是“绑定、绑定、绑定”"
+          "answerZh": "“绑定”的三种形式是“绑定、绑定、绑定”",
+          "prompt": "A beautiful clean vector illustration showing a three, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/122/17"
         }
       ]
     },
@@ -3453,79 +3827,105 @@
           "question": "Do you know anyone who works as a waiter?",
           "answer": "Yes, I know someone … ~ No, I don't know anyone …",
           "questionZh": "你认识做服务员的人吗？",
-          "answerZh": "是的，我认识一个人……〜不，我不认识任何人……"
+          "answerZh": "是的，我认识一个人……〜不，我不认识任何人……",
+          "prompt": "A beautiful clean vector illustration showing a waiter, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/0"
         },
         {
           "question": "Do you note down all the new English words you hear?",
           "answer": "Yes, I note down … ~ No, I don't note down …",
           "questionZh": "你记下你听到的所有新英语单词吗？",
-          "answerZh": "是的，我记下来了……〜不，我不记下来……"
+          "answerZh": "是的，我记下来了……〜不，我不记下来……",
+          "prompt": "A beautiful clean vector illustration showing a new, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/1"
         },
         {
           "question": "Do you take notes in a notebook during the lesson?",
           "answer": "No, I don't take …",
           "questionZh": "上课时你会在笔记本上做笔记吗？",
-          "answerZh": "不，我不接受……"
+          "answerZh": "不，我不接受……",
+          "prompt": "A clean minimalist vector illustration of a notebook on a lesson, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/123/2"
         },
         {
           "question": "Why not?",
           "answer": "Because if I did, I couldn't give my full attention to what was being said",
           "questionZh": "为什么不呢？",
-          "answerZh": "因为如果我这样做，我就无法全神贯注于所说的内容"
+          "answerZh": "因为如果我这样做，我就无法全神贯注于所说的内容",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Why not, modern flat design style",
+          "imagePath": "/api/image/8/123/3"
         },
         {
           "question": "What colour are the banknotes of your country?",
           "answer": "The banknotes of my country are … $BOXPNFOOPSNBMMZTJOHIJHIFSOPUFTUIBONFODBO Yes, women",
           "questionZh": "你们国家的纸币是什么颜色的？",
-          "answerZh": "我国的纸币是…… $BOXPNFOOPSNBMMZTJOHIJHIFSOPUFTUIBONFODBO 是的，女性"
+          "answerZh": "我国的纸币是…… $BOXPNFOOPSNBMMZTJOHIJHIFSOPUFTUIBONFODBO 是的，女性",
+          "prompt": "A beautiful clean vector illustration showing a banknotes, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/4"
         },
         {
           "question": "What's the difference between a note and a letter?",
           "answer": "The difference note is that a note is normally shorter than a letter and less formal",
           "questionZh": "便条和信件有什么区别？",
-          "answerZh": "区别在于便条通常比信件短且不太正式"
+          "answerZh": "区别在于便条通常比信件短且不太正式",
+          "prompt": "A clean minimalist vector illustration of a difference at a note, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/123/5"
         },
         {
           "question": "Why did soldiers wear armour in the old days?",
           "answer": "Soldiers wore … to protect themselves in battle",
           "questionZh": "古代士兵为什么要穿铠甲？",
-          "answerZh": "士兵们穿着……是为了在战斗中保护自己"
+          "answerZh": "士兵们穿着……是为了在战斗中保护自己",
+          "prompt": "A beautiful clean vector illustration showing a old, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/6"
         },
         {
           "question": "Have you ever visited a particular part of the world simply because you?",
           "answer": "were fascinated by the local culture Yes, I've … ~ No, I've never …",
           "questionZh": "您是否曾经仅仅因为您而访问过世界的某个特定地区？",
-          "answerZh": "对当地文化着迷是的，我……〜不，我从来没有……"
+          "answerZh": "对当地文化着迷是的，我……〜不，我从来没有……",
+          "prompt": "A beautiful clean vector illustration showing a particular, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/7"
         },
         {
           "question": "Why do you think murderers sometimes return to the scene of their?",
           "answer": "crime I think murderers … because they think that they may have left some evidence there",
           "questionZh": "你认为凶手为什么有时会回到案发现场？",
-          "answerZh": "犯罪我认为是凶手......因为他们认为他们可能在那里留下了一些证据"
+          "answerZh": "犯罪我认为是凶手......因为他们认为他们可能在那里留下了一些证据",
+          "prompt": "A beautiful clean vector illustration showing a scene, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/8"
         },
         {
           "question": "What are the letters \"i.e.\" the abbreviation of?",
           "answer": "The letters \"i.e.\" are the abbreviation of \"id est\" note \"that is\" 8IFOEPXFVTFUIJTBCCSFWJBUJPO We use this abbreviation mainly in writing",
           "questionZh": "“i.e”是什么字母？的缩写？",
-          "answerZh": "字母“即”是“id est”的缩写 注意“that is” 8IFOEPXFVTFUIJTBCCSFWJBUJPO 我们主要在写作中使用这个缩写"
+          "answerZh": "字母“即”是“id est”的缩写 注意“that is” 8IFOEPXFVTFUIJTBCCSFWJBUJPO 我们主要在写作中使用这个缩写",
+          "prompt": "A clean minimalist vector illustration of a letters on a abbreviation, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/123/9"
         },
         {
           "question": "Is an African person used to hot weather?",
           "answer": "Yes, an African person is used to hot weather",
           "questionZh": "非洲人习惯炎热的天气吗？",
-          "answerZh": "是的，非洲人习惯了炎热的天气"
+          "answerZh": "是的，非洲人习惯了炎热的天气",
+          "prompt": "A beautiful clean vector illustration showing a african, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/10"
         },
         {
           "question": "Are you used to studyingXJUIUIF$BMMBO.FUIPE?",
           "answer": "Yes, I'm used to studying … ~ No, I'm not used to studying …",
           "questionZh": "你习惯学习XJUIUIF$BMMBO.FUIPE吗？",
-          "answerZh": "是的，我习惯了学习……～不，我不习惯学习……"
+          "answerZh": "是的，我习惯了学习……～不，我不习惯学习……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are you used to studyingXJUIUIF$BMMBO.FUIPE, modern flat design style",
+          "imagePath": "/api/image/8/123/11"
         },
         {
           "question": "What does the idiom \"pull yourself together\" mean?",
           "answer": "The idiom note \"gain control of …\" (JWFNFBOFYBNQMFQMFBTF Stop crying and pull yourself together!",
           "questionZh": "成语“振作起来”是什么意思？",
-          "answerZh": "成语注释“控制……”（JWFNFBOFYBNQMFQMFBTF 别哭了，振作起来！"
+          "answerZh": "成语注释“控制……”（JWFNFBOFYBNQMFQMFBTF 别哭了，振作起来！",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/123/12"
         }
       ]
     },
@@ -3737,61 +4137,81 @@
           "question": "What are the benefits of regular physical exercise?",
           "answer": "The benefits … are good health, more energy etc.",
           "questionZh": "经常锻炼身体有什么好处？",
-          "answerZh": "好处……是身体健康、精力充沛等。"
+          "answerZh": "好处……是身体健康、精力充沛等。",
+          "prompt": "A beautiful clean vector illustration showing a benefits, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/0"
         },
         {
           "question": "Do you think it's important for parents who smoke to try to give up?",
           "answer": "smoking for the sake of their children Yes, I think it's … ~ No, I don't think it's … mixed up",
           "questionZh": "您认为对于吸烟的父母来说尝试戒烟重要吗？",
-          "answerZh": "为了孩子而吸烟 是的，我认为这是……〜不，我不认为这是……混淆了"
+          "answerZh": "为了孩子而吸烟 是的，我认为这是……〜不，我不认为这是……混淆了",
+          "prompt": "A beautiful clean vector illustration showing a sake, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/1"
         },
         {
           "question": "Do you think a sense of humour is one of the most important parts of a?",
           "answer": "person's character Yes, I think … ~ No, I don't think …",
           "questionZh": "您认为幽默感是最重要的部分之一吗？",
-          "answerZh": "人的性格 是的，我认为……〜不，我不认为……"
+          "answerZh": "人的性格 是的，我认为……〜不，我不认为……",
+          "prompt": "A clean minimalist vector illustration of a sense on a most, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/124/2"
         },
         {
           "question": "Is it important for teachers to praise children when they do things well?",
           "answer": "Yes, it's important for …",
           "questionZh": "当孩子做得好的时候，老师表扬孩子重要吗？",
-          "answerZh": "是的，这对于……来说很重要。"
+          "answerZh": "是的，这对于……来说很重要。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is it important for teachers to praise children when they do things well, modern flat design style",
+          "imagePath": "/api/image/8/124/3"
         },
         {
           "question": "What's the danger of giving children too much praise?",
           "answer": "The danger … is that they might think they are better than they really are and start to become careless in their work",
           "questionZh": "给予孩子过多的表扬有什么危害？",
-          "answerZh": "危险的是……他们可能认为自己比实际情况更好，并开始在工作中变得粗心"
+          "answerZh": "危险的是……他们可能认为自己比实际情况更好，并开始在工作中变得粗心",
+          "prompt": "A beautiful clean vector illustration showing a danger, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/4"
         },
         {
           "question": "Is it easy to get a loan from a bank?",
           "answer": "Yes, it's easy to … ~ No, it isn't easy to … furthermore moreover",
           "questionZh": "从银行贷款容易吗？",
-          "answerZh": "是的，很容易……〜不，这不容易……而且而且"
+          "answerZh": "是的，很容易……〜不，这不容易……而且而且",
+          "prompt": "A beautiful clean vector illustration showing a loan, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/5"
         },
         {
           "question": "How many toes do you have?",
           "answer": "I have ten toes",
           "questionZh": "你有几个脚趾？",
-          "answerZh": "我有十个脚趾"
+          "answerZh": "我有十个脚趾",
+          "prompt": "A clean symbolic vector illustration representing the concept of: How many toes do you have, modern flat design style",
+          "imagePath": "/api/image/8/124/6"
         },
         {
           "question": "Do you know any famous people personally?",
           "answer": "Yes, I know … ~ No, I don't know …",
           "questionZh": "您认识哪些名人？",
-          "answerZh": "是的，我知道……～不，我不知道……"
+          "answerZh": "是的，我知道……～不，我不知道……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Do you know any famous people personally, modern flat design style",
+          "imagePath": "/api/image/8/124/7"
         },
         {
           "question": "What do they give a hospital patient to make them unconscious before?",
           "answer": "an operation They usually … a special kind of gas or an injection to make …",
           "questionZh": "他们以前给医院病人吃什么让他们失去知觉？",
-          "answerZh": "手术他们通常......一种特殊的气体或注射来制造......"
+          "answerZh": "手术他们通常......一种特殊的气体或注射来制造......",
+          "prompt": "A beautiful clean vector illustration showing a hospital, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/8"
         },
         {
           "question": "What do we use to split wood?",
           "answer": "We use an axe to split wood",
           "questionZh": "我们用什么来劈木头？",
-          "answerZh": "我们用斧头劈木头"
+          "answerZh": "我们用斧头劈木头",
+          "prompt": "A beautiful clean vector illustration showing a axe, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/124/9"
         }
       ]
     },
@@ -3931,61 +4351,81 @@
           "question": "Which is the heaviest land animal on earth?",
           "answer": "The elephant is … 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE The mobile phone was invented in 1973 2) We sometimes put the definite article \"the\" in front of a name, but",
           "questionZh": "地球上最重的陆地动物是什么？",
-          "answerZh": "大象是… 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE 移动电话于 1973 年发明 2) 我们有时将定冠词“the”放在名字前面，但是"
+          "answerZh": "大象是… 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE 移动电话于 1973 年发明 2) 我们有时将定冠词“the”放在名字前面，但是",
+          "prompt": "A beautiful clean vector illustration showing a heaviest, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/125/0"
         },
         {
           "question": "Which is the longest river in the world?",
           "answer": "The Nile is … 3) Finally, we occasionally put the word \"the\" in front of the name of a country, but only if the name is plural in form. For example, \"the Netherlands\", \"the United States of America\" etc. With country names that are singular in form, we do not use \"the\". For example, we say \"France\" (not \"the France\").",
           "questionZh": "世界上最长的河流是哪条？",
-          "answerZh": "尼罗河是…… 3) 最后，我们偶尔会在国家名称前加上“the”一词，但前提是该名称采用复数形式。例如，“荷兰”、“美利坚合众国”等。对于单数形式的国家/地区名称，我们不使用“the”。例如，我们说“法国”（而不是“法国”）。"
+          "answerZh": "尼罗河是…… 3) 最后，我们偶尔会在国家名称前加上“the”一词，但前提是该名称采用复数形式。例如，“荷兰”、“美利坚合众国”等。对于单数形式的国家/地区名称，我们不使用“the”。例如，我们说“法国”（而不是“法国”）。",
+          "prompt": "A clean minimalist vector illustration of a longest on a world, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/125/1"
         },
         {
           "question": "Do you think that the present state of the world is better than a hundred?",
           "answer": "years ago Yes, I think … ~ No, I don't think …",
           "questionZh": "你认为当今世界的状况比一百更好吗？",
-          "answerZh": "几年前 是的，我认为……〜不，我不认为……"
+          "answerZh": "几年前 是的，我认为……〜不，我不认为……",
+          "prompt": "A clean minimalist vector illustration of a present in a world, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/125/2"
         },
         {
           "question": "Do you enjoy choosing presents to give to other people or do you find it?",
           "answer": "stressful I enjoy choosing … ~ I find choosing …",
           "questionZh": "您喜欢选择礼物送给别人还是自己找到礼物？",
-          "answerZh": "有压力我喜欢选择……〜我发现选择……"
+          "answerZh": "有压力我喜欢选择……〜我发现选择……",
+          "prompt": "A split-screen minimalist vector illustration comparing people on the left and do on the right, modern flat design style",
+          "imagePath": "/api/image/8/125/3"
         },
         {
           "question": "What does the verb \"to swear\" mean?",
           "answer": "The verb \"to swear\" …",
           "questionZh": "动词“发誓”是什么意思？",
-          "answerZh": "动词“发誓”..."
+          "answerZh": "动词“发誓”...",
+          "prompt": "A beautiful clean vector illustration showing a verb, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/125/4"
         },
         {
           "question": "What are the three forms of \"swear\"?",
           "answer": "The three forms of \"swear\" are \"swear, swore, sworn\"",
           "questionZh": "“咒骂”有哪三种形式？",
-          "answerZh": "“发誓”的三种形式是“发誓、发誓、发誓”"
+          "answerZh": "“发誓”的三种形式是“发誓、发誓、发誓”",
+          "prompt": "A beautiful clean vector illustration showing a three, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/125/5"
         },
         {
           "question": "Are there some people who have never sworn in their lives?",
           "answer": "Yes, there are … lazy idle",
           "questionZh": "有没有一辈子没发过誓的人？",
-          "answerZh": "是的，有……懒惰闲着"
+          "answerZh": "是的，有……懒惰闲着",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Are there some people who have never sworn in their lives, modern flat design style",
+          "imagePath": "/api/image/8/125/6"
         },
         {
           "question": "What do I mean if I say \"The workers were idle because the machines had?",
           "answer": "broken down\" If you say …, you mean they were not doing anything because …",
           "questionZh": "如果我说“工人闲置是因为机器闲置了”，这是什么意思？",
-          "answerZh": "崩溃了”如果你说……，你的意思是他们没有做任何事情，因为……"
+          "answerZh": "崩溃了”如果你说……，你的意思是他们没有做任何事情，因为……",
+          "prompt": "A clean minimalist vector illustration of a workers in a machines, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/125/7"
         },
         {
           "question": "Why do we always remember certain scenes in a film better than we?",
           "answer": "remember others We always remember … because they are very emotional or full of action",
           "questionZh": "为什么我们总是比自己更记得电影中的某些场景？",
-          "answerZh": "记住别人我们总是记得……因为他们非常情绪化或充满行动"
+          "answerZh": "记住别人我们总是记得……因为他们非常情绪化或充满行动",
+          "prompt": "A beautiful clean vector illustration showing a film, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/125/8"
         },
         {
           "question": "What do we call a part of a song that is repeated more than once: a verse?",
           "answer": "or a chorus We call … a chorus",
           "questionZh": "我们将歌曲中重复多次的部分称为什么：诗句？",
-          "answerZh": "或合唱团 我们称之为……合唱团"
+          "answerZh": "或合唱团 我们称之为……合唱团",
+          "prompt": "A clean minimalist vector illustration of a part on a song, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/125/9"
         }
       ]
     },
@@ -4125,127 +4565,169 @@
           "question": "What are you doing?",
           "answer": "I'm extending my …",
           "questionZh": "你在干什么？",
-          "answerZh": "我正在延长我的……"
+          "answerZh": "我正在延长我的……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What are you doing, modern flat design style",
+          "imagePath": "/api/image/8/126/0"
         },
         {
           "question": "Is there anyone you can think of who you could trust with your life?",
           "answer": "Yes, there's someone … ~ No, there isn't anyone …",
           "questionZh": "你能想到可以托付一生的人吗？",
-          "answerZh": "是的，有人……～不，没有人……"
+          "answerZh": "是的，有人……～不，没有人……",
+          "prompt": "A clean symbolic vector illustration representing the concept of: Is there anyone you can think of who you could trust with your life, modern flat design style",
+          "imagePath": "/api/image/8/126/1"
         },
         {
           "question": "Do you think it's a good idea for parents to put money in a trust for their?",
           "answer": "children so that the children can only use it when they reach a certain age Yes, I think it's … ~ No, I don't think it's … dependent independent",
           "questionZh": "您认为父母将钱存入信托机构是个好主意吗？",
-          "answerZh": "让孩子们到了一定年龄才能使用它 是的，我认为是……〜不，我不认为是……依赖独立"
+          "answerZh": "让孩子们到了一定年龄才能使用它 是的，我认为是……〜不，我不认为是……依赖独立",
+          "prompt": "A clean minimalist vector illustration of a good on a trust, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/126/2"
         },
         {
           "question": "Why is it important to be punctual when you have an appointment with?",
           "answer": "your doctor or dentist It's important … because they might not be able to see you if you arrive late",
           "questionZh": "为什么在约会时准时很重要？",
-          "answerZh": "您的医生或牙医 这很重要……因为如果您迟到，他们可能无法见到您"
+          "answerZh": "您的医生或牙医 这很重要……因为如果您迟到，他们可能无法见到您",
+          "prompt": "A beautiful clean vector illustration showing a appointment, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/3"
         },
         {
           "question": "What does the verb \"wish\" communicate?",
           "answer": "The verb \"wish\" communicates the idea that we would like things to be different from the way they in fact are now, or were in the past",
           "questionZh": "动词“愿望”表达什么意思？",
-          "answerZh": "动词“wish”传达了这样的想法：我们希望事情与现在或过去的实际情况有所不同"
+          "answerZh": "动词“wish”传达了这样的想法：我们希望事情与现在或过去的实际情况有所不同",
+          "prompt": "A beautiful clean vector illustration showing a verb, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/4"
         },
         {
           "question": "What must we remember about the tense of any verb that follows?",
           "answer": "\"wish\" We must remember that the tense of any verb that follows \"wish\" is one step back into the past from the time that we are referring to (JWFNFBOFYBNQMFQMFBTF I wish I could fly",
           "questionZh": "关于后面的任何动词的时态，我们必须记住什么？",
-          "answerZh": "“希望” 我们必须记住，“希望”后面的任何动词的时态都是从我们所指的时间向后退一步（JWFNFBOFYBNQMFQMFBTF 我希望我能飞"
+          "answerZh": "“希望” 我们必须记住，“希望”后面的任何动词的时态都是从我们所指的时间向后退一步（JWFNFBOFYBNQMFQMFBTF 我希望我能飞",
+          "prompt": "A beautiful clean vector illustration showing a tense, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/5"
         },
         {
           "question": "Do you have a million pounds?",
           "answer": "No, I don't have …",
           "questionZh": "你有一百万英镑吗？",
-          "answerZh": "不，我没有……"
+          "answerZh": "不，我没有……",
+          "prompt": "A beautiful clean vector illustration showing a million, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/6"
         },
         {
           "question": "Do you wish you had a million pounds?",
           "answer": "Yes, I wish I had … ~ No, I don't wish I had …",
           "questionZh": "你希望拥有一百万英镑吗？",
-          "answerZh": "是的，我希望我有……〜不，我不希望我有……"
+          "answerZh": "是的，我希望我有……〜不，我不希望我有……",
+          "prompt": "A beautiful clean vector illustration showing a million, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/7"
         },
         {
           "question": "Are you relaxing on a beach at the moment?",
           "answer": "No, I'm not relaxing …",
           "questionZh": "您现在正在海滩上放松吗？",
-          "answerZh": "不，我没有放松……"
+          "answerZh": "不，我没有放松……",
+          "prompt": "A clean minimalist vector illustration of a beach on a moment, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/126/8"
         },
         {
           "question": "Do you wish you had met a famous film star yesterday?",
           "answer": "Yes, I wish I had met … ~ No, I don't wish I had met …",
           "questionZh": "您希望昨天见到一位著名的电影明星吗？",
-          "answerZh": "是的，我希望我遇见过……〜不，我不希望我遇见过……"
+          "answerZh": "是的，我希望我遇见过……〜不，我不希望我遇见过……",
+          "prompt": "A beautiful clean vector illustration showing a famous, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/9"
         },
         {
           "question": "Are you the kind of person who enjoys talking about the ideal?",
           "answer": "theoretical state of things or do you consider such things a waste of time and prefer to talk about the actual state of things I'm the kind of person who extend",
           "questionZh": "你是那种喜欢谈论理想的人吗？",
-          "answerZh": "事物的理论状态还是您认为这些事情是浪费时间而更喜欢谈论事物的实际状态我是那种扩展的人"
+          "answerZh": "事物的理论状态还是您认为这些事情是浪费时间而更喜欢谈论事物的实际状态我是那种扩展的人",
+          "prompt": "A clean minimalist vector illustration of a kind on a ideal, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/126/10"
         },
         {
           "question": "Which would you prefer to sit in front of on a cold winter's day: a real log?",
           "answer": "fire burning in the fireplace or a modern gas fire On a cold …, I'd prefer to … common sense",
           "questionZh": "在寒冷的冬日里，你更愿意坐在哪根木头前：一根真正的木头？",
-          "answerZh": "壁炉里的火或现代煤气火在寒冷的时候……，我更喜欢……常识"
+          "answerZh": "壁炉里的火或现代煤气火在寒冷的时候……，我更喜欢……常识",
+          "prompt": "A clean minimalist vector illustration of a cold in front of a real, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/126/11"
         },
         {
           "question": "What is common sense?",
           "answer": "Common sense is practical good sense which is not gained from any special studies",
           "questionZh": "什么是常识？",
-          "answerZh": "常识是实用的良好感觉，不是从任何专门研究中获得的"
+          "answerZh": "常识是实用的良好感觉，不是从任何专门研究中获得的",
+          "prompt": "A clean symbolic vector illustration representing the concept of: What is common sense, modern flat design style",
+          "imagePath": "/api/image/8/126/12"
         },
         {
           "question": "Which tool would you need if you wanted to hit a nail into a piece of?",
           "answer": "wood I'd need a hammer if I …",
           "questionZh": "如果您想将钉子钉入一块，您需要哪种工具？",
-          "answerZh": "木头，如果我……我需要一把锤子"
+          "answerZh": "木头，如果我……我需要一把锤子",
+          "prompt": "A clean minimalist vector illustration of a nail in a piece, simple colored background, modern flat design style",
+          "imagePath": "/api/image/8/126/13"
         },
         {
           "question": "What does the idiom \"cut corners\" mean?",
           "answer": "The idiom extend \"do something quickly …\"",
           "questionZh": "成语“偷工减料”是什么意思？",
-          "answerZh": "这个习语延伸为“快速做某事……”"
+          "answerZh": "这个习语延伸为“快速做某事……”",
+          "prompt": "A beautiful clean vector illustration showing a idiom, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/14"
         },
         {
           "question": "\"Was it usual for him to come here every Sunday?\"; \"It isn't?",
           "answer": "common to find that kind of bird in this part of the country\".",
           "questionZh": "“他每周日都来这里是常事吗？”； “不是吗？",
-          "answerZh": "在这个国家的这个地区很容易找到这种鸟”。"
+          "answerZh": "在这个国家的这个地区很容易找到这种鸟”。",
+          "prompt": "A beautiful clean vector illustration showing a country, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/15"
         },
         {
           "question": "\"Is that right what James said?\" –?",
           "answer": "\"I'm afraid so\"; \"I hope so\"; \"I suppose so\"; \"I think so\".",
           "questionZh": "“詹姆斯说的对吗？” –？",
-          "answerZh": "“恐怕是这样”； “我希望如此”； “我想是这样”； “我想是的”。"
+          "answerZh": "“恐怕是这样”； “我希望如此”； “我想是这样”； “我想是的”。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: \"Is that right what James said?\" –, modern flat design style",
+          "imagePath": "/api/image/8/126/16"
         },
         {
           "question": "\"Is that right what James said?\" –?",
           "answer": "\"I'm afraid not\"; \"I hope not\"; \"I suppose not\".",
           "questionZh": "“詹姆斯说的对吗？” –？",
-          "answerZh": "“恐怕不是”; “我希望不会”； “我想不会”。"
+          "answerZh": "“恐怕不是”; “我希望不会”； “我想不会”。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: \"Is that right what James said?\" –, modern flat design style",
+          "imagePath": "/api/image/8/126/17"
         },
         {
           "question": "One common way of making a request is to say \"Can you …?\"?",
           "answer": "or \"Could you …?\" For example, \"Could you possibly lend me your pen for a second, please?\"",
           "questionZh": "提出请求的一种常见方式是说“你能……吗？”？",
-          "answerZh": "或“你能……吗？”例如，“你能借我一下你的笔吗？”"
+          "answerZh": "或“你能……吗？”例如，“你能借我一下你的笔吗？”",
+          "prompt": "A beautiful clean vector illustration showing a request, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/18"
         },
         {
           "question": "example. Another common way of making a request is to say \"Do you mind …?\"?",
           "answer": "or \"Would you mind …?\" For example, \"Would you mind passing me that book, please?\"",
           "questionZh": "例子。提出请求的另一种常见方式是说“你介意……吗？”？",
-          "answerZh": "或“你介意……吗？”例如，“您介意把那本书递给我吗？”"
+          "answerZh": "或“你介意……吗？”例如，“您介意把那本书递给我吗？”",
+          "prompt": "A beautiful clean vector illustration showing a request, simple colored background, modern flat design",
+          "imagePath": "/api/image/8/126/19"
         },
         {
           "question": "wanted to be especially polite I would say \"Would you mind …?\"?",
           "answer": "if I wanted to be especially polite.",
           "questionZh": "想要特别有礼貌，我会说“你介意……吗？”？",
-          "answerZh": "如果我想特别有礼貌的话。"
+          "answerZh": "如果我想特别有礼貌的话。",
+          "prompt": "A clean symbolic vector illustration representing the concept of: wanted to be especially polite I would say \"Would you mind …?\", modern flat design style",
+          "imagePath": "/api/image/8/126/20"
         }
       ]
     }
@@ -4258,7 +4740,9 @@
       "questionText": "Do you like people who are always laughing and joking?",
       "expectedAnswer": "Yes, I like … ~ No, I don't like …",
       "questionTextZh": "你喜欢总是开怀大笑的人吗？",
-      "expectedAnswerZh": "是的，我喜欢……～不，我不喜欢……"
+      "expectedAnswerZh": "是的，我喜欢……～不，我不喜欢……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Do you like people who are always laughing and joking, modern flat design style",
+      "imagePath": "/api/image/8/112/0"
     },
     {
       "id": "s8_l112_q2",
@@ -4267,7 +4751,9 @@
       "questionText": "Can you tell us a joke?",
       "expectedAnswer": "Yes, I can tell you a joke ~ No, I can't tell you a joke",
       "questionTextZh": "你能给我们讲个笑话吗？",
-      "expectedAnswerZh": "是的，我可以给你讲个笑话~不，我不能给你讲个笑话"
+      "expectedAnswerZh": "是的，我可以给你讲个笑话~不，我不能给你讲个笑话",
+      "prompt": "A beautiful clean vector illustration showing a joke, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/112/1"
     },
     {
       "id": "s8_l113_q1",
@@ -4276,7 +4762,9 @@
       "questionText": "Do you enjoy discussing politics?",
       "expectedAnswer": "Yes, I enjoy … ~ No, I don't enjoy …",
       "questionTextZh": "你喜欢讨论政治吗？",
-      "expectedAnswerZh": "是的，我喜欢……〜不，我不喜欢……"
+      "expectedAnswerZh": "是的，我喜欢……〜不，我不喜欢……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Do you enjoy discussing politics, modern flat design style",
+      "imagePath": "/api/image/8/113/0"
     },
     {
       "id": "s8_l113_q2",
@@ -4285,7 +4773,9 @@
       "questionText": "What does it mean \"to live a regular life\"?",
       "expectedAnswer": "\"To live a regular life\" means that we eat, sleep and work etc. at more or less the same times every day",
       "questionTextZh": "“过有规律的生活”是什么意思？",
-      "expectedAnswerZh": "“生活有规律”是指我们每天吃饭、睡觉、工作等时间大致相同。"
+      "expectedAnswerZh": "“生活有规律”是指我们每天吃饭、睡觉、工作等时间大致相同。",
+      "prompt": "A beautiful clean vector illustration showing a regular, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/113/1"
     },
     {
       "id": "s8_l114_q1",
@@ -4294,7 +4784,9 @@
       "questionText": "What's the difference between a dish and a plate?",
       "expectedAnswer": "The difference between … is that …",
       "questionTextZh": "盘子和盘子有什么区别？",
-      "expectedAnswerZh": "……之间的区别在于……"
+      "expectedAnswerZh": "……之间的区别在于……",
+      "prompt": "A clean minimalist vector illustration of a difference at a dish, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/114/0"
     },
     {
       "id": "s8_l114_q2",
@@ -4303,7 +4795,9 @@
       "questionText": "What's your favourite dish?",
       "expectedAnswer": "My favourite dish is …",
       "questionTextZh": "你最喜欢的菜是什么？",
-      "expectedAnswerZh": "我最喜欢的菜是……"
+      "expectedAnswerZh": "我最喜欢的菜是……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: What's your favourite dish, modern flat design style",
+      "imagePath": "/api/image/8/114/1"
     },
     {
       "id": "s8_l115_q1",
@@ -4312,7 +4806,9 @@
       "questionText": "Do you have a bank account?",
       "expectedAnswer": "Yes, I have timetable ~ No, I don't have timetable",
       "questionTextZh": "您有银行账户吗？",
-      "expectedAnswerZh": "是的，我有时间表~不，我没有时间表"
+      "expectedAnswerZh": "是的，我有时间表~不，我没有时间表",
+      "prompt": "A beautiful clean vector illustration showing a bank, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/115/0"
     },
     {
       "id": "s8_l115_q2",
@@ -4321,7 +4817,9 @@
       "questionText": "Do you have an account at any shop?",
       "expectedAnswer": "Yes, I have … ~ No, I don't have …",
       "questionTextZh": "您在任何商店都有帐户吗？",
-      "expectedAnswerZh": "是的，我有……～不，我没有……"
+      "expectedAnswerZh": "是的，我有……～不，我没有……",
+      "prompt": "A beautiful clean vector illustration showing a account, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/115/1"
     },
     {
       "id": "s8_l116_q1",
@@ -4330,7 +4828,9 @@
       "questionText": "Do you think it's always wise to declare your future plans to other?",
       "expectedAnswer": "people Yes, I think it's … ~ No, I don't think it's … 8IZPSXIZOPU",
       "questionTextZh": "您认为向他人宣布您的未来计划总是明智的吗？",
-      "expectedAnswerZh": "人们是的，我认为这是……〜不，我不认为这是……8IZPSXIZOPU"
+      "expectedAnswerZh": "人们是的，我认为这是……〜不，我不认为这是……8IZPSXIZOPU",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Do you think it's always wise to declare your future plans to other, modern flat design style",
+      "imagePath": "/api/image/8/116/0"
     },
     {
       "id": "s8_l116_q2",
@@ -4339,7 +4839,9 @@
       "questionText": "What do we call the three classes into which many societies in the world?",
       "expectedAnswer": "are divided We call the three … the upper class, middle class and working class",
       "questionTextZh": "我们将世界上许多社会分为哪三个阶级？",
-      "expectedAnswerZh": "我们称之为三者……上层阶级、中产阶级和工人阶级"
+      "expectedAnswerZh": "我们称之为三者……上层阶级、中产阶级和工人阶级",
+      "prompt": "A clean minimalist vector illustration of a three in a world, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/116/1"
     },
     {
       "id": "s8_l117_q1",
@@ -4348,7 +4850,9 @@
       "questionText": "Which of these sentences is correct: \"He hasn't made many progresses\"?",
       "expectedAnswer": "or \"He hasn't made much progress\" \"He hasn't made much",
       "questionTextZh": "以下哪句话是正确的：“他没有取得很多进步”？",
-      "expectedAnswerZh": "或“他没有取得多大进步”“他没有取得多大进步”"
+      "expectedAnswerZh": "或“他没有取得多大进步”“他没有取得多大进步”",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Which of these sentences is correct: \"He hasn't made many progresses\", modern flat design style",
+      "imagePath": "/api/image/8/117/0"
     },
     {
       "id": "s8_l117_q2",
@@ -4357,7 +4861,9 @@
       "questionText": "Do you agree that a little knowledge can sometimes be a dangerous?",
       "expectedAnswer": "thing Yes, I agree that … ~ No, I don't agree that …",
       "questionTextZh": "您是否同意一点知识有时可能是危险的？",
-      "expectedAnswerZh": "是的，我同意……〜不，我不同意……"
+      "expectedAnswerZh": "是的，我同意……〜不，我不同意……",
+      "prompt": "A clean minimalist vector illustration of a little at a dangerous, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/117/1"
     },
     {
       "id": "s8_l118_q1",
@@ -4366,7 +4872,9 @@
       "questionText": "What do we do if a noun doesn't have a plural form?",
       "expectedAnswer": "If a noun …, we simply use it on its own, also without an article",
       "questionTextZh": "如果名词没有复数形式怎么办？",
-      "expectedAnswerZh": "如果名词……，我们只是单独使用它，也不带冠词"
+      "expectedAnswerZh": "如果名词……，我们只是单独使用它，也不带冠词",
+      "prompt": "A clean minimalist vector illustration of a noun at a plural, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/118/0"
     },
     {
       "id": "s8_l118_q2",
@@ -4375,7 +4883,9 @@
       "questionText": "Is it correct to say \"The water is necessary for the life\"?",
       "expectedAnswer": "No, it isn't …",
       "questionTextZh": "“水是生命所必需的”这句话正确吗？",
-      "expectedAnswerZh": "不，这不是……"
+      "expectedAnswerZh": "不，这不是……",
+      "prompt": "A clean minimalist vector illustration of a water at a life, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/118/1"
     },
     {
       "id": "s8_l119_q1",
@@ -4384,7 +4894,9 @@
       "questionText": "What are two common uses of the structure \"to be\" infinitive with?",
       "expectedAnswer": "\"to\" Two common uses … are to communicate an arrangement or an obligation",
       "questionTextZh": "不定式“to be”结构有哪两种常见用法？",
-      "expectedAnswerZh": "“to”的两个常见用法……是传达安排或义务"
+      "expectedAnswerZh": "“to”的两个常见用法……是传达安排或义务",
+      "prompt": "A beautiful clean vector illustration showing a structure, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/119/0"
     },
     {
       "id": "s8_l119_q2",
@@ -4393,7 +4905,9 @@
       "questionText": "What does this sentence mean: \"The Prime Minister is to speak to the?",
       "expectedAnswer": "press at noon\" That sentence means that there is an arrangement for the Prime Minister to speak to the press at noon",
       "questionTextZh": "这句话是什么意思：“总理是要讲话的？",
-      "expectedAnswerZh": "press at noon”这句话的意思是，有安排首相在中午向新闻界发表讲话"
+      "expectedAnswerZh": "press at noon”这句话的意思是，有安排首相在中午向新闻界发表讲话",
+      "prompt": "A beautiful clean vector illustration showing a prime, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/119/1"
     },
     {
       "id": "s8_l120_q1",
@@ -4402,7 +4916,9 @@
       "questionText": "Is there anything you should have done yesterday but didn't do?",
       "expectedAnswer": "Yes, there's polish ~ No, there isn't … If so what",
       "questionTextZh": "昨天有什么事情是你应该做但没有做的吗？",
-      "expectedAnswerZh": "是的，有抛光剂〜不，没有……如果有的话怎么办"
+      "expectedAnswerZh": "是的，有抛光剂〜不，没有……如果有的话怎么办",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Is there anything you should have done yesterday but didn't do, modern flat design style",
+      "imagePath": "/api/image/8/120/0"
     },
     {
       "id": "s8_l120_q2",
@@ -4411,7 +4927,9 @@
       "questionText": "Is there anything you know you should do tomorrow but perhaps won't?",
       "expectedAnswer": "do Yes, there's something … ~ No, there isn't anything …",
       "questionTextZh": "有什么事情是你知道明天应该做但也许不会做的吗？",
-      "expectedAnswerZh": "是的，有东西……〜不，什么也没有……"
+      "expectedAnswerZh": "是的，有东西……〜不，什么也没有……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Is there anything you know you should do tomorrow but perhaps won't, modern flat design style",
+      "imagePath": "/api/image/8/120/1"
     },
     {
       "id": "s8_l121_q1",
@@ -4420,7 +4938,9 @@
       "questionText": "The verb \"need\" can sometimes be used as a modal verb in questions and negative sentences (but not normally in positive sentences). For example, instead of asking \"Does she need to fill in a form?\", we can ask \"Need she?",
       "expectedAnswer": "fill in a form?\", and instead of saying \"You don't need to pay the bill yet\", we can say \"You needn't pay the bill yet\".",
       "questionTextZh": "动词“need”有时可以在疑问句和否定句中用作情态动词（但通常不在肯定句中）。例如，我们可以问“她需要吗？”，而不是问“她需要填写表格吗？”",
-      "expectedAnswerZh": "填写表格吗？”，而不是说“您还不需要支付账单”，我们可以说“您还不需要支付账单”。"
+      "expectedAnswerZh": "填写表格吗？”，而不是说“您还不需要支付账单”，我们可以说“您还不需要支付账单”。",
+      "prompt": "A clean minimalist vector illustration of a verb on a modal, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/121/0"
     },
     {
       "id": "s8_l121_q2",
@@ -4429,7 +4949,9 @@
       "questionText": "What does somebody mean if they say that they needn't have done?",
       "expectedAnswer": "something If somebody says that …, it means that they did it, but it was, in fact, not necessary",
       "questionTextZh": "如果有人说他们不必这样做，那是什么意思？",
-      "expectedAnswerZh": "某事如果有人这么说……，则意味着他们做到了，但实际上没有必要"
+      "expectedAnswerZh": "某事如果有人这么说……，则意味着他们做到了，但实际上没有必要",
+      "prompt": "A clean symbolic vector illustration representing the concept of: What does somebody mean if they say that they needn't have done, modern flat design style",
+      "imagePath": "/api/image/8/121/1"
     },
     {
       "id": "s8_l122_q1",
@@ -4438,7 +4960,9 @@
       "questionText": "What is a \"backyard\"?",
       "expectedAnswer": "A \"backyard\" is an enclosed space behind a house",
       "questionTextZh": "什么是“后院”？",
-      "expectedAnswerZh": "“后院”是房屋后面的封闭空间"
+      "expectedAnswerZh": "“后院”是房屋后面的封闭空间",
+      "prompt": "A beautiful clean vector illustration showing a enclosed, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/122/0"
     },
     {
       "id": "s8_l122_q2",
@@ -4447,7 +4971,9 @@
       "questionText": "What's a courtyard?",
       "expectedAnswer": "A courtyard is … and is usually found in colleges, castles or very large houses",
       "questionTextZh": "什么是庭院？",
-      "expectedAnswerZh": "庭院是……通常出现在大学、城堡或非常大的房子里"
+      "expectedAnswerZh": "庭院是……通常出现在大学、城堡或非常大的房子里",
+      "prompt": "A beautiful clean vector illustration showing a courtyard, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/122/1"
     },
     {
       "id": "s8_l123_q1",
@@ -4456,7 +4982,9 @@
       "questionText": "Do you know anyone who works as a waiter?",
       "expectedAnswer": "Yes, I know someone … ~ No, I don't know anyone …",
       "questionTextZh": "你认识做服务员的人吗？",
-      "expectedAnswerZh": "是的，我认识一个人……〜不，我不认识任何人……"
+      "expectedAnswerZh": "是的，我认识一个人……〜不，我不认识任何人……",
+      "prompt": "A beautiful clean vector illustration showing a waiter, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/123/0"
     },
     {
       "id": "s8_l123_q2",
@@ -4465,7 +4993,9 @@
       "questionText": "Do you note down all the new English words you hear?",
       "expectedAnswer": "Yes, I note down … ~ No, I don't note down …",
       "questionTextZh": "你记下你听到的所有新英语单词吗？",
-      "expectedAnswerZh": "是的，我记下来了……〜不，我不记下来……"
+      "expectedAnswerZh": "是的，我记下来了……〜不，我不记下来……",
+      "prompt": "A beautiful clean vector illustration showing a new, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/123/1"
     },
     {
       "id": "s8_l124_q1",
@@ -4474,7 +5004,9 @@
       "questionText": "What are the benefits of regular physical exercise?",
       "expectedAnswer": "The benefits … are good health, more energy etc.",
       "questionTextZh": "经常锻炼身体有什么好处？",
-      "expectedAnswerZh": "好处……是身体健康、精力充沛等。"
+      "expectedAnswerZh": "好处……是身体健康、精力充沛等。",
+      "prompt": "A beautiful clean vector illustration showing a benefits, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/124/0"
     },
     {
       "id": "s8_l124_q2",
@@ -4483,7 +5015,9 @@
       "questionText": "Do you think it's important for parents who smoke to try to give up?",
       "expectedAnswer": "smoking for the sake of their children Yes, I think it's … ~ No, I don't think it's … mixed up",
       "questionTextZh": "您认为对于吸烟的父母来说尝试戒烟重要吗？",
-      "expectedAnswerZh": "为了孩子而吸烟 是的，我认为这是……〜不，我不认为这是……混淆了"
+      "expectedAnswerZh": "为了孩子而吸烟 是的，我认为这是……〜不，我不认为这是……混淆了",
+      "prompt": "A beautiful clean vector illustration showing a sake, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/124/1"
     },
     {
       "id": "s8_l125_q1",
@@ -4492,7 +5026,9 @@
       "questionText": "Which is the heaviest land animal on earth?",
       "expectedAnswer": "The elephant is … 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE The mobile phone was invented in 1973 2) We sometimes put the definite article \"the\" in front of a name, but",
       "questionTextZh": "地球上最重的陆地动物是什么？",
-      "expectedAnswerZh": "大象是… 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE 移动电话于 1973 年发明 2) 我们有时将定冠词“the”放在名字前面，但是"
+      "expectedAnswerZh": "大象是… 8IFOXBTUIFNPCJMFQIPOFJOWFOUFE 移动电话于 1973 年发明 2) 我们有时将定冠词“the”放在名字前面，但是",
+      "prompt": "A beautiful clean vector illustration showing a heaviest, simple colored background, modern flat design",
+      "imagePath": "/api/image/8/125/0"
     },
     {
       "id": "s8_l125_q2",
@@ -4501,7 +5037,9 @@
       "questionText": "Which is the longest river in the world?",
       "expectedAnswer": "The Nile is … 3) Finally, we occasionally put the word \"the\" in front of the name of a country, but only if the name is plural in form. For example, \"the Netherlands\", \"the United States of America\" etc. With country names that are singular in form, we do not use \"the\". For example, we say \"France\" (not \"the France\").",
       "questionTextZh": "世界上最长的河流是哪条？",
-      "expectedAnswerZh": "尼罗河是…… 3) 最后，我们偶尔会在国家名称前加上“the”一词，但前提是该名称采用复数形式。例如，“荷兰”、“美利坚合众国”等。对于单数形式的国家/地区名称，我们不使用“the”。例如，我们说“法国”（而不是“法国”）。"
+      "expectedAnswerZh": "尼罗河是…… 3) 最后，我们偶尔会在国家名称前加上“the”一词，但前提是该名称采用复数形式。例如，“荷兰”、“美利坚合众国”等。对于单数形式的国家/地区名称，我们不使用“the”。例如，我们说“法国”（而不是“法国”）。",
+      "prompt": "A clean minimalist vector illustration of a longest on a world, simple colored background, modern flat design style",
+      "imagePath": "/api/image/8/125/1"
     },
     {
       "id": "s8_l126_q1",
@@ -4510,7 +5048,9 @@
       "questionText": "What are you doing?",
       "expectedAnswer": "I'm extending my …",
       "questionTextZh": "你在干什么？",
-      "expectedAnswerZh": "我正在延长我的……"
+      "expectedAnswerZh": "我正在延长我的……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: What are you doing, modern flat design style",
+      "imagePath": "/api/image/8/126/0"
     },
     {
       "id": "s8_l126_q2",
@@ -4519,7 +5059,9 @@
       "questionText": "Is there anyone you can think of who you could trust with your life?",
       "expectedAnswer": "Yes, there's someone … ~ No, there isn't anyone …",
       "questionTextZh": "你能想到可以托付一生的人吗？",
-      "expectedAnswerZh": "是的，有人……～不，没有人……"
+      "expectedAnswerZh": "是的，有人……～不，没有人……",
+      "prompt": "A clean symbolic vector illustration representing the concept of: Is there anyone you can think of who you could trust with your life, modern flat design style",
+      "imagePath": "/api/image/8/126/1"
     }
   ],
   "flashcards": [
